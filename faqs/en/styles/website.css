@@ -1,0 +1,9 @@
+.gitbook-link {
+    display: none !important;
+}
+
+.faq-page-footer > a {
+	display: none !important;
+	color: red;
+
+}

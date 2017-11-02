@@ -144,7 +144,7 @@
                     
                         <b>2.2.</b>
                     
-                    Independence of SAS-ESC Peering Protocol
+                    SAS-ESC Peering Protocol
             
                 </a>
             
@@ -434,9 +434,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.2.1.1" data-path="sasRegistrationMessage-enhancements.md">
+        <li class="chapter " data-level="5.1.2.1.1" data-path="sas-esc-messages/sasRegistrationMessage-enhancements.html">
             
-                <span>
+                <a href="sas-esc-messages/sasRegistrationMessage-enhancements.html">
             
                     
                         <b>5.1.2.1.1.</b>
@@ -670,6 +670,33 @@ body {
 <li>Exchange of Private Key for digital signature</li>
 <li>Setting of communication timeout</li>
 </ol>
+<p>Item 1. is outlined in Figure 1 and explained below. </p>
+<p><img src="../assets/handshake-diagram.png" alt=""> 
+Diagram 1. SAS-ESC public key exchange</p>
+<p><strong>Step 0</strong> One ESC, <em>E</em>, and one SAS, <em>S</em>, are in operation. E knows nothing of S, whereas S knows E&apos;s URL which has been provided to S by S&apos;s operators and the ESC API. Both partes (E and S) have their respective X.509 certificates in possession. </p>
+<p><strong>Step 1</strong> S sends its public key to E as a JSON Web Signature which in the payload contains the pulic key in the JSON Web Key format (RFC 7517). The JWK must contain sufficient information for E to validate S&apos;s obtain S&apos;s X.509 certificate (key_e must contain a valid <code>x5u</code> field with a URL to S&apos;s X.509 certificate and should contain other fields listed in RFC 7517). </p>
+<ul>
+<li>Signing with a JSON Web Signature provides the <a href="../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a> against another party posing as S by requiring that S actually signs their public key thus proving that they are in possession of the associated private key. </li>
+</ul>
+<p><strong>Step 2</strong> E retrieves S&apos;s X.509 certificate and verifies it using the certificate chain</p>
+<ul>
+<li><p>If S&apos;s X.509 is signed by CAs recognised by E, and E succesfully validates it using the certificate chain, E proceeds to <strong>Step 3</strong>.</p>
+<ul>
+<li>If E cannot validate S&apos;s X.509 certificate, E sends a reponse to S containing message AUTHENTICATION_FAILURE and error information (reason for failure to validate) and end communication with S. </li>
+</ul>
+</li>
+<li><p>If S&apos;s X.509 certificate is self-signed, E responds to S with a message AUTHENTICATION_PENDING and request its operator (the operator of ESC E) to validate S&apos;s certificate. Successful certificate validation triggers <strong>Step 3</strong>; failure to validate should trigger E sending an AUTHENTICATION_FAILURE message to S. </p>
+</li>
+</ul>
+<p><strong>Step 3</strong> E sends its public key using the JSON Web Key notation with at least the fields listed in <strong>Step 2</strong>, signed with a JSON Web Signature. </p>
+<p><strong>Step 4</strong> Mirroring Step 2, S authenticates E by validating E&apos;s X.509 associated with its private key and verifies the signature </p>
+<h2 id="to-do">To do</h2>
+<ul>
+<li>define response message format in Step 2</li>
+<li>discuss <em>2. Exchange of Private Key for digital signature&quot;</em>. Private keys do not need (should not need!) to be exchanged. Symmetric keys also do not need to be exchanged because JWON Web Encryption has an inbuilt symmetric key mechanism and only needs parties to know each other&apos;s public keys. </li>
+</ul>
+<pre><code class="lang-Note:">Fallback to TLS 1.1 and TLS 1.0 should be disabled by all parties.
+</code></pre>
 <pre><code> Describe Key Bridge Authentication Method
  This page/section should describe how above steps are performed.
 </code></pre><p> If the client type is confidential, the client and authorization server establish a client authentication method suitable for the security requirements of the authorization server.  The authorization server MAY accept any form of client authentication meeting its security requirements.</p>
@@ -718,7 +745,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SAS Registration (Authentication)","level":"3.1","depth":1,"next":{"title":"Authorization Overview","level":"3.2","depth":1,"path":"content/authorization.md","ref":"content/authorization.md","articles":[{"title":"Roles","level":"3.2.1","depth":2,"path":"content/authorization-roles.md","ref":"content/authorization-roles.md","articles":[]},{"title":"Abstract OAuth 2.0 Protocol Flow","level":"3.2.2","depth":2,"path":"content/authorization-protocol-flow.md","ref":"content/authorization-protocol-flow.md","articles":[]},{"title":"Authorization Grant","level":"3.2.3","depth":2,"path":"content/authorization-grant.md","ref":"content/authorization-grant.md","articles":[]},{"title":"Implicit Flow - Authorization","level":"3.2.4","depth":2,"path":"content/authorization-implicit.md","ref":"content/authorization-implicit.md","articles":[{"title":"Request","level":"3.2.4.1","depth":3,"path":"content/authorization-implicit-request.md","ref":"content/authorization-implicit-request.md","articles":[]},{"title":"Response","level":"3.2.4.2","depth":3,"path":"content/authorization-implicit-response.md","ref":"content/authorization-implicit-response.md","articles":[{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]}]}]}]},"previous":{"title":"Generic SAS Peering Workflow","level":"2.3","depth":1,"path":"content/introduction/generic-workflow.md","ref":"content/introduction/generic-workflow.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization-registration.md","mtime":"2017-11-01T12:10:33.173Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SAS Registration (Authentication)","level":"3.1","depth":1,"next":{"title":"Authorization Overview","level":"3.2","depth":1,"path":"content/authorization.md","ref":"content/authorization.md","articles":[{"title":"Roles","level":"3.2.1","depth":2,"path":"content/authorization-roles.md","ref":"content/authorization-roles.md","articles":[]},{"title":"Abstract OAuth 2.0 Protocol Flow","level":"3.2.2","depth":2,"path":"content/authorization-protocol-flow.md","ref":"content/authorization-protocol-flow.md","articles":[]},{"title":"Authorization Grant","level":"3.2.3","depth":2,"path":"content/authorization-grant.md","ref":"content/authorization-grant.md","articles":[]},{"title":"Implicit Flow - Authorization","level":"3.2.4","depth":2,"path":"content/authorization-implicit.md","ref":"content/authorization-implicit.md","articles":[{"title":"Request","level":"3.2.4.1","depth":3,"path":"content/authorization-implicit-request.md","ref":"content/authorization-implicit-request.md","articles":[]},{"title":"Response","level":"3.2.4.2","depth":3,"path":"content/authorization-implicit-response.md","ref":"content/authorization-implicit-response.md","articles":[{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]}]}]}]},"previous":{"title":"Generic SAS Peering Workflow","level":"2.3","depth":1,"path":"content/introduction/generic-workflow.md","ref":"content/introduction/generic-workflow.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization-registration.md","mtime":"2017-11-02T12:17:53.981Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-02T13:01:47.379Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -726,10 +753,6 @@ body {
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

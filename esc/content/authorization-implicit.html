@@ -144,7 +144,7 @@
                     
                         <b>2.2.</b>
                     
-                    Independence of SAS-ESC Peering Protocol
+                    SAS-ESC Peering Protocol
             
                 </a>
             
@@ -434,9 +434,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.2.1.1" data-path="sasRegistrationMessage-enhancements.md">
+        <li class="chapter " data-level="5.1.2.1.1" data-path="sas-esc-messages/sasRegistrationMessage-enhancements.html">
             
-                <span>
+                <a href="sas-esc-messages/sasRegistrationMessage-enhancements.html">
             
                     
                         <b>5.1.2.1.1.</b>
@@ -676,40 +676,8 @@ body {
 <p> Since this is a redirection-based flow, the client must be capable of interacting with the resource owner&apos;s user-agent (typically a web browser) and capable of receiving incoming requests (via redirection) from the authorization server.</p>
 <p> Unlike the authorization code grant type, in which the client makes separate requests for authorization and for an access token, the client receives the access token as the result of the authorization request.</p>
 <p> The implicit grant type does not include client authentication, and relies on the presence of the resource owner and the registration of the redirection URI.  Because the access token is encoded into the redirection URI, it may be exposed to the resource owner and other applications residing on the same device.</p>
-<pre><code>     +----------+
-     |   ESC    |
-     | Operator |
-     |          |
-     +----------+
-          ^
-          |
-         (B)
-     +----|-----+          Client Identifier     +---------------+
-     |         -+----(A)-- &amp; Redirection URI ---&gt;|               |
-     |  User-   |                                | Authorization |
-     |  Agent  -|----(B)-- User authenticates --&gt;|     Server    |
-     |          |                                |               |
-     |          |&lt;---(C)--- Redirection URI ----&lt;|               |
-     |          |          with Access Token     +---------------+
-     |          |            in Fragment
-     |          |                                +---------------+
-     |          |----(D)--- Redirection URI ----&gt;|   Web-Hosted  |
-     |          |          without Fragment      |     Client    |
-     |          |                                |    Resource   |
-     |     (F)  |&lt;---(E)------- Script ---------&lt;|               |
-     |          |                                +---------------+
-     +-|--------+
-       |    |
-      (A)  (G) Access Token
-       |    |
-       ^    v
-     +---------+
-     |         |
-     |   SAS   |
-     |         |
-     +---------+
-
-   Note: The lines illustrating steps (A) and (B) are broken into two
+<p><img src="../assets/implicit-flow.svg" alt=""></p>
+<pre><code>   Note: The lines illustrating steps (A) and (B) are broken into two
    parts as they pass through the user-agent.
 
                        Figure 4: Implicit Grant Flow
@@ -783,7 +751,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Implicit Flow - Authorization","level":"3.2.4","depth":2,"next":{"title":"Request","level":"3.2.4.1","depth":3,"path":"content/authorization-implicit-request.md","ref":"content/authorization-implicit-request.md","articles":[]},"previous":{"title":"Authorization Grant","level":"3.2.3","depth":2,"path":"content/authorization-grant.md","ref":"content/authorization-grant.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization-implicit.md","mtime":"2017-11-01T12:42:58.423Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Implicit Flow - Authorization","level":"3.2.4","depth":2,"next":{"title":"Request","level":"3.2.4.1","depth":3,"path":"content/authorization-implicit-request.md","ref":"content/authorization-implicit-request.md","articles":[]},"previous":{"title":"Authorization Grant","level":"3.2.3","depth":2,"path":"content/authorization-grant.md","ref":"content/authorization-grant.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization-implicit.md","mtime":"2017-11-02T12:42:56.293Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-02T13:01:47.379Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -791,10 +759,6 @@ body {
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

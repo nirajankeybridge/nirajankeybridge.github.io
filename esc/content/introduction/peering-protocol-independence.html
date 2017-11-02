@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Independence of SAS-ESC Peering Protocol · GitBook</title>
+        <title>SAS-ESC Peering Protocol · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -144,7 +144,7 @@
                     
                         <b>2.2.</b>
                     
-                    Independence of SAS-ESC Peering Protocol
+                    SAS-ESC Peering Protocol
             
                 </a>
             
@@ -434,9 +434,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.2.1.1" data-path="../sasRegistrationMessage-enhancements.md">
+        <li class="chapter " data-level="5.1.2.1.1" data-path="../sas-esc-messages/sasRegistrationMessage-enhancements.html">
             
-                <span>
+                <a href="../sas-esc-messages/sasRegistrationMessage-enhancements.html">
             
                     
                         <b>5.1.2.1.1.</b>
@@ -643,7 +643,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Independence of SAS-ESC Peering Protocol</a>
+        <a href="../.." >SAS-ESC Peering Protocol</a>
     </h1>
 </div>
 
@@ -665,8 +665,11 @@ body {
 </style>
 
 <h2 id="sas-esc-peering-protocol">SAS-ESC Peering Protocol</h2>
-<p>A SAS exterior peering protocol standard will place no constraint on the internal architecture and operation of the various entities that use the protocol. Referring again to Illustration 10, a generic peering process enables SAS of unknown constitution on the left peers with a Key Bridge ESC on the right.</p>
-<p>SAS to ESC peering operational security policies and configurations are under development within a multi-stakeholder group in which Key Bridge is a participant.1 The actual protocol and data structures for SAS to ESC peering is not the subject of multi-stakeholder group consideration. Key Bridge has therefore invented proprietary and also proposed non-proprietary methods that a SAS may use when coordinating with a ESC to dynamically protect a non-informing incumbent spectrum user. The Key Bridge SAS Gateway Protocol is, at present, a proprietary application peering protocol that includes mechanisms to support cryptographically secure message exchange for both SAS to SAS and SAS to ESC peering, including all security prescriptions identified by the multi-stakeholder group.</p>
+<p>A SAS exterior peering protocol standard will place no constraint on the internal architecture and operation of the various entities that use the protocol. Referring again to Illustration 1, a generic peering process enables SAS of unknown constitution on the left peers with a Key Bridge ESC on the right.</p>
+<blockquote>
+<p><strong>This paragraph needs to be reviewed</strong>
+SAS to ESC peering operational security policies and configurations are under development within a multi-stakeholder group in which Key Bridge is a participant (The Wireless Innovation Forum, Spectrum Sharing Committee, Working Group 2: Security). The actual protocol and data structures for SAS to ESC peering is not the subject of multi-stakeholder group consideration. Key Bridge has therefore invented proprietary and also proposed non-proprietary methods that a SAS may use when coordinating with a ESC to dynamically protect a non-informing incumbent spectrum user. The Key Bridge SAS Gateway Protocol is, at present, a proprietary application peering protocol that includes mechanisms to support cryptographically secure message exchange for both SAS to SAS and SAS to ESC peering, including all security prescriptions identified by the multi-stakeholder group.</p>
+</blockquote>
 <p>A SAS and ESC Peering relationship using the SAS Gateway Protocol is secure and neutral. A SAS Infrastructure may register with and receive information from any inter-operable ESC Infrastructure supporting a peering service. When using the Key Bridge SAS Gateway Protocol a compatible SAS may register with and receive information from a compatible ESC via a designated ESC Peering API.</p>
 <p>In the Key Bridge architecture ESC Service Nodes are responsible for Non-Informing <a href="../../GLOSSARY.html#incumbent-user" class="glossary-term" title="A federal entity authorized to operate on a primary basis in accordance with the table of frequency allocations, a fixed satellite service operator, or a Grandfathered Wireless Broadband Licensee authorized to operate on a primary basis on frequencies designated in section 96.11.">Incumbent User</a> (NIIU) detection services and peer directly with a subscribing SAS via the SAS Gateway Protocol. This strategy is designed to limit the geographic extent of NIIU information conveyed to a SAS to that necessary for the SAS to administer CBSDs in a specific geographic region. However, the ESC places no constraint on SAS internal architecture or operation, and a SAS may peer with multiple ESC Service Nodes.</p>
 
@@ -712,7 +715,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Independence of SAS-ESC Peering Protocol","level":"2.2","depth":1,"next":{"title":"Generic SAS Peering Workflow","level":"2.3","depth":1,"path":"content/introduction/generic-workflow.md","ref":"content/introduction/generic-workflow.md","articles":[]},"previous":{"title":"Independence of SAS and ESC","level":"2.1","depth":1,"path":"content/introduction/independence.md","ref":"content/introduction/independence.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/introduction/peering-protocol-independence.md","mtime":"2017-11-01T08:28:44.574Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SAS-ESC Peering Protocol","level":"2.2","depth":1,"next":{"title":"Generic SAS Peering Workflow","level":"2.3","depth":1,"path":"content/introduction/generic-workflow.md","ref":"content/introduction/generic-workflow.md","articles":[]},"previous":{"title":"Independence of SAS and ESC","level":"2.1","depth":1,"path":"content/introduction/independence.md","ref":"content/introduction/independence.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/introduction/peering-protocol-independence.md","mtime":"2017-11-01T17:55:01.038Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-02T13:01:47.379Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -720,10 +723,6 @@ body {
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Security · GitBook</title>
+        <title>application/x-www-form-urlencoded Media Type · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -62,7 +62,7 @@
     <link rel="next" href="abbreviations.html" />
     
     
-    <link rel="prev" href="dpa-state-machine.html" />
+    <link rel="prev" href="security.html" />
     
 
     </head>
@@ -129,7 +129,7 @@
                     
                         <b>2.1.</b>
                     
-                    Independence of SAS and ESC
+                    SAS-ESC Independence
             
                 </a>
             
@@ -314,6 +314,93 @@
     
 
             </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="endpoints/">
+            
+                <a href="endpoints/">
+            
+                    
+                        <b>3.2.5.</b>
+                    
+                    Protocol Endpoints
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.5.1" data-path="endpoints/01-authorization-endpoint.html">
+            
+                <a href="endpoints/01-authorization-endpoint.html">
+            
+                    
+                        <b>3.2.5.1.</b>
+                    
+                    Authorization Endpoint
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.5.1.1" data-path="endpoints/02-response-type.html">
+            
+                <a href="endpoints/02-response-type.html">
+            
+                    
+                        <b>3.2.5.1.1.</b>
+                    
+                    Response Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5.1.2" data-path="endpoints/03-redirection.html">
+            
+                <a href="endpoints/03-redirection.html">
+            
+                    
+                        <b>3.2.5.1.2.</b>
+                    
+                    Redirection Endpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5.2" data-path="endpoints/04-scope.html">
+            
+                <a href="endpoints/04-scope.html">
+            
+                    
+                        <b>3.2.5.2.</b>
+                    
+                    Access Token Scope
+            
+                </a>
+            
+
             
         </li>
     
@@ -546,14 +633,29 @@
             
         </li>
     
-        <li class="chapter active" data-level="6.2" data-path="security-concerns.html">
+        <li class="chapter " data-level="6.2" data-path="security.html">
             
-                <a href="security-concerns.html">
+                <a href="security.html">
             
                     
                         <b>6.2.</b>
                     
-                    Security
+                    Security Considerations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.3" data-path="urlencoded.html">
+            
+                <a href="urlencoded.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    application/x-www-form-urlencoded Media Type
             
                 </a>
             
@@ -643,7 +745,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Security</a>
+        <a href=".." >application/x-www-form-urlencoded Media Type</a>
     </h1>
 </div>
 
@@ -660,45 +762,38 @@
                                 
                                 <p><style>
 body {
-  counter-reset: h1 24;
+  counter-reset: h1 30;
 }
 </style></p>
-<h2 id="security-concerns">Security Concerns</h2>
-<h3 id="implicit-grant">Implicit Grant</h3>
-<p>   Implicit grants improve the responsiveness and efficiency of some
-   clients (such as a client implemented as an in-browser application),
-   since it reduces the number of round trips required to obtain an
-   access token. However, this convenience should be weighed against
-   the security implications of using implicit grants, such as those
-   described in Sections 10.3 and 10.16 of RFC 6749, especially when the
-   authorization code grant type is available.</p>
-<h3 id="tls-version">TLS Version</h3>
-<!-- Section 1.6.   -->
-<p>   Whenever Transport Layer Security (TLS) is used by this
-   specification, the appropriate version (or versions) of TLS will vary
-   over time, based on the widespread deployment and known security
-   vulnerabilities.  At the time of this writing, TLS version 1.2
-   [RFC5246] is the most recent version, but has a very limited
-   deployment base and might not be readily available for
-   implementation.  TLS version 1.0 [RFC2246] is the most widely
-   deployed version and will provide the broadest interoperability.</p>
-<p>   Implementations MAY also support additional transport-layer security
-   mechanisms that meet their security requirements.</p>
-<h3 id="interoperability">Interoperability</h3>
-<!-- Section 1.8. -->  
-<p>   OAuth 2.0 provides a rich authorization framework with well-defined
-   security properties.  However, as a rich and highly extensible
-   framework with many optional components, on its own, this
-   specification is likely to produce a wide range of non-interoperable
-   implementations.</p>
-<p>   In addition, this specification leaves a few required components
-   partially or fully undefined (e.g., client registration,
-   authorization server capabilities, endpoint discovery).  Without these components, clients must be manually and specifically
-   configured against a specific authorization server and resource
-   server in order to interoperate.</p>
-<p>   This framework was designed with the clear expectation that future
-   work will define prescriptive profiles and extensions necessary to
-   achieve full web-scale interoperability.</p>
+<h1 id="use-of-applicationx-www-form-urlencoded-media-type">Use of application/x-www-form-urlencoded Media Type</h1>
+<p>Excerpted from Appendix B of OAuth 2.0 RFC at
+<a href="https://tools.ietf.org/html/rfc6749#appendix-B" target="_blank">https://tools.ietf.org/html/rfc6749#appendix-B</a></p>
+<blockquote>
+<p>  At the time of publication of OAuth 2.0 specification, the
+   &quot;application/x-www-form-urlencoded&quot; media type was defined in
+   Section 17.13.4 of <a href="https://www.w3.org/TR/1999/REC-html401-19991224/" target="_blank">W3C.REC-html401-19991224</a> but not registered in
+   the IANA MIME Media Types registry
+   (<a href="http://www.iana.org/assignments/media-types" target="_blank">http://www.iana.org/assignments/media-types</a>).  Furthermore, that
+   definition is incomplete, as it does not consider non-US-ASCII
+   characters.</p>
+<p> To address this shortcoming when generating payloads using this media
+   type, names and values MUST be encoded using the UTF-8 character
+   encoding scheme [<a href="https://tools.ietf.org/html/rfc3629" target="_blank">RFC3629</a>] first; the resulting octet sequence then
+   needs to be further encoded using the escaping rules defined in
+   [<a href="https://www.w3.org/TR/1999/REC-html401-19991224/" target="_blank">W3C.REC-html401-19991224</a>].</p>
+<p> When parsing data from a payload using this media type, the names and
+   values resulting from reversing the name/value encoding consequently
+   need to be treated as octet sequences, to be decoded using the UTF-8
+   character encoding scheme.</p>
+<p> For example, the value consisting of the six Unicode code points</p>
+<pre><code>   (1) U+0020 (SPACE), (2) U+0025 (PERCENT SIGN),
+   (3) U+0026 (AMPERSAND), (4) U+002B (PLUS SIGN),
+   (5) U+00A3 (POUND SIGN), and (6) U+20AC (EURO SIGN)
+</code></pre><p>   would be encoded into the octet sequence below (using hexadecimal notation):</p>
+<pre><code>     20 25 26 2B C2 A3 E2 82 AC
+</code></pre><p>   and then represented in the payload as:</p>
+<pre><code>     +%25%26%2B%C2%A3%E2%82%AC
+</code></pre></blockquote>
 
                                 
                                 </section>
@@ -726,7 +821,7 @@ body {
 
             
                 
-                <a href="dpa-state-machine.html" class="navigation navigation-prev " aria-label="Previous page: DPA State Machine">
+                <a href="security.html" class="navigation navigation-prev " aria-label="Previous page: Security Considerations">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -742,7 +837,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Security","level":"6.2","depth":1,"next":{"title":"Abbreviations","level":"7.1","depth":1,"path":"content/abbreviations.md","ref":"content/abbreviations.md","articles":[]},"previous":{"title":"DPA State Machine","level":"6.1","depth":1,"path":"content/dpa-state-machine.md","ref":"content/dpa-state-machine.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/security-concerns.md","mtime":"2017-11-01T12:56:08.724Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T12:33:35.154Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"application/x-www-form-urlencoded Media Type","level":"6.3","depth":1,"next":{"title":"Abbreviations","level":"7.1","depth":1,"path":"content/abbreviations.md","ref":"content/abbreviations.md","articles":[]},"previous":{"title":"Security Considerations","level":"6.2","depth":1,"path":"content/security.md","ref":"content/security.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/urlencoded.md","mtime":"2017-11-03T19:15:42.126Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T13:24:58.013Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

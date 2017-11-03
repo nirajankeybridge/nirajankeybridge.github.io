@@ -59,7 +59,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="security-concerns.html" />
+    <link rel="next" href="security.html" />
     
     
     <link rel="prev" href="sas-esc-messages/sasDeregistration.html" />
@@ -129,7 +129,7 @@
                     
                         <b>2.1.</b>
                     
-                    Independence of SAS and ESC
+                    SAS-ESC Independence
             
                 </a>
             
@@ -314,6 +314,93 @@
     
 
             </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="endpoints/">
+            
+                <a href="endpoints/">
+            
+                    
+                        <b>3.2.5.</b>
+                    
+                    Protocol Endpoints
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.5.1" data-path="endpoints/01-authorization-endpoint.html">
+            
+                <a href="endpoints/01-authorization-endpoint.html">
+            
+                    
+                        <b>3.2.5.1.</b>
+                    
+                    Authorization Endpoint
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.5.1.1" data-path="endpoints/02-response-type.html">
+            
+                <a href="endpoints/02-response-type.html">
+            
+                    
+                        <b>3.2.5.1.1.</b>
+                    
+                    Response Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5.1.2" data-path="endpoints/03-redirection.html">
+            
+                <a href="endpoints/03-redirection.html">
+            
+                    
+                        <b>3.2.5.1.2.</b>
+                    
+                    Redirection Endpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5.2" data-path="endpoints/04-scope.html">
+            
+                <a href="endpoints/04-scope.html">
+            
+                    
+                        <b>3.2.5.2.</b>
+                    
+                    Access Token Scope
+            
+                </a>
+            
+
             
         </li>
     
@@ -546,14 +633,29 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="security-concerns.html">
+        <li class="chapter " data-level="6.2" data-path="security.html">
             
-                <a href="security-concerns.html">
+                <a href="security.html">
             
                     
                         <b>6.2.</b>
                     
-                    Security
+                    Security Considerations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="urlencoded.html">
+            
+                <a href="urlencoded.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    application/x-www-form-urlencoded Media Type
             
                 </a>
             
@@ -660,7 +762,7 @@
                                 
                                 <p><style>
 body {
-  counter-reset: h1 23;
+  counter-reset: h1 28;
 }
 </style></p>
 <h1 id="annex-a-normative-dpa-state-machine">Annex A (Normative) DPA State Machine</h1>
@@ -669,18 +771,18 @@ body {
 <p><strong>Figure 2: DPA State Machine in a channel per DPA</strong></p>
 <p>The DPA State shall be defined as follows:</p>
 <ul>
-<li><p>ACTIVE: &#x201C;ACTIVE&#x201D; refers to the state of a DPA in which the ESC detects the presence of the incumbent, in which two hours haves not passed after the ESC senses disappearance of the presence of any incumbents, or in which CBSDs are forbidden to use .a channel in its Neighborhood Area regardless of the presence of the incumbents. Both SAS and ESC shall consider &#x201C;ACTIVE&#x201D; the initial state of a DPA. </p>
+<li><p><strong>ACTIVE</strong>: &#x201C;ACTIVE&#x201D; refers to the state of a DPA in which the ESC detects the presence of the incumbent, in which two hours haves not passed after the ESC senses disappearance of the presence of any incumbents, or in which CBSDs are forbidden to use .a channel in its Neighborhood Area regardless of the presence of the incumbents. Both SAS and ESC shall consider &#x201C;ACTIVE&#x201D; the initial state of a DPA. </p>
 </li>
-<li><p>INACTIVE: &#x201C;INACTIVE&#x201D; refers to the state of a DPA in which CBSDs are allowed to use. a channel in its Neighborhood Area, in which two hours have passed after the ESC sensed disappearance of the presence of any incumbents when the DPA was ACTIVE State, or in which the ESC senses no presence of the incumbents.</p>
+<li><p><strong>INACTIVE</strong>: &#x201C;INACTIVE&#x201D; refers to the state of a DPA in which CBSDs are allowed to use. a channel in its Neighborhood Area, in which two hours have passed after the ESC sensed disappearance of the presence of any incumbents when the DPA was ACTIVE State, or in which the ESC senses no presence of the incumbents.</p>
 </li>
 </ul>
 <p>The following trigger events shall be applied to the DPA State Transitions:</p>
 <ul>
-<li><p>Sense: &#x201C;Sense&#x201D; refers to an event in which the ESC senses no presence of the incumbents or in which two hours has passed after the ESC sensed disappearance of the presence of the incumbent. All the DPA States shall transition to &#x201C;INACTIVE&#x201D; after this trigger event.</p>
+<li><p><strong>Sense</strong>: &#x201C;Sense&#x201D; refers to an event in which the ESC senses no presence of the incumbents or in which two hours has passed after the ESC sensed disappearance of the presence of the incumbent. All the DPA States shall transition to &#x201C;INACTIVE&#x201D; after this trigger event.</p>
 </li>
-<li><p>Detect: &#x201C;Detect&#x201D; refers to an event in which the ESC detects the presence of the incumbent in the DPA. All the DPA States shall transition to &#x201C;ACTIVE&#x201D; after this trigger event.</p>
+<li><p><strong>Detect</strong>: &#x201C;Detect&#x201D; refers to an event in which the ESC detects the presence of the incumbent in the DPA. All the DPA States shall transition to &#x201C;ACTIVE&#x201D; after this trigger event.</p>
 </li>
-<li><p>Fail: &#x201C;Fail&#x201D; refers to an event in which the SAS detects any failures in the Keep Alive Message exchange with the ESC. In particular, if the SAS doesn&#x2019;t receive any Keep Alive Response for more than x seconds after sending a Keep Alive Message, it shall move to the &#x201C;Fail&#x201D; state. All the DPA States shall transition to &#x201C;ACTIVE&#x201D; after this trigger event.</p>
+<li><p><strong>Fail</strong>: &#x201C;Fail&#x201D; refers to an event in which the SAS detects any failures in the Keep Alive Message exchange with the ESC. In particular, if the SAS doesn&#x2019;t receive any Keep Alive Response for more than x seconds after sending a Keep Alive Message, it shall move to the &#x201C;Fail&#x201D; state. All the DPA States shall transition to &#x201C;ACTIVE&#x201D; after this trigger event.</p>
 </li>
 </ul>
 
@@ -715,7 +817,7 @@ body {
                 </a>
                 
                 
-                <a href="security-concerns.html" class="navigation navigation-next " aria-label="Next page: Security">
+                <a href="security.html" class="navigation navigation-next " aria-label="Next page: Security Considerations">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -726,7 +828,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DPA State Machine","level":"6.1","depth":1,"next":{"title":"Security","level":"6.2","depth":1,"path":"content/security-concerns.md","ref":"content/security-concerns.md","articles":[]},"previous":{"title":"SAS Deregistration Message","level":"5.1.2.5","depth":3,"path":"content/sas-esc-messages/sasDeregistration.md","ref":"content/sas-esc-messages/sasDeregistration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/dpa-state-machine.md","mtime":"2017-10-26T09:52:13.117Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T12:33:35.154Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DPA State Machine","level":"6.1","depth":1,"next":{"title":"Security Considerations","level":"6.2","depth":1,"path":"content/security.md","ref":"content/security.md","articles":[]},"previous":{"title":"SAS Deregistration Message","level":"5.1.2.5","depth":3,"path":"content/sas-esc-messages/sasDeregistration.md","ref":"content/sas-esc-messages/sasDeregistration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/dpa-state-machine.md","mtime":"2017-11-03T19:03:07.098Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T13:24:58.013Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

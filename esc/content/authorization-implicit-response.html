@@ -129,7 +129,7 @@
                     
                         <b>2.1.</b>
                     
-                    Independence of SAS and ESC
+                    SAS-ESC Independence
             
                 </a>
             
@@ -314,6 +314,93 @@
     
 
             </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="endpoints/">
+            
+                <a href="endpoints/">
+            
+                    
+                        <b>3.2.5.</b>
+                    
+                    Protocol Endpoints
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.5.1" data-path="endpoints/01-authorization-endpoint.html">
+            
+                <a href="endpoints/01-authorization-endpoint.html">
+            
+                    
+                        <b>3.2.5.1.</b>
+                    
+                    Authorization Endpoint
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.5.1.1" data-path="endpoints/02-response-type.html">
+            
+                <a href="endpoints/02-response-type.html">
+            
+                    
+                        <b>3.2.5.1.1.</b>
+                    
+                    Response Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5.1.2" data-path="endpoints/03-redirection.html">
+            
+                <a href="endpoints/03-redirection.html">
+            
+                    
+                        <b>3.2.5.1.2.</b>
+                    
+                    Redirection Endpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5.2" data-path="endpoints/04-scope.html">
+            
+                <a href="endpoints/04-scope.html">
+            
+                    
+                        <b>3.2.5.2.</b>
+                    
+                    Access Token Scope
+            
+                </a>
+            
+
             
         </li>
     
@@ -546,14 +633,29 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="security-concerns.html">
+        <li class="chapter " data-level="6.2" data-path="security.html">
             
-                <a href="security-concerns.html">
+                <a href="security.html">
             
                     
                         <b>6.2.</b>
                     
-                    Security
+                    Security Considerations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="urlencoded.html">
+            
+                <a href="urlencoded.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    application/x-www-form-urlencoded Media Type
             
                 </a>
             
@@ -691,7 +793,7 @@ body {
 <tr>
 <td>token_type</td>
 <td>REQUIRED</td>
-<td>The type of the token issued as described in Section 7.1. Value is case insensitive.</td>
+<td>The type of the token issued as described <a href="#Access-Token-Types">below</a>. Value is case insensitive.</td>
 </tr>
 <tr>
 <td>expires_in</td>
@@ -701,7 +803,7 @@ body {
 <tr>
 <td>scope</td>
 <td>OPTIONAL if identical to the scope requested by the client; otherwise, REQUIRED</td>
-<td>The scope of the access token as described by Section 3.3.</td>
+<td>The scope of the access token as described by Section <a href="endpoints/scope.md">&quot;Action Token Scope&quot;</a></td>
 </tr>
 <tr>
 <td>state</td>
@@ -723,10 +825,35 @@ body {
    redirecting the client than a 3xx redirection response -- for
    example, returning an HTML page that includes a &apos;continue&apos; button
    with an action linked to the redirection URI.</p>
-<p>   The client MUST ignore unrecognized response parameters.  The access
-   token string size is left undefined by this specification.  The
-   client should avoid making assumptions about value sizes.  The
-   authorization server SHOULD document the size of any value it issues.</p>
+<p>   The client MUST ignore unrecognized response parameters. The access token string size is left undefined by this specification. The client should avoid making assumptions about value sizes. The authorization server SHOULD document the size of any value it issues.</p>
+<h2 id="access-token-types">Access Token Types</h2>
+<!-- https://tools.ietf.org/html/rfc6749#section-7.1 -->
+<p>The access token type provides the client with the information
+   required to successfully utilize the access token to make a protected
+   resource request (along with type-specific attributes).  The client
+   MUST NOT use an access token if it does not understand the token
+   type.</p>
+<p>   For example, the &quot;bearer&quot; token type defined in <a href="https://tools.ietf.org/html/rfc6750" target="_blank">[RFC6750]</a> is utilized
+   by simply including the access token string in the request:</p>
+<pre><code>     GET /resource/1 HTTP/1.1
+     Host: example.com
+     Authorization: Bearer mF_9.B5f-4.1JqM
+</code></pre><p>   while the &quot;mac&quot; token type defined in <a href="https://tools.ietf.org/html/rfc6749#ref-OAuth-HTTP-MAC" target="_blank">[OAuth-HTTP-MAC]</a> is utilized by
+   issuing a Message Authentication Code (MAC) key together with the
+   access token that is used to sign certain components of the HTTP
+   requests:</p>
+<pre><code>     GET /resource/1 HTTP/1.1
+     Host: example.com
+     Authorization: MAC id=&quot;h480djs93hd8&quot;,
+                        nonce=&quot;274312:dj83hs9s&quot;,
+                        mac=&quot;kDZvddkndxvhGRXZhvuDjEWhGeE=&quot;
+</code></pre><p>   The above examples are provided for illustration purposes only.
+   Developers are advised to consult the <a href="https://tools.ietf.org/html/rfc6750" target="_blank">[RFC6750]</a> and <a href="https://tools.ietf.org/html/rfc6749#ref-OAuth-HTTP-MAC" target="_blank">[OAuth-HTTP-MAC]</a>
+   specifications before use.</p>
+<p>   Each access token type definition specifies the additional attributes
+   (if any) sent to the client together with the &quot;access_token&quot; response
+   parameter.  It also defines the HTTP authentication method used to
+   include the access token when making a protected resource request.</p>
 
                                 
                                 </section>
@@ -770,7 +897,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Response","level":"3.2.4.2","depth":3,"next":{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]},"previous":{"title":"Request","level":"3.2.4.1","depth":3,"path":"content/authorization-implicit-request.md","ref":"content/authorization-implicit-request.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization-implicit-response.md","mtime":"2017-11-01T11:34:24.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T12:33:35.154Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Response","level":"3.2.4.2","depth":3,"next":{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]},"previous":{"title":"Request","level":"3.2.4.1","depth":3,"path":"content/authorization-implicit-request.md","ref":"content/authorization-implicit-request.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization-implicit-response.md","mtime":"2017-11-03T18:44:33.499Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T13:24:58.013Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -129,7 +129,7 @@
                     
                         <b>2.1.</b>
                     
-                    Independence of SAS and ESC
+                    SAS-ESC Independence
             
                 </a>
             
@@ -314,6 +314,93 @@
     
 
             </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../endpoints/">
+            
+                <a href="../endpoints/">
+            
+                    
+                        <b>3.2.5.</b>
+                    
+                    Protocol Endpoints
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.5.1" data-path="../endpoints/01-authorization-endpoint.html">
+            
+                <a href="../endpoints/01-authorization-endpoint.html">
+            
+                    
+                        <b>3.2.5.1.</b>
+                    
+                    Authorization Endpoint
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.5.1.1" data-path="../endpoints/02-response-type.html">
+            
+                <a href="../endpoints/02-response-type.html">
+            
+                    
+                        <b>3.2.5.1.1.</b>
+                    
+                    Response Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5.1.2" data-path="../endpoints/03-redirection.html">
+            
+                <a href="../endpoints/03-redirection.html">
+            
+                    
+                        <b>3.2.5.1.2.</b>
+                    
+                    Redirection Endpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5.2" data-path="../endpoints/04-scope.html">
+            
+                <a href="../endpoints/04-scope.html">
+            
+                    
+                        <b>3.2.5.2.</b>
+                    
+                    Access Token Scope
+            
+                </a>
+            
+
             
         </li>
     
@@ -546,14 +633,29 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="../security-concerns.html">
+        <li class="chapter " data-level="6.2" data-path="../security.html">
             
-                <a href="../security-concerns.html">
+                <a href="../security.html">
             
                     
                         <b>6.2.</b>
                     
-                    Security
+                    Security Considerations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../urlencoded.html">
+            
+                <a href="../urlencoded.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    application/x-www-form-urlencoded Media Type
             
                 </a>
             
@@ -660,7 +762,7 @@
                                 
                                 <p><style>
 body {
-  counter-reset: h1 15;
+  counter-reset: h1 20;
 }
 </style></p>
 <h1 id="sas-esc-messages">SAS-ESC Messages</h1>
@@ -752,11 +854,24 @@ body {
 <td style="text-align:left">signature</td>
 <td style="text-align:left">string</td>
 <td style="text-align:left">Required</td>
-<td style="text-align:left">This parameter contains the digital signature encoded in Base64URL encoding. This parameter is calculated by taking the BASE64 encoding of the digital signature applied to the Payload Data and Protected header, prepared according to the procedures in Section 3 of RFC 7515 [n.7], using the algorithm as declared in the protected header &quot;alg&quot; field.</td>
+<td style="text-align:left">This parameter contains the digital signature encoded in Base64URL encoding. This parameter is calculated by taking the BASE64 encoding of the digital signature applied to the Payload Data and Protected header, prepared according to the Example JWK procedures in <a href="https://tools.ietf.org/html/rfc7517#section-3" target="_blank">Section 3 of RFC 7515</a> which is reproduced <a href="#Example-Jwk">below</a>, using the algorithm as declared in the protected header &quot;alg&quot; field.</td>
 </tr>
 </tbody>
 </table>
-<p>Base64 and Base64URL encodings are described in RFC 4648 [n.8]. </p>
+<p>Base64 and Base64URL encodings are described in <a href="https://tools.ietf.org/html/rfc4648" target="_blank">RFC 4648</a>. </p>
+<h3 id="Example-Jwk">Example JWK </h3>
+<p>   This section provides an example of a JWK.  The following example JWK
+   declares that the key is an Elliptic Curve [<a href="https://tools.ietf.org/html/rfc7517#ref-DSS" target="_blank">DSS</a>] key, it is used with
+   the P-256 Elliptic Curve, and its x and y coordinates are the
+   base64url-encoded values shown.  A key identifier is also provided
+   for the key.</p>
+<pre><code>     {&quot;kty&quot;:&quot;EC&quot;,
+      &quot;crv&quot;:&quot;P-256&quot;,
+      &quot;x&quot;:&quot;f83OJ3D2xF1Bg8vub9tLe1gHMzV76e8Tus9uPHvRVEU&quot;,
+      &quot;y&quot;:&quot;x_FEzRu9m36HLN_tue659LNpXW6pCyStikYjKIWI5a0&quot;,
+      &quot;kid&quot;:&quot;Public key used in JWS spec [RFC 7515 Appendix A.3](https://tools.ietf.org/html/rfc7517#appendix-A.3)  example&quot;
+     }
+</code></pre><p>   Additional example JWK values can be found in <a href="https://tools.ietf.org/html/rfc7517#appendix-A" target="_blank">Appendix A of RFC 7515</a>.</p>
 
                                 
                                 </section>
@@ -800,7 +915,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SAS-ESC Messages","level":"5.1","depth":1,"next":{"title":"Message Container","level":"5.1.1","depth":2,"path":"content/sas-esc-messages/messageContainer.md","ref":"content/sas-esc-messages/messageContainer.md","articles":[]},"previous":{"title":"Message encoding and transport","level":"4.2","depth":1,"path":"content/message-encoding-and-transport.md","ref":"content/message-encoding-and-transport.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/sas-esc-messages/messageContainer.md","mtime":"2017-11-02T12:17:54.013Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T12:33:35.154Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SAS-ESC Messages","level":"5.1","depth":1,"next":{"title":"Message Container","level":"5.1.1","depth":2,"path":"content/sas-esc-messages/messageContainer.md","ref":"content/sas-esc-messages/messageContainer.md","articles":[]},"previous":{"title":"Message encoding and transport","level":"4.2","depth":1,"path":"content/message-encoding-and-transport.md","ref":"content/message-encoding-and-transport.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/sas-esc-messages/messageContainer.md","mtime":"2017-11-03T18:54:11.647Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T13:24:58.013Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

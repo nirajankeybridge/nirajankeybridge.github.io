@@ -129,7 +129,7 @@
                     
                         <b>2.1.</b>
                     
-                    Independence of SAS and ESC
+                    SAS-ESC Independence
             
                 </a>
             
@@ -314,6 +314,93 @@
     
 
             </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../endpoints/">
+            
+                <a href="../endpoints/">
+            
+                    
+                        <b>3.2.5.</b>
+                    
+                    Protocol Endpoints
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.5.1" data-path="../endpoints/01-authorization-endpoint.html">
+            
+                <a href="../endpoints/01-authorization-endpoint.html">
+            
+                    
+                        <b>3.2.5.1.</b>
+                    
+                    Authorization Endpoint
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.5.1.1" data-path="../endpoints/02-response-type.html">
+            
+                <a href="../endpoints/02-response-type.html">
+            
+                    
+                        <b>3.2.5.1.1.</b>
+                    
+                    Response Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5.1.2" data-path="../endpoints/03-redirection.html">
+            
+                <a href="../endpoints/03-redirection.html">
+            
+                    
+                        <b>3.2.5.1.2.</b>
+                    
+                    Redirection Endpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5.2" data-path="../endpoints/04-scope.html">
+            
+                <a href="../endpoints/04-scope.html">
+            
+                    
+                        <b>3.2.5.2.</b>
+                    
+                    Access Token Scope
+            
+                </a>
+            
+
             
         </li>
     
@@ -546,14 +633,29 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="../security-concerns.html">
+        <li class="chapter " data-level="6.2" data-path="../security.html">
             
-                <a href="../security-concerns.html">
+                <a href="../security.html">
             
                     
                         <b>6.2.</b>
                     
-                    Security
+                    Security Considerations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../urlencoded.html">
+            
+                <a href="../urlencoded.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    application/x-www-form-urlencoded Media Type
             
                 </a>
             
@@ -660,7 +762,7 @@
                                 
                                 <p><style>
 body {
-  counter-reset: h1 18;
+  counter-reset: h1 23;
 }
 </style></p>
 <h5 id="enhancements-to-escsensordata-object-for-sas-esc-interface">Enhancements to EscSensorData object for SAS-ESC Interface</h5>
@@ -747,13 +849,13 @@ body {
 <td style="text-align:left">horizontalAccuracy</td>
 <td style="text-align:left">number</td>
 <td style="text-align:left">Required</td>
-<td style="text-align:left">A positive number in meters to indicate accuracy oftheESC Sensorantennahorizontal location.</td>
+<td style="text-align:left">A positive number in meters to indicate accuracy of the ESC Sensor antenna horizontal location.</td>
 </tr>
 <tr>
 <td style="text-align:left">verticalAccuracy</td>
 <td style="text-align:left">number</td>
 <td style="text-align:left">Required</td>
-<td style="text-align:left">A positive number in meters to indicate accuracy oftheESC Sensorvertical location.</td>
+<td style="text-align:left">A positive number in meters to indicate accuracy of the ESC Sensor vertical location.</td>
 </tr>
 <tr>
 <td style="text-align:left">antennaAzimuth</td>
@@ -790,7 +892,7 @@ body {
 <td style="text-align:left">angle</td>
 <td style="text-align:left">number</td>
 <td style="text-align:left">Required</td>
-<td style="text-align:left">This is the angle.<strong>In the azimuth plane:</strong>the value is given in degrees relative to the boresight of the antenna. The value of this parameter is an integer between 0 and 360 inclusive.<strong>In the elevation plane</strong>: the angle is given in degrees relative to the horizon. The value of this parameter is an integer between -180 and 180 inclusive.</td>
+<td style="text-align:left">This is the angle <strong>in the azimuth plane:</strong>the value is given in degrees relative to the boresight of the antenna. The value of this parameter is an integer between 0 and 360 inclusive. <strong>In the elevation plane</strong>: the angle is given in degrees relative to the horizon. The value of this parameter is an integer between -180 and 180 inclusive.</td>
 </tr>
 <tr>
 <td style="text-align:left">gain</td>
@@ -843,7 +945,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"EscSensorData Enhancement","level":"5.1.2.1.1","depth":4,"next":{"title":"ESC Information Update Message","level":"5.1.2.2","depth":3,"path":"content/sas-esc-messages/escInformationUpdate.md","ref":"content/sas-esc-messages/escInformationUpdate.md","articles":[]},"previous":{"title":"SAS Registration Message","level":"5.1.2.1","depth":3,"path":"content/sas-esc-messages/sasRegistrationMessage.md","ref":"content/sas-esc-messages/sasRegistrationMessage.md","articles":[{"title":"EscSensorData Enhancement","level":"5.1.2.1.1","depth":4,"path":"content/sas-esc-messages/sasRegistrationMessage-enhancements.md","ref":"content/sas-esc-messages/sasRegistrationMessage-enhancements.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/sas-esc-messages/sasRegistrationMessage-enhancements.md","mtime":"2017-11-01T12:38:46.689Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T12:33:35.154Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"EscSensorData Enhancement","level":"5.1.2.1.1","depth":4,"next":{"title":"ESC Information Update Message","level":"5.1.2.2","depth":3,"path":"content/sas-esc-messages/escInformationUpdate.md","ref":"content/sas-esc-messages/escInformationUpdate.md","articles":[]},"previous":{"title":"SAS Registration Message","level":"5.1.2.1","depth":3,"path":"content/sas-esc-messages/sasRegistrationMessage.md","ref":"content/sas-esc-messages/sasRegistrationMessage.md","articles":[{"title":"EscSensorData Enhancement","level":"5.1.2.1.1","depth":4,"path":"content/sas-esc-messages/sasRegistrationMessage-enhancements.md","ref":"content/sas-esc-messages/sasRegistrationMessage-enhancements.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/sas-esc-messages/sasRegistrationMessage-enhancements.md","mtime":"2017-11-03T18:59:13.803Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T13:24:58.013Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

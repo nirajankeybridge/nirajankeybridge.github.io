@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>SAS Registration (Authentication) · GitBook</title>
+        <title>Security Considerations · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="authorization.html" />
+    <link rel="next" href="urlencoded.html" />
     
     
-    <link rel="prev" href="introduction/generic-workflow.html" />
+    <link rel="prev" href="dpa-state-machine.html" />
     
 
     </head>
@@ -174,7 +174,7 @@
         
         
     
-        <li class="chapter active" data-level="3.1" data-path="authorization-registration.html">
+        <li class="chapter " data-level="3.1" data-path="authorization-registration.html">
             
                 <a href="authorization-registration.html">
             
@@ -633,7 +633,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="security.html">
+        <li class="chapter active" data-level="6.2" data-path="security.html">
             
                 <a href="security.html">
             
@@ -745,7 +745,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >SAS Registration (Authentication)</a>
+        <a href=".." >Security Considerations</a>
     </h1>
 </div>
 
@@ -762,48 +762,148 @@
                                 
                                 <p><style>
 body {
-  counter-reset: h1 3;
+  counter-reset: h1 29;
 }
 </style></p>
-<h1 id="sas-client-authentication">SAS Client Authentication</h1>
-<p>Proir to  SAS-ESC communications, following operations need to occur:</p>
-<ol>
-<li>Exchange of Public Key Infrastructure (PKI) between <a href="../GLOSSARY.html#sas-administrator" class="glossary-term" title="A legal entity that the FCC has authorized to administer the operation of a SAS.">SAS Administrator</a> and <a href="../GLOSSARY.html#esc-operator" class="glossary-term" title="A legal entity that the FCC has authorized to operate an ESC.">ESC Operator</a></li>
-<li>Exchange of Private Key for digital signature</li>
-<li>Setting of communication timeout</li>
-</ol>
-<p>Item 1. is outlined in Figure 1 and explained below. </p>
-<p><img src="../assets/handshake-diagram.png" alt=""> 
-Diagram 1. SAS-ESC public key exchange</p>
-<p><strong>Step 0</strong> One ESC, <em>E</em>, and one SAS, <em>S</em>, are in operation. E knows nothing of S, whereas S knows E&apos;s URL which has been provided to S by S&apos;s operators and the ESC API. Both partes (E and S) have their respective X.509 certificates in possession. </p>
-<p><strong>Step 1</strong> S sends its public key to E as a JSON Web Signature which in the payload contains the pulic key in the JSON Web Key format <a href="https://tools.ietf.org/html/rfc7517" target="_blank">(RFC 7517)</a>. The JWK must contain sufficient information for E to validate S&apos;s obtain S&apos;s X.509 certificate (key_e must contain a valid <code>x5u</code> field with a URL to S&apos;s X.509 certificate and should contain other fields listed in <a href="https://tools.ietf.org/html/rfc7517" target="_blank">RFC 7517</a>). </p>
-<ul>
-<li>Signing with a JSON Web Signature provides the <a href="../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a> against another party posing as S by requiring that S actually signs their public key thus proving that they are in possession of the associated private key. </li>
-</ul>
-<p><strong>Step 2</strong> E retrieves S&apos;s X.509 certificate and verifies it using the certificate chain</p>
-<ul>
-<li><p>If S&apos;s X.509 is signed by CAs recognised by E, and E succesfully validates it using the certificate chain, E proceeds to <strong>Step 3</strong>.</p>
-<ul>
-<li>If E cannot validate S&apos;s X.509 certificate, E sends a reponse to S containing message AUTHENTICATION_FAILURE and error information (reason for failure to validate) and end communication with S. </li>
-</ul>
-</li>
-<li><p>If S&apos;s X.509 certificate is self-signed, E responds to S with a message AUTHENTICATION_PENDING and request its operator (the operator of ESC E) to validate S&apos;s certificate. Successful certificate validation triggers <strong>Step 3</strong>; failure to validate should trigger E sending an AUTHENTICATION_FAILURE message to S. </p>
-</li>
-</ul>
-<p><strong>Step 3</strong> E sends its public key using the JSON Web Key notation with at least the fields listed in <strong>Step 2</strong>, signed with a JSON Web Signature. </p>
-<p><strong>Step 4</strong> Mirroring Step 2, S authenticates E by validating E&apos;s X.509 associated with its private key and verifies the signature </p>
-<h2 id="to-do">To do</h2>
-<ul>
-<li>define response message format in Step 2</li>
-<li>discuss <em>2. Exchange of Private Key for digital signature&quot;</em>. Private keys do not need (should not need!) to be exchanged. Symmetric keys also do not need to be exchanged because JWON Web Encryption has an inbuilt symmetric key mechanism and only needs parties to know each other&apos;s public keys. </li>
-</ul>
-<pre><code class="lang-Note:">Fallback to TLS 1.1 and TLS 1.0 should be disabled by all parties.
-</code></pre>
-<pre><code> Describe Key Bridge Authentication Method
- This page/section should describe how above steps are performed.
-</code></pre><p> If the client type is confidential, the client and authorization server establish a client authentication method suitable for the security requirements of the authorization server.  The authorization server MAY accept any form of client authentication meeting its security requirements.</p>
-<p>Confidential clients are typically issued (or establish) a set of client credentials used for authenticating with the authorization server (e.g., password, public/private key pair). </p>
-<p>The client MUST NOT use more than one authentication method in each request.</p>
+<h2 id="security-concerns">Security Concerns</h2>
+<h3 id="implicit-grant">Implicit Grant</h3>
+<p>   Implicit grants improve the responsiveness and efficiency of some
+   clients (such as a client implemented as an in-browser application),
+   since it reduces the number of round trips required to obtain an
+   access token. However, this convenience should be weighed against
+   the security implications of using implicit grants, such as those
+   described in Sections <a href="#Access-Tokens"><em>Access Tokens</em></a> and <a href="#misuse"><em>Misuse of Access Token to Impersonate Resource Owner in Implicit Flow</em></a>, especially when the authorization code grant type is available.</p>
+<h3 id="TLS-Version">TLS Version </h3>
+<!-- Section 1.6.   -->
+<p>   Whenever Transport Layer Security (TLS) is used by this
+   specification, the appropriate version (or versions) of TLS will vary
+   over time, based on the widespread deployment and known security
+   vulnerabilities.  At the time of this writing, TLS version 1.2
+   <a href="https://tools.ietf.org/html/rfc5246" target="_blank">[RFC5246]</a> is the most recent version, but has a very limited
+   deployment base and might not be readily available for
+   implementation.  TLS version 1.0 <a href="https://tools.ietf.org/html/rfc2246" target="_blank">[RFC2246]</a> is the most widely
+   deployed version and will provide the broadest interoperability.</p>
+<p>   Implementations MAY also support additional transport-layer security
+   mechanisms that meet their security requirements.</p>
+<h3 id="interoperability">Interoperability</h3>
+<!-- Section 1.8. -->  
+<p>   OAuth 2.0 provides a rich authorization framework with well-defined
+   security properties.  However, as a rich and highly extensible
+   framework with many optional components, on its own, this
+   specification is likely to produce a wide range of non-interoperable
+   implementations.</p>
+<p>   In addition, this specification leaves a few required components
+   partially or fully undefined (e.g., client registration,
+   authorization server capabilities, endpoint discovery).  Without these components, clients must be manually and specifically
+   configured against a specific authorization server and resource
+   server in order to interoperate.</p>
+<p>   This framework was designed with the clear expectation that future
+   work will define prescriptive profiles and extensions necessary to
+   achieve full web-scale interoperability.</p>
+<h3 id="Access-Tokens">Access Tokens </h3>
+<!-- https://tools.ietf.org/html/rfc6749#section-10.3 -->
+<p> Access token credentials (as well as any confidential access token
+   attributes) MUST be kept confidential in transit and storage, and
+   only shared among the authorization server, the resource servers the
+   access token is valid for, and the client to whom the access token is
+   issued.  Access token credentials MUST only be transmitted using TLS
+   as described in Section <a href="#TLS-Version"><em>&quot;TLS Version&quot;</em></a> above with server authentication as defined by
+   <a href="https://tools.ietf.org/html/rfc2818" target="_blank">[RFC2818]</a>.</p>
+<p>   When using the implicit grant type, the access token is transmitted
+   in the URI fragment, which can expose it to unauthorized parties.</p>
+<p>   The authorization server MUST ensure that access tokens cannot be
+   generated, modified, or guessed to produce valid access tokens by
+   unauthorized parties.</p>
+<p>   The client SHOULD request access tokens with the minimal scope
+   necessary.  The authorization server SHOULD take the client identity
+   into account when choosing how to honor the requested scope and MAY
+   issue an access token with less rights than requested.</p>
+<p>   This specification does not provide any methods for the resource
+   server to ensure that an access token presented to it by a given
+   client was issued to that client by the authorization server.</p>
+<h3 id="Credentials-Guessing-Attacks">Credentials-Guessing Attacks</h3>
+<!-- https://tools.ietf.org/html/rfc6749#section-10.10 -->
+<p>   The authorization server MUST prevent attackers from guessing access
+   tokens, authorization codes, refresh tokens, resource owner
+   passwords, and client credentials.</p>
+<p>   The probability of an attacker guessing generated tokens (and other
+   credentials not intended for handling by end-users) MUST be less than
+   or equal to 2^(-128) and SHOULD be less than or equal to 2^(-160).</p>
+<p>   The authorization server MUST utilize other means to protect
+   credentials intended for end-user usage.</p>
+<h3 id="cross-site">Cross-Site Request Forgery </h3>
+<!-- https://tools.ietf.org/html/rfc6749#section-10.12 -->
+<p> Cross-site request forgery (CSRF) is an exploit in which an attacker
+   causes the user-agent of a victim end-user to follow a malicious URI
+   (e.g., provided to the user-agent as a misleading link, image, or
+   redirection) to a trusting server (usually established via the
+   presence of a valid session cookie).</p>
+<p>   A CSRF attack against the client&apos;s redirection URI allows an attacker
+   to inject its own authorization code or access token, which can
+   result in the client using an access token associated with the
+   attacker&apos;s protected resources rather than the victim&apos;s (e.g., save
+   the victim&apos;s bank account information to a protected resource
+   controlled by the attacker).</p>
+<p>   The client MUST implement CSRF <a href="../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a> for its redirection URI.
+   This is typically accomplished by requiring any request sent to the
+   redirection URI endpoint to include a value that binds the request to
+   the user-agent&apos;s authenticated state (e.g., a hash of the session
+   cookie used to authenticate the user-agent).  The client SHOULD
+   utilize the &quot;state&quot; request parameter to deliver this value to the
+   authorization server when making an authorization request.</p>
+<p>   Once authorization has been obtained from the end-user, the
+   authorization server redirects the end-user&apos;s user-agent back to the
+   client with the required binding value contained in the &quot;state&quot;
+   parameter.  The binding value enables the client to verify the
+   validity of the request by matching the binding value to the
+   user-agent&apos;s authenticated state.  The binding value used for CSRF
+   <a href="../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a> MUST contain a non-guessable value (as described in
+   <a href="#Credentials-Guessing-Attacks">Credentials-Guessing Attacks</a>), and the user-agent&apos;s authenticated state (e.g.,
+   session cookie, HTML5 local storage) MUST be kept in a location
+   accessible only to the client and the user-agent (i.e., protected by
+   same-origin policy).</p>
+<p>   A CSRF attack against the authorization server&apos;s authorization
+   endpoint can result in an attacker obtaining end-user authorization
+   for a malicious client without involving or alerting the end-user.</p>
+<p>   The authorization server MUST implement CSRF <a href="../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a> for its
+   authorization endpoint and ensure that a malicious client cannot
+   obtain authorization without the awareness and explicit consent of
+   the resource owner.</p>
+<h3 id="misuse">Misuse of Access Token to Impersonate Resource Owner in Implicit Flow </h3>
+<!-- https://tools.ietf.org/html/rfc6749#section-10.16 -->
+<p>   For public clients using implicit flows, this specification does not
+   provide any method for the client to determine what client an access
+   token was issued to.</p>
+<p>   A resource owner may willingly delegate access to a resource by
+   granting an access token to an attacker&apos;s malicious client.  This may
+   be due to phishing or some other pretext.  An attacker may also steal
+   a token via some other mechanism.  An attacker may then attempt to
+   impersonate the resource owner by providing the access token to a
+   legitimate public client.</p>
+<p>   In the implicit flow (response_type=token), the attacker can easily
+   switch the token in the response from the authorization server,
+   replacing the real access token with the one previously issued to the
+   attacker.</p>
+<p>   Servers communicating with native applications that rely on being
+   passed an access token in the back channel to identify the user of
+   the client may be similarly compromised by an attacker creating a
+   compromised application that can inject arbitrary stolen access
+   tokens.</p>
+<p>   Any public client that makes the assumption that only the resource
+   owner can present it with a valid access token for the resource is
+   vulnerable to this type of attack.</p>
+<p>   This type of attack may expose information about the resource owner
+   at the legitimate client to the attacker (malicious client).  This
+   will also allow the attacker to perform operations at the legitimate
+   client with the same permissions as the resource owner who originally
+   granted the access token or authorization code.</p>
+<p>   Authenticating resource owners to clients is out of scope for this
+   specification.  Any specification that uses the authorization process
+   as a form of delegated end-user authentication to the client (e.g.,
+   third-party sign-in service) MUST NOT use the implicit flow without
+   additional security mechanisms that would enable the client to
+   determine if the access token was issued for its use (e.g., audience-
+   restricting the access token).</p>
 
                                 
                                 </section>
@@ -831,12 +931,12 @@ Diagram 1. SAS-ESC public key exchange</p>
 
             
                 
-                <a href="introduction/generic-workflow.html" class="navigation navigation-prev " aria-label="Previous page: Generic SAS Peering Workflow">
+                <a href="dpa-state-machine.html" class="navigation navigation-prev " aria-label="Previous page: DPA State Machine">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="authorization.html" class="navigation navigation-next " aria-label="Next page: Authorization Overview">
+                <a href="urlencoded.html" class="navigation navigation-next " aria-label="Next page: application/x-www-form-urlencoded Media Type">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -847,7 +947,7 @@ Diagram 1. SAS-ESC public key exchange</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SAS Registration (Authentication)","level":"3.1","depth":1,"next":{"title":"Authorization Overview","level":"3.2","depth":1,"path":"content/authorization.md","ref":"content/authorization.md","articles":[{"title":"Roles","level":"3.2.1","depth":2,"path":"content/authorization-roles.md","ref":"content/authorization-roles.md","articles":[]},{"title":"Abstract OAuth 2.0 Protocol Flow","level":"3.2.2","depth":2,"path":"content/authorization-protocol-flow.md","ref":"content/authorization-protocol-flow.md","articles":[]},{"title":"Authorization Grant","level":"3.2.3","depth":2,"path":"content/authorization-grant.md","ref":"content/authorization-grant.md","articles":[]},{"title":"Implicit Flow - Authorization","level":"3.2.4","depth":2,"path":"content/authorization-implicit.md","ref":"content/authorization-implicit.md","articles":[{"title":"Request","level":"3.2.4.1","depth":3,"path":"content/authorization-implicit-request.md","ref":"content/authorization-implicit-request.md","articles":[]},{"title":"Response","level":"3.2.4.2","depth":3,"path":"content/authorization-implicit-response.md","ref":"content/authorization-implicit-response.md","articles":[{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]}]}]},{"title":"Protocol Endpoints","level":"3.2.5","depth":2,"path":"content/endpoints/README.md","ref":"content/endpoints/README.md","articles":[{"title":"Authorization Endpoint","level":"3.2.5.1","depth":3,"path":"content/endpoints/01-authorization-endpoint.md","ref":"content/endpoints/01-authorization-endpoint.md","articles":[{"title":"Response Type","level":"3.2.5.1.1","depth":4,"path":"content/endpoints/02-response-type.md","ref":"content/endpoints/02-response-type.md","articles":[]},{"title":"Redirection Endpoint","level":"3.2.5.1.2","depth":4,"path":"content/endpoints/03-redirection.md","ref":"content/endpoints/03-redirection.md","articles":[]}]},{"title":"Access Token Scope","level":"3.2.5.2","depth":3,"path":"content/endpoints/04-scope.md","ref":"content/endpoints/04-scope.md","articles":[]}]}]},"previous":{"title":"Generic SAS Peering Workflow","level":"2.3","depth":1,"path":"content/introduction/generic-workflow.md","ref":"content/introduction/generic-workflow.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization-registration.md","mtime":"2017-11-03T18:37:04.423Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T13:24:58.013Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Security Considerations","level":"6.2","depth":1,"next":{"title":"application/x-www-form-urlencoded Media Type","level":"6.3","depth":1,"path":"content/urlencoded.md","ref":"content/urlencoded.md","articles":[]},"previous":{"title":"DPA State Machine","level":"6.1","depth":1,"path":"content/dpa-state-machine.md","ref":"content/dpa-state-machine.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/security.md","mtime":"2017-11-03T19:10:57.060Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T13:24:58.013Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

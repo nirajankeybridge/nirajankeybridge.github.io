@@ -172,9 +172,9 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="content/authorization-registration.html">
+        <li class="chapter " data-level="3.1" data-path="content/authorization/authorization-registration.html">
             
-                <a href="content/authorization-registration.html">
+                <a href="content/authorization/authorization-registration.html">
             
                     
                         <b>3.1.</b>
@@ -187,9 +187,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="content/authorization.html">
+        <li class="chapter " data-level="3.2" data-path="content/authorization/authorization.html">
             
-                <a href="content/authorization.html">
+                <a href="content/authorization/authorization.html">
             
                     
                         <b>3.2.</b>
@@ -203,9 +203,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.1" data-path="content/authorization-roles.html">
+        <li class="chapter " data-level="3.2.1" data-path="content/authorization/authorization-roles.html">
             
-                <a href="content/authorization-roles.html">
+                <a href="content/authorization/authorization-roles.html">
             
                     
                         <b>3.2.1.</b>
@@ -218,9 +218,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2.2" data-path="content/authorization-protocol-flow.html">
+        <li class="chapter " data-level="3.2.2" data-path="content/authorization/authorization-protocol-flow.html">
             
-                <a href="content/authorization-protocol-flow.html">
+                <a href="content/authorization/authorization-protocol-flow.html">
             
                     
                         <b>3.2.2.</b>
@@ -233,9 +233,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2.3" data-path="content/authorization-grant.html">
+        <li class="chapter " data-level="3.2.3" data-path="content/authorization/authorization-grant.html">
             
-                <a href="content/authorization-grant.html">
+                <a href="content/authorization/authorization-grant.html">
             
                     
                         <b>3.2.3.</b>
@@ -248,9 +248,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2.4" data-path="content/authorization-implicit.html">
+        <li class="chapter " data-level="3.2.4" data-path="content/authorization/authorization-implicit.html">
             
-                <a href="content/authorization-implicit.html">
+                <a href="content/authorization/authorization-implicit.html">
             
                     
                         <b>3.2.4.</b>
@@ -264,9 +264,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.4.1" data-path="content/authorization-implicit-request.html">
+        <li class="chapter " data-level="3.2.4.1" data-path="content/authorization/authorization-implicit-request.html">
             
-                <a href="content/authorization-implicit-request.html">
+                <a href="content/authorization/authorization-implicit-request.html">
             
                     
                         <b>3.2.4.1.</b>
@@ -279,9 +279,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2.4.2" data-path="content/authorization-implicit-response.html">
+        <li class="chapter " data-level="3.2.4.2" data-path="content/authorization/authorization-implicit-response.html">
             
-                <a href="content/authorization-implicit-response.html">
+                <a href="content/authorization/authorization-implicit-response.html">
             
                     
                         <b>3.2.4.2.</b>
@@ -295,9 +295,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.4.2.1" data-path="content/authorization-implicit-response-error.html">
+        <li class="chapter " data-level="3.2.4.2.1" data-path="content/authorization/authorization-implicit-response-error.html">
             
-                <a href="content/authorization-implicit-response-error.html">
+                <a href="content/authorization/authorization-implicit-response-error.html">
             
                     
                         <b>3.2.4.2.1.</b>
@@ -765,16 +765,29 @@ body {
 </style></p>
 <h1 id="sas-esc-peering-protocol">SAS-ESC Peering Protocol</h1>
 <p>This document specifies the Application Programming Interface (API) for Interface between Spectrum Access System (SAS) and Environmental Sensing Capability (ESC).</p>
-<p><strong>Prerequisite operations</strong></p>
-<p>The following operations shall be done before SAS-ESC communications.</p>
+<h2 id="scope">Scope</h2>
+<p>This document is a Technical Specification of a communication protocol and procedures for the SAS-ESC interface. The key words &quot;required&quot;, &quot;shall&quot;, &quot;shall not&quot;, &quot;should&quot;, &quot;should not&quot;, &quot;recommended&quot;, &quot;may&quot;, and &quot;optional&quot; in this document are to be interpreted as described in <a href="references.html#RFC-2119">RFC-2119</a>.  In addition, the key word &#x201C;conditional&#x201D; shall be interpreted to mean that the definition is an absolute requirement of this specification only if the stated condition is met. </p>
+<h1 id="sas-esc-communication-concept">SAS-ESC Communication Concept</h1>
+<p><img src="assets/sas - esc communications protocol 5.1.svg" alt="SAS-ESC Communication Protocol">
+<br>Figure 1: <em>SAS-ESC Communication Protocol Diagram</em></p>
+<h1 id="sas-esc-communication-lifecycle">SAS-ESC Communication Lifecycle</h1>
+<p>At a high level, the lifecycle of the SAS-ESC communication protocol consists of three parts (figure 2):</p>
 <ol>
-<li>Exchange of Public Key Infrastructure (PKI) between <a href="GLOSSARY.html#sas-administrator" class="glossary-term" title="A legal entity that the FCC has authorized to administer the operation of a SAS.">SAS Administrator</a> and <a href="GLOSSARY.html#esc-operator" class="glossary-term" title="A legal entity that the FCC has authorized to operate an ESC.">ESC Operator</a></li>
-<li>Exchange of Private Key for digital signature</li>
-<li>Setting of communication timeout</li>
+<li><strong>Initialion/Authentication</strong>. In this stage human <a href="GLOSSARY.html#sas-administrator" class="glossary-term" title="A legal entity that the FCC has authorized to administer the operation of a SAS.">SAS Administrator</a> and <a href="GLOSSARY.html#esc-operator" class="glossary-term" title="A legal entity that the FCC has authorized to operate an ESC.">ESC Operator</a> exchange the Public Key Infrastructure (PKI). This ensures full knowledge of identities of systems that are communicating. </li>
+<li><strong>Normal Operation</strong>. The SAS registers with the ESC and begins the normal mode of operation:<ul>
+<li>Heartbeat polling to ensure connection and system liveness</li>
+<li>Accepting and processing event notifications from the ESC</li>
+<li>Updating the ESC with the most recent information about the SAS, should it change</li>
+</ul>
+</li>
+<li><strong>End of Service</strong>. Here the SAS ceases co-operating with the ESC by sending a de-registration message. The <a href="GLOSSARY.html#esc-operator" class="glossary-term" title="A legal entity that the FCC has authorized to operate an ESC.">ESC Operator</a> may remove the SAS&apos;s PKI information. This step may never occur </li>
 </ol>
-<p><img src="assets/lifecycle.svg" alt="SAS-ESC Communication Life Cycle"> </p>
-<pre><code>Figure: SAS-ESC Communication Life Cycle Overview
-</code></pre>
+<p><img src="assets/sas-esc-lifecycle-algorithm.svg" alt="Comunication Lifecycle from a SAS Perspective"> 
+<br>Figure 1: <em>High-Level Communication Lifecycle from a SAS Perspective</em></p>
+<h2 id="data-flows-in-the-communication-lifecycle">Data flows in the Communication Lifecycle</h2>
+<p><img src="assets/lifecycle.svg" alt="SAS-ESC Communication Life Cycle"> 
+<br>Figure 3: <em>SAS-ESC Communication Lifecycle</em></p>
+
                                 
                                 </section>
                             
@@ -813,7 +826,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"SAS-ESC Independence","level":"2.1","depth":1,"path":"content/introduction/independence.md","ref":"content/introduction/independence.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"README.md","mtime":"2017-11-03T13:24:21.198Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T13:24:58.013Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"SAS-ESC Independence","level":"2.1","depth":1,"path":"content/introduction/independence.md","ref":"content/introduction/independence.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"README.md","mtime":"2017-11-06T13:42:05.433Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-06T13:42:55.135Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

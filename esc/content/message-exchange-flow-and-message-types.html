@@ -174,9 +174,9 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="authorization-registration.html">
+        <li class="chapter " data-level="3.1" data-path="authorization/authorization-registration.html">
             
-                <a href="authorization-registration.html">
+                <a href="authorization/authorization-registration.html">
             
                     
                         <b>3.1.</b>
@@ -189,9 +189,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="authorization.html">
+        <li class="chapter " data-level="3.2" data-path="authorization/authorization.html">
             
-                <a href="authorization.html">
+                <a href="authorization/authorization.html">
             
                     
                         <b>3.2.</b>
@@ -205,9 +205,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.1" data-path="authorization-roles.html">
+        <li class="chapter " data-level="3.2.1" data-path="authorization/authorization-roles.html">
             
-                <a href="authorization-roles.html">
+                <a href="authorization/authorization-roles.html">
             
                     
                         <b>3.2.1.</b>
@@ -220,9 +220,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2.2" data-path="authorization-protocol-flow.html">
+        <li class="chapter " data-level="3.2.2" data-path="authorization/authorization-protocol-flow.html">
             
-                <a href="authorization-protocol-flow.html">
+                <a href="authorization/authorization-protocol-flow.html">
             
                     
                         <b>3.2.2.</b>
@@ -235,9 +235,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2.3" data-path="authorization-grant.html">
+        <li class="chapter " data-level="3.2.3" data-path="authorization/authorization-grant.html">
             
-                <a href="authorization-grant.html">
+                <a href="authorization/authorization-grant.html">
             
                     
                         <b>3.2.3.</b>
@@ -250,9 +250,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2.4" data-path="authorization-implicit.html">
+        <li class="chapter " data-level="3.2.4" data-path="authorization/authorization-implicit.html">
             
-                <a href="authorization-implicit.html">
+                <a href="authorization/authorization-implicit.html">
             
                     
                         <b>3.2.4.</b>
@@ -266,9 +266,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.4.1" data-path="authorization-implicit-request.html">
+        <li class="chapter " data-level="3.2.4.1" data-path="authorization/authorization-implicit-request.html">
             
-                <a href="authorization-implicit-request.html">
+                <a href="authorization/authorization-implicit-request.html">
             
                     
                         <b>3.2.4.1.</b>
@@ -281,9 +281,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2.4.2" data-path="authorization-implicit-response.html">
+        <li class="chapter " data-level="3.2.4.2" data-path="authorization/authorization-implicit-response.html">
             
-                <a href="authorization-implicit-response.html">
+                <a href="authorization/authorization-implicit-response.html">
             
                     
                         <b>3.2.4.2.</b>
@@ -297,9 +297,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.4.2.1" data-path="authorization-implicit-response-error.html">
+        <li class="chapter " data-level="3.2.4.2.1" data-path="authorization/authorization-implicit-response-error.html">
             
-                <a href="authorization-implicit-response-error.html">
+                <a href="authorization/authorization-implicit-response-error.html">
             
                     
                         <b>3.2.4.2.1.</b>
@@ -767,21 +767,19 @@ body {
 </style></p>
 <h1 id="message-exchange-flow-and-message-types">Message exchange flow and message types</h1>
 <p>Message exchanges between SAS and ESC are shown in Figures 1 and 2 below.</p>
-<p><img src="../assets/request-response-flow.svg" alt=""></p>
-<p><strong>Figure 1: Request-Response flow</strong></p>
-<p><img src="../assets/indication-confirmation-flow.svg" alt=""></p>
-<p><strong>Figure 2: Indication-Confirmation flow</strong></p>
+<p><img src="../assets/flow-request-response.svg" alt=""><br>Figure 1: <em>Request-Response flow</em></p>
+<p><img src="../assets/flow-indication-confirmation.svg" alt=""><br>Figure 2: <em>Indication-Confirmation flow</em></p>
 <p>As per this message flow, the following messages shall be exchanged between SAS and ESC.</p>
 <ul>
-<li><p><strong>SAS Registration Message</strong>: The message for the SAS to register with the ESC. Request-Response flow in the figure 1 is used.</p>
+<li><p><strong>SAS Registration Message</strong>: The message for the SAS to register with the ESC. Request-Response flow in Figure 1 is used.</p>
 </li>
-<li><p><strong>ESC Information Update Message</strong>: The message for the ESC to indicate the update of the ESC information to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
+<li><p><strong>ESC Information Update Message</strong>: The message for the ESC to indicate the update of the ESC information to the SAS. Indication-Confirmation flow in Figure 2 is used.</p>
 </li>
-<li><p><strong>DPA State Message</strong>: The message for the ESC to indicate the DPA activation status to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
+<li><p><strong>DPA State Message</strong>: The message for the ESC to indicate the DPA activation status to the SAS. Indication-Confirmation flow in Figure 2 is used.</p>
 </li>
-<li><p><strong>Keep Alive Message</strong>: The message for the SAS to detect a failure with ESC. Request-Response flow in the figure 1 is used.</p>
+<li><p><strong>Keep Alive Message</strong>: The message for the SAS to detect a failure with ESC. Request-Response flow in Figure 1 is used.</p>
 </li>
-<li><p><strong>SAS Deregistration Message</strong>: The message for the SAS to deregister from the ESC. Request-Response flow in the figure 1 is used.</p>
+<li><p><strong>SAS Deregistration Message</strong>: The message for the SAS to deregister from the ESC. Request-Response flow in Figure 1 is used.</p>
 </li>
 </ul>
 
@@ -827,7 +825,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Message exchange flow and message types","level":"4.1","depth":1,"next":{"title":"Message encoding and transport","level":"4.2","depth":1,"path":"content/message-encoding-and-transport.md","ref":"content/message-encoding-and-transport.md","articles":[]},"previous":{"title":"Access Token Scope","level":"3.2.5.2","depth":3,"path":"content/endpoints/04-scope.md","ref":"content/endpoints/04-scope.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/message-exchange-flow-and-message-types.md","mtime":"2017-11-01T11:44:54.880Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-03T13:24:58.013Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Message exchange flow and message types","level":"4.1","depth":1,"next":{"title":"Message encoding and transport","level":"4.2","depth":1,"path":"content/message-encoding-and-transport.md","ref":"content/message-encoding-and-transport.md","articles":[]},"previous":{"title":"Access Token Scope","level":"3.2.5.2","depth":3,"path":"content/endpoints/04-scope.md","ref":"content/endpoints/04-scope.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/message-exchange-flow-and-message-types.md","mtime":"2017-11-06T13:42:05.653Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-06T13:42:55.135Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

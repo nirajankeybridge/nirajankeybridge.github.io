@@ -1,0 +1,791 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Security Considerations · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="urlencoded.html" />
+    
+    
+    <link rel="prev" href="dpa-state-machine.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.keybridgewireless.com" target="_blank" class="custom-link">Key Bridge Wireless</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Introductory Concepts</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="introduction/independence.html">
+            
+                <a href="introduction/independence.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    SAS-ESC Independence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="introduction/generic-workflow.html">
+            
+                <a href="introduction/generic-workflow.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Generic SAS Peering Workflow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="introduction/communication-lifecycle.html">
+            
+                <a href="introduction/communication-lifecycle.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Communication Lifecycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Authentication and Authorization</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="authorization/">
+            
+                <a href="authorization/">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Concept of Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="authorization/authentication.html">
+            
+                <a href="authorization/authentication.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    SAS Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="authorization/authorization.html">
+            
+                <a href="authorization/authorization.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    SAS Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Message Exchange, Encoding, Transport</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="message-exchange-flow-and-message-types.html">
+            
+                <a href="message-exchange-flow-and-message-types.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    Message exchange flow and message types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="message-encoding-and-transport.html">
+            
+                <a href="message-encoding-and-transport.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    Message encoding and transport
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Message Payload Content</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="sas-esc-messages/messageContainer.html">
+            
+                <a href="sas-esc-messages/messageContainer.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    SAS-ESC Messages
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="sas-esc-messages/messageContainer.html">
+            
+                <a href="sas-esc-messages/messageContainer.html">
+            
+                    
+                        <b>5.1.1.</b>
+                    
+                    Message Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="sas-esc-messages/sasRegistrationMessage.html">
+            
+                <a href="sas-esc-messages/sasRegistrationMessage.html">
+            
+                    
+                        <b>5.1.2.</b>
+                    
+                    Payload Data
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.2.1" data-path="sas-esc-messages/sasRegistrationMessage.html">
+            
+                <a href="sas-esc-messages/sasRegistrationMessage.html">
+            
+                    
+                        <b>5.1.2.1.</b>
+                    
+                    SAS Registration Message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.2.1.1" data-path="sas-esc-messages/sasRegistrationMessage-enhancements.html">
+            
+                <a href="sas-esc-messages/sasRegistrationMessage-enhancements.html">
+            
+                    
+                        <b>5.1.2.1.1.</b>
+                    
+                    EscSensorData Enhancement
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2.2" data-path="sas-esc-messages/escInformationUpdate.html">
+            
+                <a href="sas-esc-messages/escInformationUpdate.html">
+            
+                    
+                        <b>5.1.2.2.</b>
+                    
+                    ESC Information Update Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2.3" data-path="sas-esc-messages/dpaActivationStatus.html">
+            
+                <a href="sas-esc-messages/dpaActivationStatus.html">
+            
+                    
+                        <b>5.1.2.3.</b>
+                    
+                    DPA Activation Status Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2.4" data-path="sas-esc-messages/keepAlive.html">
+            
+                <a href="sas-esc-messages/keepAlive.html">
+            
+                    
+                        <b>5.1.2.4.</b>
+                    
+                    Keep Alive Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2.5" data-path="sas-esc-messages/sasDeregistration.html">
+            
+                <a href="sas-esc-messages/sasDeregistration.html">
+            
+                    
+                        <b>5.1.2.5.</b>
+                    
+                    SAS Deregistration Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Annexes</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="dpa-state-machine.html">
+            
+                <a href="dpa-state-machine.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    DPA State Machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.2" data-path="security.html">
+            
+                <a href="security.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    Security Considerations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="urlencoded.html">
+            
+                <a href="urlencoded.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    application/x-www-form-urlencoded Media Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Glossary</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="abbreviations.html">
+            
+                <a href="abbreviations.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    Abbreviations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../GLOSSARY.html">
+            
+                <a href="../GLOSSARY.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    Definitions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../references.html">
+            
+                <a href="../references.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    References
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Security Considerations</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="security-concerns">Security Concerns</h2>
+<!-- 
+### Implicit Grant
+   Implicit grants improve the responsiveness and efficiency of some
+   clients (such as a client implemented as an in-browser application),
+   since it reduces the number of round trips required to obtain an
+   access token. However, this convenience should be weighed against
+   the security implications of using implicit grants, such as those
+   described in Sections [_Access Tokens_](#Access-Tokens) and [_Misuse of Access Token to Impersonate Resource Owner in Implicit Flow_](#misuse), especially when the authorization code grant type is available. -->
+<h3 id="TLS-Version">TLS Version </h3>
+<!-- Section 1.6.   -->
+<p>   The appropriate version (or versions) of Transport Layer Security (TLS) will vary
+   over time, based on the widespread deployment and known security
+   vulnerabilities.  At the time of this writing, TLS version 1.2
+   <a href="https://tools.ietf.org/html/rfc5246" target="_blank">[RFC5246]</a> is the most recent version, but has a very limited deployment base and might not be readily available for
+   implementation. TLS version 1.0 <a href="https://tools.ietf.org/html/rfc2246" target="_blank">[RFC2246]</a> is the most widely deployed version and will provide the broadest interoperability.</p>
+<p>   Implementations MAY also support additional transport-layer security
+   mechanisms that meet the requirements of this protocol, as defined in <a href="message-encoding-and-transport.html#transport">Message Encoding and Transport</a>.</p>
+<!-- Section 1.8. -->  
+<!-- 
+### Interoperability
+   OAuth 2.0 provides a rich authorization framework with well-defined
+   security properties.  However, as a rich and highly extensible
+   framework with many optional components, on its own, this
+   specification is likely to produce a wide range of non-interoperable
+   implementations.
+
+   In addition, this specification leaves a few required components
+   partially or fully undefined (e.g., client registration,
+   authorization server capabilities, endpoint discovery).  Without these components, clients must be manually and specifically
+   configured against a specific authorization server and resource
+   server in order to interoperate.
+
+   This framework was designed with the clear expectation that future
+   work will define prescriptive profiles and extensions necessary to
+   achieve full web-scale interoperability. -->
+<h3 id="Access-Tokens">Access Tokens </h3>
+<!-- https://tools.ietf.org/html/rfc6749#section-10.3 -->
+<p> Access token credentials (as well as any confidential access token
+   attributes) MUST be kept confidential in transit and storage, and
+   only shared among the <a href="../GLOSSARY.html#authorization-server" class="glossary-term" title="The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+The authorization server may be the same server as the resource server or a separate entity.">authorization server</a>, the resource servers the
+   access token is valid for, and the client to whom the access token is
+   issued.  Access token credentials MUST only be transmitted using TLS
+   as described in Section <a href="#TLS-Version"><em>&quot;TLS Version&quot;</em></a> above with server authentication as defined by
+   <a href="https://tools.ietf.org/html/rfc2818" target="_blank">[RFC2818]</a>.</p>
+<p>   When the access token is transmitted
+   in the URI fragment, it maybe exposed to unauthorized parties.</p>
+<p>   The <a href="../GLOSSARY.html#authorization-server" class="glossary-term" title="The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+The authorization server may be the same server as the resource server or a separate entity.">authorization server</a> MUST ensure that access tokens cannot be
+   generated, modified, or guessed to produce valid access tokens by
+   unauthorized parties.</p>
+<p>   The client SHOULD request access tokens with the minimal scope
+   necessary.  The <a href="../GLOSSARY.html#authorization-server" class="glossary-term" title="The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+The authorization server may be the same server as the resource server or a separate entity.">authorization server</a> SHOULD take the client identity
+   into account when choosing how to honor the requested scope and MAY
+   issue an access token with less rights than requested.
+<!-- 
+   This specification does not provide any methods for the resource
+   server to ensure that an access token presented to it by a given
+   client was issued to that client by the authorization server.
+ --></p>
+<h3 id="Credentials-Guessing-Attacks">Credentials-Guessing Attacks</h3>
+<!-- https://tools.ietf.org/html/rfc6749#section-10.10 -->
+<p>   The <a href="../GLOSSARY.html#authorization-server" class="glossary-term" title="The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+The authorization server may be the same server as the resource server or a separate entity.">authorization server</a> MUST prevent attackers from guessing access
+   tokens, authorization codes, refresh tokens, resource owner
+   passwords, and client credentials.</p>
+<p>   The probability of an attacker guessing generated tokens (and other
+   credentials not intended for handling by end-users) MUST be less than
+   or equal to 2^(-128) and SHOULD be less than or equal to 2^(-160).</p>
+<p>   The <a href="../GLOSSARY.html#authorization-server" class="glossary-term" title="The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+The authorization server may be the same server as the resource server or a separate entity.">authorization server</a> MUST utilize other means to protect
+   credentials intended for end-user usage.</p>
+<h3 id="cross-site">Cross-Site Request Forgery (CSRF) </h3>
+<!-- https://tools.ietf.org/html/rfc6749#section-10.12 -->
+<p> Cross-site request forgery (CSRF) is an exploit in which an attacker
+   causes the user-agent of a victim end-user to follow a malicious URI
+   (e.g., provided to the user-agent as a misleading link, image, or
+   redirection) to a trusting server (usually established via the
+   presence of a valid session cookie).</p>
+<p>   A CSRF attack against the client&apos;s redirection URI allows an attacker
+   to inject its own authorization code or access token, which can
+   result in the client using an access token associated with the
+   attacker&apos;s protected resources rather than the victim&apos;s (e.g., save
+   the victim&apos;s bank account information to a protected resource
+   controlled by the attacker).</p>
+<p>   The client MUST implement CSRF <a href="../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a> for its redirection URI.
+   This is typically accomplished by requiring any request sent to the
+   redirection URI endpoint to include a value that binds the request to
+   the user-agent&apos;s authenticated state (e.g., a hash of the session
+   cookie used to authenticate the user-agent).  The client SHOULD
+   utilize the &quot;state&quot; request parameter to deliver this value to the
+   <a href="../GLOSSARY.html#authorization-server" class="glossary-term" title="The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+The authorization server may be the same server as the resource server or a separate entity.">authorization server</a> when making an authorization request.</p>
+<p>   Once authorization has been obtained from the end-user, the
+   <a href="../GLOSSARY.html#authorization-server" class="glossary-term" title="The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+The authorization server may be the same server as the resource server or a separate entity.">authorization server</a> redirects the end-user&apos;s user-agent back to the
+   client with the required binding value contained in the &quot;state&quot;
+   parameter.  The binding value enables the client to verify the
+   validity of the request by matching the binding value to the
+   user-agent&apos;s authenticated state.  The binding value used for CSRF
+   <a href="../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a> MUST contain a non-guessable value (as described in
+   <a href="#Credentials-Guessing-Attacks">Credentials-Guessing Attacks</a>), and the user-agent&apos;s authenticated state (e.g.,
+   session cookie, HTML5 local storage) MUST be kept in a location
+   accessible only to the client and the user-agent (i.e., protected by
+   same-origin policy).</p>
+<p>   A CSRF attack against the <a href="../GLOSSARY.html#authorization-server" class="glossary-term" title="The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+The authorization server may be the same server as the resource server or a separate entity.">authorization server</a>&apos;s authorization
+   endpoint can result in an attacker obtaining end-user authorization
+   for a malicious client without involving or alerting the end-user.</p>
+<p>   The <a href="../GLOSSARY.html#authorization-server" class="glossary-term" title="The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+The authorization server may be the same server as the resource server or a separate entity.">authorization server</a> MUST implement CSRF <a href="../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a> for its
+   authorization endpoint and ensure that a malicious client cannot
+   obtain authorization without the awareness and explicit consent of
+   the resource owner.</p>
+<h3 id="misuse">Misuse of Access Token to Impersonate Resource Owner in Implicit Flow </h3>
+<!-- https://tools.ietf.org/html/rfc6749#section-10.16 -->
+<p>   For public clients using implicit flows, this specification does not
+   provide any method for the client to determine what client an access
+   token was issued to.</p>
+<p>   A resource owner may willingly delegate access to a resource by
+   granting an access token to an attacker&apos;s malicious client.  This may
+   be due to phishing or some other pretext.  An attacker may also steal
+   a token via some other mechanism.  An attacker may then attempt to
+   impersonate the resource owner by providing the access token to a
+   legitimate public client.</p>
+<p>   In flows where response_type=token (e.g. implicit flow), the attacker can easily
+   switch the token in the response from the <a href="../GLOSSARY.html#authorization-server" class="glossary-term" title="The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+The authorization server may be the same server as the resource server or a separate entity.">authorization server</a>,
+   replacing the real access token with the one previously issued to the
+   attacker.</p>
+<p>   Servers communicating with native applications that rely on being
+   passed an access token in the back channel to identify the user of
+   the client may be similarly compromised by an attacker creating a
+   compromised application that can inject arbitrary stolen access
+   tokens.</p>
+<p>   Any public client that makes the assumption that only the resource
+   owner can present it with a valid access token for the resource is
+   vulnerable to this type of attack.</p>
+<p>   This type of attack may expose information about the resource owner
+   at the legitimate client to the attacker (malicious client).  This
+   will also allow the attacker to perform operations at the legitimate
+   client with the same permissions as the resource owner who originally
+   granted the access token or authorization code.</p>
+<p><!--    Authenticating resource owners to clients is out of scope for this
+   specification.  --> Any specification that uses the authorization process
+   as a form of delegated end-user authentication to the client (e.g.,
+   third-party sign-in service) MUST NOT use the implicit flow without
+   additional security mechanisms that would enable the client to
+   determine if the access token was issued for its use (e.g., audience-
+   restricting the access token).</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="dpa-state-machine.html" class="navigation navigation-prev " aria-label="Previous page: DPA State Machine">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="urlencoded.html" class="navigation navigation-next " aria-label="Next page: application/x-www-form-urlencoded Media Type">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Security Considerations","level":"6.2","depth":1,"next":{"title":"application/x-www-form-urlencoded Media Type","level":"6.3","depth":1,"path":"content/urlencoded.md","ref":"content/urlencoded.md","articles":[]},"previous":{"title":"DPA State Machine","level":"6.1","depth":1,"path":"content/dpa-state-machine.md","ref":"content/dpa-state-machine.md","articles":[]},"dir":"ltr"},"config":{"plugins":["image-captions","image-wrapper"],"styles":{"website":"website.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"image-captions":{"caption":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","variable_name":"_pictures"},"image-wrapper":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: SAS-ESC Communication Protocol","alt":"SAS-ESC Communication Protocol","nro":1,"url":"assets\\sas - esc communications protocol 5.1.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS-ESC Communication Protocol","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"content/introduction/independence.html#fig2.1.1","level":"2.1","list_caption":"Figure: SAS to ESC Peering masks internal architecture","alt":"SAS to ESC Peering masks internal architecture","nro":2,"url":"/assets/illustration10 - SAS to ESC Peering masks internal architecture.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS to ESC Peering masks internal architecture","attributes":{},"skip":false,"key":"2.1.1"},{"backlink":"content/introduction/generic-workflow.html#fig2.2.1","level":"2.2","list_caption":"Figure: ESC Service Nodes provide Non-Informing Incumbent User (NIIU) detection services to a SAS","alt":"ESC Service Nodes provide Non-Informing Incumbent User (NIIU) detection services to a SAS","nro":3,"url":"/assets/Illustration 11 - ESC Service Nodes provide NIIU detection services to a SAS.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"ESC Service Nodes provide Non-Informing Incumbent User (NIIU) detection services to a SAS","attributes":{},"skip":false,"key":"2.2.1"},{"backlink":"content/introduction/communication-lifecycle.html#fig2.3.1","level":"2.3","list_caption":"Figure: High-Level Communication Lifecycle from a SAS Perspective","alt":"High-Level Communication Lifecycle from a SAS Perspective","nro":4,"url":"/assets/sas-esc-lifecycle-algorithm.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"High-Level Communication Lifecycle from a SAS Perspective","attributes":{},"skip":false,"key":"2.3.1"},{"backlink":"content/authorization/index.html#fig3.1.1","level":"3.1","list_caption":"Figure: Authentication and Authorization Concept of Operations","alt":"Authentication and Authorization Concept of Operations","nro":5,"url":"../../assets/authentication-authorization.png","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Authentication and Authorization Concept of Operations","attributes":{},"skip":false,"key":"3.1.1"},{"backlink":"content/authorization/authentication.html#fig3.2.1","level":"3.2","list_caption":"Figure: SAS-ESC Authentication","alt":"SAS-ESC Authentication","nro":6,"url":"../../assets/authentication.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS-ESC Authentication","attributes":{},"skip":false,"key":"3.2.1"},{"backlink":"content/authorization/authorization.html#fig3.3.1","level":"3.3","list_caption":"Figure: SAS-ESC Authorization","alt":"SAS-ESC Authorization","nro":7,"url":"../../assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS-ESC Authorization","attributes":{},"skip":false,"key":"3.3.1"},{"backlink":"content/message-exchange-flow-and-message-types.html#fig4.1.1","level":"4.1","list_caption":"Figure: Request-Response flow","alt":"Request-Response flow","nro":8,"url":"/assets/flow-request-response.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Request-Response flow","attributes":{},"skip":false,"key":"4.1.1"},{"backlink":"content/message-exchange-flow-and-message-types.html#fig4.1.2","level":"4.1","list_caption":"Figure: Indication-Confirmation flow","alt":"Indication-Confirmation flow","nro":9,"url":"/assets/flow-indication-confirmation.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Indication-Confirmation flow","attributes":{},"skip":false,"key":"4.1.2"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1","level":"5.1.2","list_caption":"Figure: Register Transaction Is Used for SAS Registration","alt":"Register Transaction Is Used for SAS Registration","nro":10,"url":"/assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Register Transaction Is Used for SAS Registration","attributes":{},"skip":false,"key":"5.1.2.1"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.2","level":"5.1.2","list_caption":"Figure: SAS Registration Request & Response Payload Content Summary","alt":"SAS Registration Request & Response Payload Content Summary","nro":11,"url":"/assets/registration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Registration Request & Response Payload Content Summary","attributes":{},"skip":false,"key":"5.1.2.2"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1.1","level":"5.1.2.1","list_caption":"Figure: Register Transaction Is Used for SAS Registration","alt":"Register Transaction Is Used for SAS Registration","nro":12,"url":"/assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Register Transaction Is Used for SAS Registration","attributes":{},"skip":false,"key":"5.1.2.1.1"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1.2","level":"5.1.2.1","list_caption":"Figure: SAS Registration Request & Response Payload Content Summary","alt":"SAS Registration Request & Response Payload Content Summary","nro":13,"url":"/assets/registration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Registration Request & Response Payload Content Summary","attributes":{},"skip":false,"key":"5.1.2.1.2"},{"backlink":"content/sas-esc-messages/escInformationUpdate.html#fig5.1.2.2.1","level":"5.1.2.2","list_caption":"Figure: Update Transaction Is Used For ESC Information Update Indication & Confirm","alt":"Update Transaction Is Used For ESC Information Update Indication & Confirm","nro":14,"url":"..\\..\\assets\\update.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Update Transaction Is Used For ESC Information Update Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.2.1"},{"backlink":"content/sas-esc-messages/escInformationUpdate.html#fig5.1.2.2.2","level":"5.1.2.2","list_caption":"Figure: ESC Information Update Indication & Confirm Payload Content Summary","alt":"ESC Information Update Indication & Confirm Payload Content Summary","nro":15,"url":"..\\..\\assets\\esc-information-update.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"ESC Information Update Indication & Confirm Payload Content Summary","attributes":{},"skip":false,"key":"5.1.2.2.2"},{"backlink":"content/sas-esc-messages/dpaActivationStatus.html#fig5.1.2.3.1","level":"5.1.2.3","list_caption":"Figure: Update Transaction Is Used For DPA Activation Status Indication & Confirm","alt":"Update Transaction Is Used For DPA Activation Status Indication & Confirm","nro":16,"url":"..\\..\\assets\\update.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Update Transaction Is Used For DPA Activation Status Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.3.1"},{"backlink":"content/sas-esc-messages/dpaActivationStatus.html#fig5.1.2.3.2","level":"5.1.2.3","list_caption":"Figure: DPA Activation Status Indication & Confirm Payload Content Summary","alt":"DPA Activation Status Indication & Confirm Payload Content Summary","nro":17,"url":"/assets/dpa-activation-status.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"DPA Activation Status Indication & Confirm Payload Content Summary","attributes":{},"skip":false,"key":"5.1.2.3.2"},{"backlink":"content/sas-esc-messages/keepAlive.html#fig5.1.2.4.1","level":"5.1.2.4","list_caption":"Figure: Poll Transaction Is Used For Keep Alive Indication & Confirm","alt":"Poll Transaction Is Used For Keep Alive Indication & Confirm","nro":18,"url":"..\\..\\assets\\poll.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Poll Transaction Is Used For Keep Alive Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.4.1"},{"backlink":"content/sas-esc-messages/keepAlive.html#fig5.1.2.4.2","level":"5.1.2.4","list_caption":"Figure: Keep Alive Indication & Confirm Payload Content Summary","alt":"Keep Alive Indication & Confirm Payload Content Summary","nro":19,"url":"/assets/keep-alive.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Keep Alive Indication & Confirm Payload Content Summary","attributes":{},"skip":false,"key":"5.1.2.4.2"},{"backlink":"content/sas-esc-messages/sasDeregistration.html#fig5.1.2.5.1","level":"5.1.2.5","list_caption":"Figure: Unregister Transaction Is Used For SAS Deregistration","alt":"Unregister Transaction Is Used For SAS Deregistration","nro":20,"url":"..\\..\\assets\\unregister.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Unregister Transaction Is Used For SAS Deregistration","attributes":{},"skip":false,"key":"5.1.2.5.1"},{"backlink":"content/sas-esc-messages/sasDeregistration.html#fig5.1.2.5.2","level":"5.1.2.5","list_caption":"Figure: SAS Deregistration Request & Response Payload Content Summary","alt":"SAS Deregistration Request & Response Payload Content Summary","nro":21,"url":"/assets/deregistration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Deregistration Request & Response Payload Content Summary","attributes":{},"skip":false,"key":"5.1.2.5.2"},{"backlink":"content/dpa-state-machine.html#fig6.1.1","level":"6.1","list_caption":"Figure: DPA State Machine in a channel per DPA","alt":"DPA State Machine in a channel per DPA","nro":22,"url":"/assets/dpa-state-diagram.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"DPA State Machine in a channel per DPA","attributes":{},"skip":false,"key":"6.1.1"}]},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/security.md","mtime":"2017-11-21T20:17:19.503Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-22T14:03:08.902Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

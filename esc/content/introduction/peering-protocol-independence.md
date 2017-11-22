@@ -1,0 +1,10 @@
+
+## SAS-ESC Peering Protocol
+A SAS exterior peering protocol standard will place no constraint on the internal architecture and operation of the various entities that use the protocol. Referring again to Illustration 1, a generic peering process enables SAS of unknown constitution on the left peers with a Key Bridge ESC on the right.
+
+>**This paragraph needs to be reviewed**
+SAS to ESC peering operational security policies and configurations are under development within a multi-stakeholder group in which Key Bridge is a participant (The Wireless Innovation Forum, Spectrum Sharing Committee, Working Group 2: Security). The actual protocol and data structures for SAS to ESC peering is not the subject of multi-stakeholder group consideration. Key Bridge has therefore invented proprietary and also proposed non-proprietary methods that a SAS may use when coordinating with a ESC to dynamically protect a non-informing incumbent spectrum user. The Key Bridge SAS Gateway Protocol is, at present, a proprietary application peering protocol that includes mechanisms to support cryptographically secure message exchange for both SAS to SAS and SAS to ESC peering, including all security prescriptions identified by the multi-stakeholder group.
+
+A SAS and ESC Peering relationship using the SAS Gateway Protocol is secure and neutral. A SAS Infrastructure may register with and receive information from any inter-operable ESC Infrastructure supporting a peering service. When using the Key Bridge SAS Gateway Protocol a compatible SAS may register with and receive information from a compatible ESC via a designated ESC Peering API.
+
+In the Key Bridge architecture ESC Service Nodes are responsible for Non-Informing Incumbent User (NIIU) detection services and peer directly with a subscribing SAS via the SAS Gateway Protocol. This strategy is designed to limit the geographic extent of NIIU information conveyed to a SAS to that necessary for the SAS to administer CBSDs in a specific geographic region. However, the ESC places no constraint on SAS internal architecture or operation, and a SAS may peer with multiple ESC Service Nodes.

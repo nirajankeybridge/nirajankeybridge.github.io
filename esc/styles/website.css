@@ -1,0 +1,31 @@
+.gitbook-link {
+    display: none !important;
+}
+
+#gitbook-link {
+    display: none !important;
+}
+
+
+h1:before, h2:before, h3:before, h4:before, h5:before {
+  color: #aaa;
+  width: 40px;
+}
+
+/*figure, img {
+	display: inline-block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+ /*   height: 30px;*/
+}*/
+
+
+figure, img {
+    text-align: center;
+    padding: 15px 0px;
+}
+.image-wrapper {
+    text-align: center;
+    padding: 15px 0px;
+}

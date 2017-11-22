@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Message exchange flow and message types · GitBook</title>
+        <title>SAS Registration (Authentication) · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="message-encoding-and-transport.html" />
+    <link rel="next" href="authorization.html" />
     
     
-    <link rel="prev" href="authorization-implicit-response-error.html" />
+    <link rel="prev" href="introduction/generic-workflow.html" />
     
 
     </head>
@@ -174,7 +174,7 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="authorization-registration.html">
+        <li class="chapter active" data-level="3.1" data-path="authorization-registration.html">
             
                 <a href="authorization-registration.html">
             
@@ -334,7 +334,7 @@
         
         
     
-        <li class="chapter active" data-level="4.1" data-path="message-exchange-flow-and-message-types.html">
+        <li class="chapter " data-level="4.1" data-path="message-exchange-flow-and-message-types.html">
             
                 <a href="message-exchange-flow-and-message-types.html">
             
@@ -643,7 +643,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Message exchange flow and message types</a>
+        <a href=".." >SAS Registration (Authentication)</a>
     </h1>
 </div>
 
@@ -660,28 +660,21 @@
                                 
                                 <p><style>
 body {
-  counter-reset: h1 12;
+  counter-reset: h1 3;
 }
 </style></p>
-<h1 id="message-exchange-flow-and-message-types">Message exchange flow and message types</h1>
-<p>Message exchanges between SAS and ESC are shown in Figures 1 and 2 below.</p>
-<p><img src="../assets/request-response-flow.svg" alt=""></p>
-<p><strong>Figure 1: Request-Response flow</strong></p>
-<p><img src="../assets/indication-confirmation-flow.svg" alt=""></p>
-<p><strong>Figure 2: Indication-Confirmation flow</strong></p>
-<p>As per this message flow, the following messages shall be exchanged between SAS and ESC.</p>
-<ul>
-<li><p><strong>SAS Registration Message</strong>: The message for the SAS to register with the ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-<li><p><strong>ESC Information Update Message</strong>: The message for the ESC to indicate the update of the ESC information to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
-</li>
-<li><p><strong>DPA State Message</strong>: The message for the ESC to indicate the DPA activation status to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
-</li>
-<li><p><strong>Keep Alive Message</strong>: The message for the SAS to detect a failure with ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-<li><p><strong>SAS Deregistration Message</strong>: The message for the SAS to deregister from the ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-</ul>
+<h1 id="sas-client-authentication">SAS Client Authentication</h1>
+<p>Proir to  SAS-ESC communications, following operations need to occur:</p>
+<ol>
+<li>Exchange of Public Key Infrastructure (PKI) between <a href="../GLOSSARY.html#sas-administrator" class="glossary-term" title="A legal entity that the FCC has authorized to administer the operation of a SAS.">SAS Administrator</a> and <a href="../GLOSSARY.html#esc-operator" class="glossary-term" title="A legal entity that the FCC has authorized to operate an ESC.">ESC Operator</a></li>
+<li>Exchange of Private Key for digital signature</li>
+<li>Setting of communication timeout</li>
+</ol>
+<pre><code> Describe Key Bridge Authentication Method
+ This page/section should describe how above steps are performed.
+</code></pre><p> If the client type is confidential, the client and authorization server establish a client authentication method suitable for the security requirements of the authorization server.  The authorization server MAY accept any form of client authentication meeting its security requirements.</p>
+<p>Confidential clients are typically issued (or establish) a set of client credentials used for authenticating with the authorization server (e.g., password, public/private key pair). </p>
+<p>The client MUST NOT use more than one authentication method in each request.</p>
 
                                 
                                 </section>
@@ -709,12 +702,12 @@ body {
 
             
                 
-                <a href="authorization-implicit-response-error.html" class="navigation navigation-prev " aria-label="Previous page: Error">
+                <a href="introduction/generic-workflow.html" class="navigation navigation-prev " aria-label="Previous page: Generic SAS Peering Workflow">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="message-encoding-and-transport.html" class="navigation navigation-next " aria-label="Next page: Message encoding and transport">
+                <a href="authorization.html" class="navigation navigation-next " aria-label="Next page: Authorization Overview">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -725,7 +718,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Message exchange flow and message types","level":"4.1","depth":1,"next":{"title":"Message encoding and transport","level":"4.2","depth":1,"path":"content/message-encoding-and-transport.md","ref":"content/message-encoding-and-transport.md","articles":[]},"previous":{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/message-exchange-flow-and-message-types.md","mtime":"2017-11-01T11:44:54.880Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SAS Registration (Authentication)","level":"3.1","depth":1,"next":{"title":"Authorization Overview","level":"3.2","depth":1,"path":"content/authorization.md","ref":"content/authorization.md","articles":[{"title":"Roles","level":"3.2.1","depth":2,"path":"content/authorization-roles.md","ref":"content/authorization-roles.md","articles":[]},{"title":"Abstract OAuth 2.0 Protocol Flow","level":"3.2.2","depth":2,"path":"content/authorization-protocol-flow.md","ref":"content/authorization-protocol-flow.md","articles":[]},{"title":"Authorization Grant","level":"3.2.3","depth":2,"path":"content/authorization-grant.md","ref":"content/authorization-grant.md","articles":[]},{"title":"Implicit Flow - Authorization","level":"3.2.4","depth":2,"path":"content/authorization-implicit.md","ref":"content/authorization-implicit.md","articles":[{"title":"Request","level":"3.2.4.1","depth":3,"path":"content/authorization-implicit-request.md","ref":"content/authorization-implicit-request.md","articles":[]},{"title":"Response","level":"3.2.4.2","depth":3,"path":"content/authorization-implicit-response.md","ref":"content/authorization-implicit-response.md","articles":[{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]}]}]}]},"previous":{"title":"Generic SAS Peering Workflow","level":"2.3","depth":1,"path":"content/introduction/generic-workflow.md","ref":"content/introduction/generic-workflow.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization-registration.md","mtime":"2017-11-01T12:10:33.173Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

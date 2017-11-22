@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Message exchange flow and message types · GitBook</title>
+        <title>Error · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="message-encoding-and-transport.html" />
+    <link rel="next" href="message-exchange-flow-and-message-types.html" />
     
     
-    <link rel="prev" href="authorization-implicit-response-error.html" />
+    <link rel="prev" href="authorization-implicit-response.html" />
     
 
     </head>
@@ -297,7 +297,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.4.2.1" data-path="authorization-implicit-response-error.html">
+        <li class="chapter active" data-level="3.2.4.2.1" data-path="authorization-implicit-response-error.html">
             
                 <a href="authorization-implicit-response-error.html">
             
@@ -334,7 +334,7 @@
         
         
     
-        <li class="chapter active" data-level="4.1" data-path="message-exchange-flow-and-message-types.html">
+        <li class="chapter " data-level="4.1" data-path="message-exchange-flow-and-message-types.html">
             
                 <a href="message-exchange-flow-and-message-types.html">
             
@@ -643,7 +643,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Message exchange flow and message types</a>
+        <a href=".." >Error</a>
     </h1>
 </div>
 
@@ -660,29 +660,95 @@
                                 
                                 <p><style>
 body {
-  counter-reset: h1 12;
+  counter-reset: h1 11;
 }
 </style></p>
-<h1 id="message-exchange-flow-and-message-types">Message exchange flow and message types</h1>
-<p>Message exchanges between SAS and ESC are shown in Figures 1 and 2 below.</p>
-<p><img src="../assets/request-response-flow.svg" alt=""></p>
-<p><strong>Figure 1: Request-Response flow</strong></p>
-<p><img src="../assets/indication-confirmation-flow.svg" alt=""></p>
-<p><strong>Figure 2: Indication-Confirmation flow</strong></p>
-<p>As per this message flow, the following messages shall be exchanged between SAS and ESC.</p>
-<ul>
-<li><p><strong>SAS Registration Message</strong>: The message for the SAS to register with the ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-<li><p><strong>ESC Information Update Message</strong>: The message for the ESC to indicate the update of the ESC information to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
-</li>
-<li><p><strong>DPA State Message</strong>: The message for the ESC to indicate the DPA activation status to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
-</li>
-<li><p><strong>Keep Alive Message</strong>: The message for the SAS to detect a failure with ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-<li><p><strong>SAS Deregistration Message</strong>: The message for the SAS to deregister from the ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-</ul>
+<h1 id="implicit-flow---error-response">Implicit Flow - Error Response</h1>
+<!-- 
+ Section 4.2.2. Access Token Response
+ https://tools.ietf.org/html/rfc6749
+ OAUTH 2.0
+ -->
+<p> If the request fails due to a missing, invalid, or mismatching
+   redirection URI, or if the client identifier is missing or invalid,
+   the authorization server SHOULD inform the resource owner of the
+   error and MUST NOT automatically redirect the user-agent to the
+   invalid redirection URI.</p>
+<p>   If the resource owner denies the access request or if the request
+   fails for reasons other than a missing or invalid redirection URI,
+   the authorization server informs the client by adding the following
+   parameters to the fragment component of the redirection URI using the
+   &quot;application/x-www-form-urlencoded&quot; format, per Appendix B:</p>
+<table>
+<thead>
+<tr>
+<th>FIELD NAME</th>
+<th>R/O/C</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td>REQUIRED</td>
+<td>A single ASCII [USASCII] error code from the Error Codes list below. <br>Values for the &quot;error&quot; parameter MUST NOT include characters outside the set %x20-21 / %x23-5B / %x5D-7E.</td>
+</tr>
+<tr>
+<td>error_description</td>
+<td>OPTIONAL</td>
+<td>Human-readable ASCII [USASCII] text providing additional information, used to assist the client developer in understanding the error that occurred. <br>Values for the &quot;error_description&quot; parameter MUST NOT include characters outside the set %x20-21 / %x23-5B / %x5D-7E.</td>
+</tr>
+<tr>
+<td>error_uri</td>
+<td>OPTIONAL</td>
+<td>A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error. <br>Values for the &quot;error_uri&quot; parameter MUST conform to the URI-reference syntax and thus MUST NOT include characters outside the set %x21 / %x23-5B / %x5D-7E.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>REQUIRED</td>
+<td>if a &quot;state&quot; parameter was present in the client authorization request.  The exact value received from the client.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="error-codes-list">Error Codes List</h4>
+<pre><code>invalid_request
+      The request is missing a required parameter, includes an
+      invalid parameter value, includes a parameter more than
+      once, or is otherwise malformed.
 
+unauthorized_client
+      The client is not authorized to request an access token
+      using this method.
+
+access_denied
+      The resource owner or authorization server denied the
+      request.
+
+unsupported_response_type
+      The authorization server does not support obtaining an
+      access token using this method.
+
+invalid_scope
+      The requested scope is invalid, unknown, or malformed.
+
+server_error
+      The authorization server encountered an unexpected
+      condition that prevented it from fulfilling the request.
+      (This error code is needed because a 500 Internal Server
+      Error HTTP status code cannot be returned to the client
+      via an HTTP redirect.)
+
+temporarily_unavailable
+      The authorization server is currently unable to handle
+      the request due to a temporary overloading or maintenance
+      of the server.  (This error code is needed because a 503
+      Service Unavailable HTTP status code cannot be returned
+      to the client via an HTTP redirect.)
+</code></pre><p>   For example, the authorization server redirects the user-agent by
+   sending the following HTTP response:</p>
+<pre><code>   HTTP/1.1 302 Found
+   Location: https://client.example.com/cb#error=access_denied&amp;state=xyz
+</code></pre>
                                 
                                 </section>
                             
@@ -709,12 +775,12 @@ body {
 
             
                 
-                <a href="authorization-implicit-response-error.html" class="navigation navigation-prev " aria-label="Previous page: Error">
+                <a href="authorization-implicit-response.html" class="navigation navigation-prev " aria-label="Previous page: Response">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="message-encoding-and-transport.html" class="navigation navigation-next " aria-label="Next page: Message encoding and transport">
+                <a href="message-exchange-flow-and-message-types.html" class="navigation navigation-next " aria-label="Next page: Message exchange flow and message types">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -725,7 +791,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Message exchange flow and message types","level":"4.1","depth":1,"next":{"title":"Message encoding and transport","level":"4.2","depth":1,"path":"content/message-encoding-and-transport.md","ref":"content/message-encoding-and-transport.md","articles":[]},"previous":{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/message-exchange-flow-and-message-types.md","mtime":"2017-11-01T11:44:54.880Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Error","level":"3.2.4.2.1","depth":4,"next":{"title":"Message exchange flow and message types","level":"4.1","depth":1,"path":"content/message-exchange-flow-and-message-types.md","ref":"content/message-exchange-flow-and-message-types.md","articles":[]},"previous":{"title":"Response","level":"3.2.4.2","depth":3,"path":"content/authorization-implicit-response.md","ref":"content/authorization-implicit-response.md","articles":[{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization-implicit-response-error.md","mtime":"2017-11-01T11:43:46.005Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

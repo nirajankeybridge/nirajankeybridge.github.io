@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Message exchange flow and message types · GitBook</title>
+        <title>Roles · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="message-encoding-and-transport.html" />
+    <link rel="next" href="authorization-protocol-flow.html" />
     
     
-    <link rel="prev" href="authorization-implicit-response-error.html" />
+    <link rel="prev" href="authorization.html" />
     
 
     </head>
@@ -205,7 +205,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.1" data-path="authorization-roles.html">
+        <li class="chapter active" data-level="3.2.1" data-path="authorization-roles.html">
             
                 <a href="authorization-roles.html">
             
@@ -334,7 +334,7 @@
         
         
     
-        <li class="chapter active" data-level="4.1" data-path="message-exchange-flow-and-message-types.html">
+        <li class="chapter " data-level="4.1" data-path="message-exchange-flow-and-message-types.html">
             
                 <a href="message-exchange-flow-and-message-types.html">
             
@@ -643,7 +643,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Message exchange flow and message types</a>
+        <a href=".." >Roles</a>
     </h1>
 </div>
 
@@ -660,28 +660,26 @@
                                 
                                 <p><style>
 body {
-  counter-reset: h1 12;
+  counter-reset: h1 5;
 }
 </style></p>
-<h1 id="message-exchange-flow-and-message-types">Message exchange flow and message types</h1>
-<p>Message exchanges between SAS and ESC are shown in Figures 1 and 2 below.</p>
-<p><img src="../assets/request-response-flow.svg" alt=""></p>
-<p><strong>Figure 1: Request-Response flow</strong></p>
-<p><img src="../assets/indication-confirmation-flow.svg" alt=""></p>
-<p><strong>Figure 2: Indication-Confirmation flow</strong></p>
-<p>As per this message flow, the following messages shall be exchanged between SAS and ESC.</p>
-<ul>
-<li><p><strong>SAS Registration Message</strong>: The message for the SAS to register with the ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-<li><p><strong>ESC Information Update Message</strong>: The message for the ESC to indicate the update of the ESC information to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
-</li>
-<li><p><strong>DPA State Message</strong>: The message for the ESC to indicate the DPA activation status to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
-</li>
-<li><p><strong>Keep Alive Message</strong>: The message for the SAS to detect a failure with ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-<li><p><strong>SAS Deregistration Message</strong>: The message for the SAS to deregister from the ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-</ul>
+<h2 id="roles">Roles</h2>
+<p>OAuth defines four roles:</p>
+<h3 id="1-resource-owner-esc-operator">1. Resource Owner (ESC Operator):</h3>
+<p>An entity capable of granting access to a protected resource. When the resource owner is a person, it is referred to as an end-user.</p>
+<h3 id="2-resource-server-esc-server">2. Resource Server (ESC Server):</h3>
+<p>   The server hosting the protected resources, capable of accepting
+   and responding to protected resource requests using access tokens.</p>
+<h3 id="3-client-sas">3. Client (SAS):</h3>
+<p>   An application making protected resource requests on behalf of the
+   resource owner and with its authorization.  The term &quot;client&quot; does
+   not imply any particular implementation characteristics (e.g.,
+   whether the application executes on a server, a desktop, or other
+   devices).</p>
+<h3 id="4-authorization-server">4. Authorization Server:</h3>
+<p>   The server issuing access tokens to the client after successfully
+   authenticating the resource owner and obtaining authorization.</p>
+<p>The authorization server may be the same server as the resource server or a separate entity.</p>
 
                                 
                                 </section>
@@ -709,12 +707,12 @@ body {
 
             
                 
-                <a href="authorization-implicit-response-error.html" class="navigation navigation-prev " aria-label="Previous page: Error">
+                <a href="authorization.html" class="navigation navigation-prev " aria-label="Previous page: Authorization Overview">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="message-encoding-and-transport.html" class="navigation navigation-next " aria-label="Next page: Message encoding and transport">
+                <a href="authorization-protocol-flow.html" class="navigation navigation-next " aria-label="Next page: Abstract OAuth 2.0 Protocol Flow">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -725,7 +723,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Message exchange flow and message types","level":"4.1","depth":1,"next":{"title":"Message encoding and transport","level":"4.2","depth":1,"path":"content/message-encoding-and-transport.md","ref":"content/message-encoding-and-transport.md","articles":[]},"previous":{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/message-exchange-flow-and-message-types.md","mtime":"2017-11-01T11:44:54.880Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Roles","level":"3.2.1","depth":2,"next":{"title":"Abstract OAuth 2.0 Protocol Flow","level":"3.2.2","depth":2,"path":"content/authorization-protocol-flow.md","ref":"content/authorization-protocol-flow.md","articles":[]},"previous":{"title":"Authorization Overview","level":"3.2","depth":1,"path":"content/authorization.md","ref":"content/authorization.md","articles":[{"title":"Roles","level":"3.2.1","depth":2,"path":"content/authorization-roles.md","ref":"content/authorization-roles.md","articles":[]},{"title":"Abstract OAuth 2.0 Protocol Flow","level":"3.2.2","depth":2,"path":"content/authorization-protocol-flow.md","ref":"content/authorization-protocol-flow.md","articles":[]},{"title":"Authorization Grant","level":"3.2.3","depth":2,"path":"content/authorization-grant.md","ref":"content/authorization-grant.md","articles":[]},{"title":"Implicit Flow - Authorization","level":"3.2.4","depth":2,"path":"content/authorization-implicit.md","ref":"content/authorization-implicit.md","articles":[{"title":"Request","level":"3.2.4.1","depth":3,"path":"content/authorization-implicit-request.md","ref":"content/authorization-implicit-request.md","articles":[]},{"title":"Response","level":"3.2.4.2","depth":3,"path":"content/authorization-implicit-response.md","ref":"content/authorization-implicit-response.md","articles":[{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]}]}]}]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization-roles.md","mtime":"2017-11-01T10:22:49.110Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -17,10 +17,6 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -36,6 +32,18 @@
 
     
 
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
     
         
     
@@ -121,7 +129,7 @@
                     
                         <b>2.1.</b>
                     
-                    SAS-ESC Independence
+                    Independence of SAS and ESC
             
                 </a>
             
@@ -136,7 +144,7 @@
                     
                         <b>2.2.</b>
                     
-                    SAS-ESC Peering Protocol
+                    Independence of SAS-ESC Peering Protocol
             
                 </a>
             
@@ -166,14 +174,14 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="authorization/">
+        <li class="chapter " data-level="3.1" data-path="authorization-registration.html">
             
-                <a href="authorization/">
+                <a href="authorization-registration.html">
             
                     
                         <b>3.1.</b>
                     
-                    Concept of Operations
+                    SAS Registration (Authentication)
             
                 </a>
             
@@ -181,14 +189,30 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="authorization/authentication.html">
+        <li class="chapter " data-level="3.2" data-path="authorization.html">
             
-                <a href="authorization/authentication.html">
+                <a href="authorization.html">
             
                     
                         <b>3.2.</b>
                     
-                    SAS Authentication
+                    Authorization Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="authorization-roles.html">
+            
+                <a href="authorization-roles.html">
+            
+                    
+                        <b>3.2.1.</b>
+                    
+                    Roles
             
                 </a>
             
@@ -196,18 +220,110 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="authorization/authorization.html">
+        <li class="chapter " data-level="3.2.2" data-path="authorization-protocol-flow.html">
             
-                <a href="authorization/authorization.html">
+                <a href="authorization-protocol-flow.html">
             
                     
-                        <b>3.3.</b>
+                        <b>3.2.2.</b>
                     
-                    SAS Authorization
+                    Abstract OAuth 2.0 Protocol Flow
             
                 </a>
             
 
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="authorization-grant.html">
+            
+                <a href="authorization-grant.html">
+            
+                    
+                        <b>3.2.3.</b>
+                    
+                    Authorization Grant
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="authorization-implicit.html">
+            
+                <a href="authorization-implicit.html">
+            
+                    
+                        <b>3.2.4.</b>
+                    
+                    Implicit Flow - Authorization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.4.1" data-path="authorization-implicit-request.html">
+            
+                <a href="authorization-implicit-request.html">
+            
+                    
+                        <b>3.2.4.1.</b>
+                    
+                    Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4.2" data-path="authorization-implicit-response.html">
+            
+                <a href="authorization-implicit-response.html">
+            
+                    
+                        <b>3.2.4.2.</b>
+                    
+                    Response
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.4.2.1" data-path="authorization-implicit-response-error.html">
+            
+                <a href="authorization-implicit-response-error.html">
+            
+                    
+                        <b>3.2.4.2.1.</b>
+                    
+                    Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -318,9 +434,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.2.1.1" data-path="sas-esc-messages/sasRegistrationMessage-enhancements.html">
+        <li class="chapter " data-level="5.1.2.1.1" data-path="sasRegistrationMessage-enhancements.md">
             
-                <a href="sas-esc-messages/sasRegistrationMessage-enhancements.html">
+                <span>
             
                     
                         <b>5.1.2.1.1.</b>
@@ -430,29 +546,14 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="security.html">
+        <li class="chapter " data-level="6.2" data-path="security-concerns.html">
             
-                <a href="security.html">
+                <a href="security-concerns.html">
             
                     
                         <b>6.2.</b>
                     
-                    Security Considerations
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3" data-path="urlencoded.html">
-            
-                <a href="urlencoded.html">
-            
-                    
-                        <b>6.3.</b>
-                    
-                    application/x-www-form-urlencoded Media Type
+                    Security
             
                 </a>
             
@@ -557,20 +658,21 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="message-encoding-and-transport">Message encoding and transport</h1>
+                                <p><style>
+body {
+  counter-reset: h1 13;
+}
+</style></p>
+<h1 id="message-encoding-and-transport">Message encoding and transport</h1>
 <h2 id="message-encoding">Message encoding</h2>
-<p>The contents of SAS-ESC messages shall be generated by encoding the <a href="sas-esc-messages/messageContainer.html">MessageContainer</a> object using JSON (JavaScript Object Notation) as defined in <a href="https://tools.ietf.org/html/rfc7159" target="_blank">RFC 7159</a>. Unicode characters shall be used and its default encoding shall be UTF-8.</p>
-<h2 id="transport">Message transport </h2>
-<p>HTTPS shall be used as the transport protocols for SAS-ESC message exchanges, in particular, HTTP version 1.1 as specified in <a href="https://tools.ietf.org/html/rfc2616" target="_blank">RFC 2616</a>. </p>
-<p>The TLS protocol as specified in <a href="../references.html#CBRS-Security-Specification">WINNF-TS-0065</a> and  shall be used:</p>
-<blockquote>
-<p>At a minimum TLS version 1.2 is required in SAS TLS implementations to mitigate different attacks on earlier versions. In addition, SAS should be configured to support TLS version 1.3 when that standard is finalized. SAS shall not support TLS versions 1.1, 1.0, or SSL version 3.0 or any other earlier versions of these standards. </p>
-</blockquote>
-<p>The HTTP <strong>POST</strong> method shall be used for all requests from the ESC to the SAS and from the SAS to the ESC.</p>
-<p>POST requests shall be sent to the URL provided by the SAS or the ESC. The URL shall be configured in accordance with format <code>$BASE_URL/$RELEASE_NUMBER/$METHOD_NAME</code>, where </p>
+<p>The contents of SAS-ESC messages shall be generated by encoding the <a href="sas-esc-messages/messageContainer.html">MessageContainer</a> object using JSON (JavaScript Object Notation) as defined in RFC 7159 [n.2]. Unicode characters shall be used and its default encoding shall be UTF-8.</p>
+<h2 id="message-transport">Message transport</h2>
+<p>HTTPS shall be used as the transport protocols for SAS-ESC message exchanges. The TLS protocol as specified in [n.3] and HTTP version 1.1 as specified in [n.4] shall be used.</p>
+<p>The HTTP POST method shall be used for all requests from the ESC to the SAS and from the SAS to the ESC.</p>
+<p>POST shall be sent to the URL provided by the SAS or the ESC. The URL shall be configured in accordance with format <code>$BASE_URL/$RELEASE_NUMBER/$METHOD_NAME</code>, where </p>
 <ul>
 <li><code>$BASE_URL</code> represents the base URL of the SAS or the ESC.</li>
-<li><code>$RELEASE_NUMBER</code> represents the CBRS release number corresponding to the ESC Requirements developed by WinnForum under <a href="../references.html#Requirements-For-Commercial">WINNF-TS-0112</a>. In this specification, <code>$RELEASE_NUMBER</code> shall be &#x201C;v1.3&#x201D;.</li>
+<li><code>$RELEASE_NUMBER</code> represents the CBRS release number corresponding to the ESC Requirements developed by WinnForum [n.1]. In this specification, <code>$RELEASE_NUMBER</code> shall be &#x201C;v1.3&#x201D;.</li>
 <li><code>$METHOD_NAME</code> represents method name of the API specified in this document and corresponding to the specific SAS-ESC message. The methods in the following table shall be used in the API.</li>
 </ul>
 <p><strong>Table 1: List of methods in API</strong></p>
@@ -675,7 +777,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Message encoding and transport","level":"4.2","depth":1,"next":{"title":"SAS-ESC Messages","level":"5.1","depth":1,"path":"content/sas-esc-messages/messageContainer.md","ref":"content/sas-esc-messages/messageContainer.md","articles":[{"title":"Message Container","level":"5.1.1","depth":2,"path":"content/sas-esc-messages/messageContainer.md","ref":"content/sas-esc-messages/messageContainer.md","articles":[]},{"title":"Payload Data","level":"5.1.2","depth":2,"path":"content/sas-esc-messages/sasRegistrationMessage.md","ref":"content/sas-esc-messages/sasRegistrationMessage.md","articles":[{"title":"SAS Registration Message","level":"5.1.2.1","depth":3,"path":"content/sas-esc-messages/sasRegistrationMessage.md","ref":"content/sas-esc-messages/sasRegistrationMessage.md","articles":[{"title":"EscSensorData Enhancement","level":"5.1.2.1.1","depth":4,"path":"content/sas-esc-messages/sasRegistrationMessage-enhancements.md","ref":"content/sas-esc-messages/sasRegistrationMessage-enhancements.md","articles":[]}]},{"title":"ESC Information Update Message","level":"5.1.2.2","depth":3,"path":"content/sas-esc-messages/escInformationUpdate.md","ref":"content/sas-esc-messages/escInformationUpdate.md","articles":[]},{"title":"DPA Activation Status Message","level":"5.1.2.3","depth":3,"path":"content/sas-esc-messages/dpaActivationStatus.md","ref":"content/sas-esc-messages/dpaActivationStatus.md","articles":[]},{"title":"Keep Alive Message","level":"5.1.2.4","depth":3,"path":"content/sas-esc-messages/keepAlive.md","ref":"content/sas-esc-messages/keepAlive.md","articles":[]},{"title":"SAS Deregistration Message","level":"5.1.2.5","depth":3,"path":"content/sas-esc-messages/sasDeregistration.md","ref":"content/sas-esc-messages/sasDeregistration.md","articles":[]}]}]},"previous":{"title":"Message exchange flow and message types","level":"4.1","depth":1,"path":"content/message-exchange-flow-and-message-types.md","ref":"content/message-exchange-flow-and-message-types.md","articles":[]},"dir":"ltr"},"config":{"plugins":["image-captions","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"image-captions":{"caption":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","variable_name":"_pictures"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"content/authorization/index.html#fig3.1.1","level":"3.1","list_caption":"Figure: Authentication and Authorization Concept of Operations","alt":"Authentication and Authorization Concept of Operations","nro":1,"url":"../../assets/authentication-authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Authentication and Authorization Concept of Operations","attributes":{},"skip":false,"key":"3.1.1"},{"backlink":"content/authorization/authentication.html#fig3.2.1","level":"3.2","list_caption":"Figure: SAS-ESC Authentication","alt":"SAS-ESC Authentication","nro":2,"url":"../../assets/authentication.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS-ESC Authentication","attributes":{},"skip":false,"key":"3.2.1"},{"backlink":"content/authorization/authorization.html#fig3.3.1","level":"3.3","list_caption":"Figure: SAS-ESC Authorization","alt":"SAS-ESC Authorization","nro":3,"url":"../../assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS-ESC Authorization","attributes":{},"skip":false,"key":"3.3.1"},{"backlink":"content/message-exchange-flow-and-message-types.html#fig4.1.1","level":"4.1","list_caption":"Figure: Request-Response flow","alt":"Request-Response flow","nro":4,"url":"/assets/flow-request-response.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Request-Response flow","attributes":{},"skip":false,"key":"4.1.1"},{"backlink":"content/message-exchange-flow-and-message-types.html#fig4.1.2","level":"4.1","list_caption":"Figure: Indication-Confirmation flow","alt":"Indication-Confirmation flow","nro":5,"url":"/assets/flow-indication-confirmation.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Indication-Confirmation flow","attributes":{},"skip":false,"key":"4.1.2"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1","level":"5.1.2","list_caption":"Figure: Register Transaction Is Used for SAS Registration","alt":"Register Transaction Is Used for SAS Registration","nro":6,"url":"/assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Register Transaction Is Used for SAS Registration","attributes":{},"skip":false,"key":"5.1.2.1"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.2","level":"5.1.2","list_caption":"Figure: SAS Registration Request & Response","alt":"SAS Registration Request & Response","nro":7,"url":"/assets/registration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Registration Request & Response","attributes":{},"skip":false,"key":"5.1.2.2"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1.1","level":"5.1.2.1","list_caption":"Figure: Register Transaction Is Used for SAS Registration","alt":"Register Transaction Is Used for SAS Registration","nro":8,"url":"/assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Register Transaction Is Used for SAS Registration","attributes":{},"skip":false,"key":"5.1.2.1.1"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1.2","level":"5.1.2.1","list_caption":"Figure: SAS Registration Request & Response","alt":"SAS Registration Request & Response","nro":9,"url":"/assets/registration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Registration Request & Response","attributes":{},"skip":false,"key":"5.1.2.1.2"},{"backlink":"content/sas-esc-messages/escInformationUpdate.html#fig5.1.2.2.1","level":"5.1.2.2","list_caption":"Figure: Update Transaction Is Used For ESC Information Update Indication & Confirm","alt":"Update Transaction Is Used For ESC Information Update Indication & Confirm","nro":10,"url":"..\\..\\assets\\update.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Update Transaction Is Used For ESC Information Update Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.2.1"},{"backlink":"content/sas-esc-messages/escInformationUpdate.html#fig5.1.2.2.2","level":"5.1.2.2","list_caption":"Figure: ESC Information Update Indication & Confirm","alt":"ESC Information Update Indication & Confirm","nro":11,"url":"..\\..\\assets\\esc-information-update.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"ESC Information Update Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.2.2"},{"backlink":"content/sas-esc-messages/dpaActivationStatus.html#fig5.1.2.3.1","level":"5.1.2.3","list_caption":"Figure: Update Transaction Is Used For DPA Activation Status Indication & Confirm","alt":"Update Transaction Is Used For DPA Activation Status Indication & Confirm","nro":12,"url":"..\\..\\assets\\update.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Update Transaction Is Used For DPA Activation Status Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.3.1"},{"backlink":"content/sas-esc-messages/dpaActivationStatus.html#fig5.1.2.3.2","level":"5.1.2.3","list_caption":"Figure: DPA Activation Status Indication & Confirm","alt":"DPA Activation Status Indication & Confirm","nro":13,"url":"/assets/dpa-activation-status.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"DPA Activation Status Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.3.2"},{"backlink":"content/sas-esc-messages/keepAlive.html#fig5.1.2.4.1","level":"5.1.2.4","list_caption":"Figure: Poll Transaction Is Used For Keep Alive Indication & Confirm","alt":"Poll Transaction Is Used For Keep Alive Indication & Confirm","nro":14,"url":"..\\..\\assets\\poll.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Poll Transaction Is Used For Keep Alive Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.4.1"},{"backlink":"content/sas-esc-messages/keepAlive.html#fig5.1.2.4.2","level":"5.1.2.4","list_caption":"Figure: Keep Alive Indication & Confirm","alt":"Keep Alive Indication & Confirm","nro":15,"url":"/assets/keep-alive.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Keep Alive Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.4.2"},{"backlink":"content/sas-esc-messages/sasDeregistration.html#fig5.1.2.5.1","level":"5.1.2.5","list_caption":"Figure: Unregister Transaction Is Used For SAS Deregistration","alt":"Unregister Transaction Is Used For SAS Deregistration","nro":16,"url":"..\\..\\assets\\unregister.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Unregister Transaction Is Used For SAS Deregistration","attributes":{},"skip":false,"key":"5.1.2.5.1"},{"backlink":"content/sas-esc-messages/sasDeregistration.html#fig5.1.2.5.2","level":"5.1.2.5","list_caption":"Figure: SAS Deregistration Request & Response","alt":"SAS Deregistration Request & Response","nro":17,"url":"/assets/deregistration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Deregistration Request & Response","attributes":{},"skip":false,"key":"5.1.2.5.2"},{"backlink":"content/dpa-state-machine.html#fig6.1.1","level":"6.1","list_caption":"Figure: DPA State Machine in a channel per DPA","alt":"DPA State Machine in a channel per DPA","nro":18,"url":"/assets/dpa-state-diagram.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"DPA State Machine in a channel per DPA","attributes":{},"skip":false,"key":"6.1.1"}]},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/message-encoding-and-transport.md","mtime":"2017-11-08T02:01:35.810Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-20T16:29:22.155Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Message encoding and transport","level":"4.2","depth":1,"next":{"title":"SAS-ESC Messages","level":"5.1","depth":1,"path":"content/sas-esc-messages/messageContainer.md","ref":"content/sas-esc-messages/messageContainer.md","articles":[{"title":"Message Container","level":"5.1.1","depth":2,"path":"content/sas-esc-messages/messageContainer.md","ref":"content/sas-esc-messages/messageContainer.md","articles":[]},{"title":"Payload Data","level":"5.1.2","depth":2,"path":"content/sas-esc-messages/sasRegistrationMessage.md","ref":"content/sas-esc-messages/sasRegistrationMessage.md","articles":[{"title":"SAS Registration Message","level":"5.1.2.1","depth":3,"path":"content/sas-esc-messages/sasRegistrationMessage.md","ref":"content/sas-esc-messages/sasRegistrationMessage.md","articles":[{"title":"EscSensorData Enhancement","level":"5.1.2.1.1","depth":4,"path":"content/sasRegistrationMessage-enhancements.md","ref":"content/sasRegistrationMessage-enhancements.md","articles":[]}]},{"title":"ESC Information Update Message","level":"5.1.2.2","depth":3,"path":"content/sas-esc-messages/escInformationUpdate.md","ref":"content/sas-esc-messages/escInformationUpdate.md","articles":[]},{"title":"DPA Activation Status Message","level":"5.1.2.3","depth":3,"path":"content/sas-esc-messages/dpaActivationStatus.md","ref":"content/sas-esc-messages/dpaActivationStatus.md","articles":[]},{"title":"Keep Alive Message","level":"5.1.2.4","depth":3,"path":"content/sas-esc-messages/keepAlive.md","ref":"content/sas-esc-messages/keepAlive.md","articles":[]},{"title":"SAS Deregistration Message","level":"5.1.2.5","depth":3,"path":"content/sas-esc-messages/sasDeregistration.md","ref":"content/sas-esc-messages/sasDeregistration.md","articles":[]}]}]},"previous":{"title":"Message exchange flow and message types","level":"4.1","depth":1,"path":"content/message-exchange-flow-and-message-types.md","ref":"content/message-exchange-flow-and-message-types.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/message-encoding-and-transport.md","mtime":"2017-11-01T11:44:54.856Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -17,10 +17,6 @@
     
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-image-captions/image-captions.css">
-                
-            
-                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -36,6 +32,18 @@
 
     
 
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
     
         
     
@@ -119,7 +127,7 @@
                     
                         <b>2.1.</b>
                     
-                    SAS-ESC Independence
+                    Independence of SAS and ESC
             
                 </a>
             
@@ -134,7 +142,7 @@
                     
                         <b>2.2.</b>
                     
-                    SAS-ESC Peering Protocol
+                    Independence of SAS-ESC Peering Protocol
             
                 </a>
             
@@ -164,14 +172,14 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="content/authorization/">
+        <li class="chapter " data-level="3.1" data-path="content/authorization-registration.html">
             
-                <a href="content/authorization/">
+                <a href="content/authorization-registration.html">
             
                     
                         <b>3.1.</b>
                     
-                    Concept of Operations
+                    SAS Registration (Authentication)
             
                 </a>
             
@@ -179,14 +187,30 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="content/authorization/authentication.html">
+        <li class="chapter " data-level="3.2" data-path="content/authorization.html">
             
-                <a href="content/authorization/authentication.html">
+                <a href="content/authorization.html">
             
                     
                         <b>3.2.</b>
                     
-                    SAS Authentication
+                    Authorization Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="content/authorization-roles.html">
+            
+                <a href="content/authorization-roles.html">
+            
+                    
+                        <b>3.2.1.</b>
+                    
+                    Roles
             
                 </a>
             
@@ -194,18 +218,110 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="content/authorization/authorization.html">
+        <li class="chapter " data-level="3.2.2" data-path="content/authorization-protocol-flow.html">
             
-                <a href="content/authorization/authorization.html">
+                <a href="content/authorization-protocol-flow.html">
             
                     
-                        <b>3.3.</b>
+                        <b>3.2.2.</b>
                     
-                    SAS Authorization
+                    Abstract OAuth 2.0 Protocol Flow
             
                 </a>
             
 
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="content/authorization-grant.html">
+            
+                <a href="content/authorization-grant.html">
+            
+                    
+                        <b>3.2.3.</b>
+                    
+                    Authorization Grant
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="content/authorization-implicit.html">
+            
+                <a href="content/authorization-implicit.html">
+            
+                    
+                        <b>3.2.4.</b>
+                    
+                    Implicit Flow - Authorization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.4.1" data-path="content/authorization-implicit-request.html">
+            
+                <a href="content/authorization-implicit-request.html">
+            
+                    
+                        <b>3.2.4.1.</b>
+                    
+                    Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4.2" data-path="content/authorization-implicit-response.html">
+            
+                <a href="content/authorization-implicit-response.html">
+            
+                    
+                        <b>3.2.4.2.</b>
+                    
+                    Response
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.4.2.1" data-path="content/authorization-implicit-response-error.html">
+            
+                <a href="content/authorization-implicit-response-error.html">
+            
+                    
+                        <b>3.2.4.2.1.</b>
+                    
+                    Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -316,9 +432,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.2.1.1" data-path="content/sas-esc-messages/sasRegistrationMessage-enhancements.html">
+        <li class="chapter " data-level="5.1.2.1.1" data-path="content/sasRegistrationMessage-enhancements.md">
             
-                <a href="content/sas-esc-messages/sasRegistrationMessage-enhancements.html">
+                <span>
             
                     
                         <b>5.1.2.1.1.</b>
@@ -428,29 +544,14 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="content/security.html">
+        <li class="chapter " data-level="6.2" data-path="content/security-concerns.html">
             
-                <a href="content/security.html">
+                <a href="content/security-concerns.html">
             
                     
                         <b>6.2.</b>
                     
-                    Security Considerations
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3" data-path="content/urlencoded.html">
-            
-                <a href="content/urlencoded.html">
-            
-                    
-                        <b>6.3.</b>
-                    
-                    application/x-www-form-urlencoded Media Type
+                    Security
             
                 </a>
             
@@ -555,30 +656,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="sas-esc-peering-protocol">SAS-ESC Peering Protocol</h1>
+                                <p><style>
+body {
+  counter-reset: h1 -1;
+}
+</style></p>
+<h1 id="sas-esc-api-protocol">SAS-ESC API Protocol</h1>
 <p>This document specifies the Application Programming Interface (API) for Interface between Spectrum Access System (SAS) and Environmental Sensing Capability (ESC).</p>
-<h2 id="scope">Scope</h2>
-<p>This document is a Technical Specification of a communication protocol and procedures for the SAS-ESC interface. The key words &quot;required&quot;, &quot;shall&quot;, &quot;shall not&quot;, &quot;should&quot;, &quot;should not&quot;, &quot;recommended&quot;, &quot;may&quot;, and &quot;optional&quot; in this document are to be interpreted as described in <a href="references.html#RFC-2119">RFC-2119</a>.  In addition, the key word &#x201C;conditional&#x201D; shall be interpreted to mean that the definition is an absolute requirement of this specification only if the stated condition is met. </p>
-<h1 id="sas-esc-communication-concept">SAS-ESC Communication Concept</h1>
-<p><img src="assets/sas - esc communications protocol 5.1.svg" alt="SAS-ESC Communication Protocol">
-<br>Figure 1: <em>SAS-ESC Communication Protocol Diagram</em></p>
-<h1 id="sas-esc-communication-lifecycle">SAS-ESC Communication Lifecycle</h1>
-<p>At a high level, the lifecycle of the SAS-ESC communication protocol consists of three parts (figure 2):</p>
+<p><strong>Prerequisite operations</strong></p>
+<p>The following operations shall be done before SAS-ESC communications.</p>
 <ol>
-<li><strong>Initialion/Authentication</strong>. In this stage human <a href="GLOSSARY.html#sas-administrator" class="glossary-term" title="A legal entity that the FCC has authorized to administer the operation of a SAS.">SAS Administrator</a> and ESC Operator exchange the Public Key Infrastructure (PKI). This ensures full knowledge of identities of systems that are communicating. </li>
-<li><strong>Normal Operation</strong>. The SAS registers with the ESC and begins the normal mode of operation:<ul>
-<li>Heartbeat polling to ensure connection and system liveness</li>
-<li>Accepting and processing event notifications from the ESC</li>
-<li>Updating the ESC with the most recent information about the SAS, should it change</li>
-</ul>
-</li>
-<li><strong>End of Service</strong>. Here the SAS ceases co-operating with the ESC by sending a de-registration message. The ESC Operator may remove the SAS&apos;s PKI information. This step may never occur </li>
+<li>Exchange of Public Key Infrastructure (PKI) between <a href="GLOSSARY.html#sas-administrator" class="glossary-term" title="A legal entity that the FCC has authorized to administer the operation of a SAS.">SAS Administrator</a> and <a href="GLOSSARY.html#esc-operator" class="glossary-term" title="A legal entity that the FCC has authorized to operate an ESC.">ESC Operator</a></li>
+<li>Exchange of Private Key for digital signature</li>
+<li>Setting of communication timeout</li>
 </ol>
-<p><img src="assets/sas-esc-lifecycle-algorithm.svg" alt="Comunication Lifecycle from a SAS Perspective"> 
-<br>Figure 1: <em>High-Level Communication Lifecycle from a SAS Perspective</em></p>
-<h2 id="data-flows-in-the-communication-lifecycle">Data flows in the Communication Lifecycle</h2>
-<p><img src="assets/lifecycle.svg" alt="SAS-ESC Communication Life Cycle"> 
-<br>Figure 3: <em>SAS-ESC Communication Lifecycle</em></p>
 
                                 
                                 </section>
@@ -607,7 +698,7 @@
             
                 
                 
-                <a href="content/introduction/independence.html" class="navigation navigation-next navigation-unique" aria-label="Next page: SAS-ESC Independence">
+                <a href="content/introduction/independence.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Independence of SAS and ESC">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -618,7 +709,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"SAS-ESC Independence","level":"2.1","depth":1,"path":"content/introduction/independence.md","ref":"content/introduction/independence.md","articles":[]},"dir":"ltr"},"config":{"plugins":["image-captions","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"image-captions":{"caption":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","variable_name":"_pictures"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"content/authorization/index.html#fig3.1.1","level":"3.1","list_caption":"Figure: Authentication and Authorization Concept of Operations","alt":"Authentication and Authorization Concept of Operations","nro":1,"url":"../../assets/authentication-authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Authentication and Authorization Concept of Operations","attributes":{},"skip":false,"key":"3.1.1"},{"backlink":"content/authorization/authentication.html#fig3.2.1","level":"3.2","list_caption":"Figure: SAS-ESC Authentication","alt":"SAS-ESC Authentication","nro":2,"url":"../../assets/authentication.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS-ESC Authentication","attributes":{},"skip":false,"key":"3.2.1"},{"backlink":"content/authorization/authorization.html#fig3.3.1","level":"3.3","list_caption":"Figure: SAS-ESC Authorization","alt":"SAS-ESC Authorization","nro":3,"url":"../../assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS-ESC Authorization","attributes":{},"skip":false,"key":"3.3.1"},{"backlink":"content/message-exchange-flow-and-message-types.html#fig4.1.1","level":"4.1","list_caption":"Figure: Request-Response flow","alt":"Request-Response flow","nro":4,"url":"/assets/flow-request-response.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Request-Response flow","attributes":{},"skip":false,"key":"4.1.1"},{"backlink":"content/message-exchange-flow-and-message-types.html#fig4.1.2","level":"4.1","list_caption":"Figure: Indication-Confirmation flow","alt":"Indication-Confirmation flow","nro":5,"url":"/assets/flow-indication-confirmation.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Indication-Confirmation flow","attributes":{},"skip":false,"key":"4.1.2"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1","level":"5.1.2","list_caption":"Figure: Register Transaction Is Used for SAS Registration","alt":"Register Transaction Is Used for SAS Registration","nro":6,"url":"/assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Register Transaction Is Used for SAS Registration","attributes":{},"skip":false,"key":"5.1.2.1"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.2","level":"5.1.2","list_caption":"Figure: SAS Registration Request & Response","alt":"SAS Registration Request & Response","nro":7,"url":"/assets/registration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Registration Request & Response","attributes":{},"skip":false,"key":"5.1.2.2"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1.1","level":"5.1.2.1","list_caption":"Figure: Register Transaction Is Used for SAS Registration","alt":"Register Transaction Is Used for SAS Registration","nro":8,"url":"/assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Register Transaction Is Used for SAS Registration","attributes":{},"skip":false,"key":"5.1.2.1.1"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1.2","level":"5.1.2.1","list_caption":"Figure: SAS Registration Request & Response","alt":"SAS Registration Request & Response","nro":9,"url":"/assets/registration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Registration Request & Response","attributes":{},"skip":false,"key":"5.1.2.1.2"},{"backlink":"content/sas-esc-messages/escInformationUpdate.html#fig5.1.2.2.1","level":"5.1.2.2","list_caption":"Figure: Update Transaction Is Used For ESC Information Update Indication & Confirm","alt":"Update Transaction Is Used For ESC Information Update Indication & Confirm","nro":10,"url":"..\\..\\assets\\update.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Update Transaction Is Used For ESC Information Update Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.2.1"},{"backlink":"content/sas-esc-messages/escInformationUpdate.html#fig5.1.2.2.2","level":"5.1.2.2","list_caption":"Figure: ESC Information Update Indication & Confirm","alt":"ESC Information Update Indication & Confirm","nro":11,"url":"..\\..\\assets\\esc-information-update.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"ESC Information Update Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.2.2"},{"backlink":"content/sas-esc-messages/dpaActivationStatus.html#fig5.1.2.3.1","level":"5.1.2.3","list_caption":"Figure: Update Transaction Is Used For DPA Activation Status Indication & Confirm","alt":"Update Transaction Is Used For DPA Activation Status Indication & Confirm","nro":12,"url":"..\\..\\assets\\update.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Update Transaction Is Used For DPA Activation Status Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.3.1"},{"backlink":"content/sas-esc-messages/dpaActivationStatus.html#fig5.1.2.3.2","level":"5.1.2.3","list_caption":"Figure: DPA Activation Status Indication & Confirm","alt":"DPA Activation Status Indication & Confirm","nro":13,"url":"/assets/dpa-activation-status.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"DPA Activation Status Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.3.2"},{"backlink":"content/sas-esc-messages/keepAlive.html#fig5.1.2.4.1","level":"5.1.2.4","list_caption":"Figure: Poll Transaction Is Used For Keep Alive Indication & Confirm","alt":"Poll Transaction Is Used For Keep Alive Indication & Confirm","nro":14,"url":"..\\..\\assets\\poll.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Poll Transaction Is Used For Keep Alive Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.4.1"},{"backlink":"content/sas-esc-messages/keepAlive.html#fig5.1.2.4.2","level":"5.1.2.4","list_caption":"Figure: Keep Alive Indication & Confirm","alt":"Keep Alive Indication & Confirm","nro":15,"url":"/assets/keep-alive.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Keep Alive Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.4.2"},{"backlink":"content/sas-esc-messages/sasDeregistration.html#fig5.1.2.5.1","level":"5.1.2.5","list_caption":"Figure: Unregister Transaction Is Used For SAS Deregistration","alt":"Unregister Transaction Is Used For SAS Deregistration","nro":16,"url":"..\\..\\assets\\unregister.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Unregister Transaction Is Used For SAS Deregistration","attributes":{},"skip":false,"key":"5.1.2.5.1"},{"backlink":"content/sas-esc-messages/sasDeregistration.html#fig5.1.2.5.2","level":"5.1.2.5","list_caption":"Figure: SAS Deregistration Request & Response","alt":"SAS Deregistration Request & Response","nro":17,"url":"/assets/deregistration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Deregistration Request & Response","attributes":{},"skip":false,"key":"5.1.2.5.2"},{"backlink":"content/dpa-state-machine.html#fig6.1.1","level":"6.1","list_caption":"Figure: DPA State Machine in a channel per DPA","alt":"DPA State Machine in a channel per DPA","nro":18,"url":"/assets/dpa-state-diagram.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"DPA State Machine in a channel per DPA","attributes":{},"skip":false,"key":"6.1.1"}]},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"README.md","mtime":"2017-11-06T13:42:05.433Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-20T16:29:22.155Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Independence of SAS and ESC","level":"2.1","depth":1,"path":"content/introduction/independence.md","ref":"content/introduction/independence.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"README.md","mtime":"2017-11-01T12:53:30.710Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

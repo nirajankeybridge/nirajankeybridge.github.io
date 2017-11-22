@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Message exchange flow and message types · GitBook</title>
+        <title>Authorization Overview · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="message-encoding-and-transport.html" />
+    <link rel="next" href="authorization-roles.html" />
     
     
-    <link rel="prev" href="authorization-implicit-response-error.html" />
+    <link rel="prev" href="authorization-registration.html" />
     
 
     </head>
@@ -189,7 +189,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="authorization.html">
+        <li class="chapter active" data-level="3.2" data-path="authorization.html">
             
                 <a href="authorization.html">
             
@@ -334,7 +334,7 @@
         
         
     
-        <li class="chapter active" data-level="4.1" data-path="message-exchange-flow-and-message-types.html">
+        <li class="chapter " data-level="4.1" data-path="message-exchange-flow-and-message-types.html">
             
                 <a href="message-exchange-flow-and-message-types.html">
             
@@ -643,7 +643,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Message exchange flow and message types</a>
+        <a href=".." >Authorization Overview</a>
     </h1>
 </div>
 
@@ -660,28 +660,20 @@
                                 
                                 <p><style>
 body {
-  counter-reset: h1 12;
+  counter-reset: h1 4;
 }
 </style></p>
-<h1 id="message-exchange-flow-and-message-types">Message exchange flow and message types</h1>
-<p>Message exchanges between SAS and ESC are shown in Figures 1 and 2 below.</p>
-<p><img src="../assets/request-response-flow.svg" alt=""></p>
-<p><strong>Figure 1: Request-Response flow</strong></p>
-<p><img src="../assets/indication-confirmation-flow.svg" alt=""></p>
-<p><strong>Figure 2: Indication-Confirmation flow</strong></p>
-<p>As per this message flow, the following messages shall be exchanged between SAS and ESC.</p>
-<ul>
-<li><p><strong>SAS Registration Message</strong>: The message for the SAS to register with the ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-<li><p><strong>ESC Information Update Message</strong>: The message for the ESC to indicate the update of the ESC information to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
-</li>
-<li><p><strong>DPA State Message</strong>: The message for the ESC to indicate the DPA activation status to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
-</li>
-<li><p><strong>Keep Alive Message</strong>: The message for the SAS to detect a failure with ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-<li><p><strong>SAS Deregistration Message</strong>: The message for the SAS to deregister from the ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-</ul>
+<h1 id="authorization">Authorization</h1>
+<!-- 
+ 1.2. Protocol Flow
+ 4. Obtaining Authorization 
+ https://tools.ietf.org/html/rfc6749
+ OAUTH 2.0
+ -->
+<p>Authorization is based on OAuth 2.0 Implicit Flow as described in <a href="https://tools.ietf.org/html/rfc6749" target="_blank">RFC 6749 &quot;The OAuth 2.0 Authorization Framework&quot;</a>. OAuth 2.0 enables a third-party application to obtain limited access to an HTTP service, either on behalf of a resource owner by orchestrating an approval interaction between the resource owner and the HTTP service, or by allowing the third-party application to obtain access on its own behalf.</p>
+<p>In OAuth, the client requests access to resources controlled by the resource owner and hosted by the resource server, and is issued a different set of credentials than those of the resource owner. Instead of using the resource owner&apos;s credentials to access protected resources, the client obtains an access token -- a string denoting a specific scope, lifetime, and other access attributes.  Access tokens are issued to third-party clients by an authorization server with the approval of the resource owner.  The client uses the access token to access the protected resources hosted by the resource server.</p>
+<p>For example, an end-user (resource owner) can grant a printing service (client) access to her protected photos stored at a photo- sharing service (resource server), without sharing her username and password with the printing service.  Instead, she authenticates directly with a server trusted by the photo-sharing service (authorization server), which issues the printing service delegation- specific credentials (access token).</p>
+<p>To request an access token, the client obtains authorization from the resource owner.  The authorization is expressed in the form of an authorization grant, which the client uses to request the access token.  OAuth defines four grant types: authorization code, implicit, resource owner password credentials, and client credentials.  It also provides an extension mechanism for defining additional grant types.</p>
 
                                 
                                 </section>
@@ -709,12 +701,12 @@ body {
 
             
                 
-                <a href="authorization-implicit-response-error.html" class="navigation navigation-prev " aria-label="Previous page: Error">
+                <a href="authorization-registration.html" class="navigation navigation-prev " aria-label="Previous page: SAS Registration (Authentication)">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="message-encoding-and-transport.html" class="navigation navigation-next " aria-label="Next page: Message encoding and transport">
+                <a href="authorization-roles.html" class="navigation navigation-next " aria-label="Next page: Roles">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -725,7 +717,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Message exchange flow and message types","level":"4.1","depth":1,"next":{"title":"Message encoding and transport","level":"4.2","depth":1,"path":"content/message-encoding-and-transport.md","ref":"content/message-encoding-and-transport.md","articles":[]},"previous":{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/message-exchange-flow-and-message-types.md","mtime":"2017-11-01T11:44:54.880Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Authorization Overview","level":"3.2","depth":1,"next":{"title":"Roles","level":"3.2.1","depth":2,"path":"content/authorization-roles.md","ref":"content/authorization-roles.md","articles":[]},"previous":{"title":"SAS Registration (Authentication)","level":"3.1","depth":1,"path":"content/authorization-registration.md","ref":"content/authorization-registration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization.md","mtime":"2017-11-01T10:23:24.009Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

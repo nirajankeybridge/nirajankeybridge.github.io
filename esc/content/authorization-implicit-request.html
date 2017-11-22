@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Message exchange flow and message types · GitBook</title>
+        <title>Request · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="message-encoding-and-transport.html" />
+    <link rel="next" href="authorization-implicit-response.html" />
     
     
-    <link rel="prev" href="authorization-implicit-response-error.html" />
+    <link rel="prev" href="authorization-implicit.html" />
     
 
     </head>
@@ -266,7 +266,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.4.1" data-path="authorization-implicit-request.html">
+        <li class="chapter active" data-level="3.2.4.1" data-path="authorization-implicit-request.html">
             
                 <a href="authorization-implicit-request.html">
             
@@ -334,7 +334,7 @@
         
         
     
-        <li class="chapter active" data-level="4.1" data-path="message-exchange-flow-and-message-types.html">
+        <li class="chapter " data-level="4.1" data-path="message-exchange-flow-and-message-types.html">
             
                 <a href="message-exchange-flow-and-message-types.html">
             
@@ -643,7 +643,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Message exchange flow and message types</a>
+        <a href=".." >Request</a>
     </h1>
 </div>
 
@@ -660,28 +660,75 @@
                                 
                                 <p><style>
 body {
-  counter-reset: h1 12;
+  counter-reset: h1 9;
 }
 </style></p>
-<h1 id="message-exchange-flow-and-message-types">Message exchange flow and message types</h1>
-<p>Message exchanges between SAS and ESC are shown in Figures 1 and 2 below.</p>
-<p><img src="../assets/request-response-flow.svg" alt=""></p>
-<p><strong>Figure 1: Request-Response flow</strong></p>
-<p><img src="../assets/indication-confirmation-flow.svg" alt=""></p>
-<p><strong>Figure 2: Indication-Confirmation flow</strong></p>
-<p>As per this message flow, the following messages shall be exchanged between SAS and ESC.</p>
-<ul>
-<li><p><strong>SAS Registration Message</strong>: The message for the SAS to register with the ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-<li><p><strong>ESC Information Update Message</strong>: The message for the ESC to indicate the update of the ESC information to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
-</li>
-<li><p><strong>DPA State Message</strong>: The message for the ESC to indicate the DPA activation status to the SAS. Indication-Confirmation flow in the figure 2 is used.</p>
-</li>
-<li><p><strong>Keep Alive Message</strong>: The message for the SAS to detect a failure with ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-<li><p><strong>SAS Deregistration Message</strong>: The message for the SAS to deregister from the ESC. Request-Response flow in the figure 1 is used.</p>
-</li>
-</ul>
+<h1 id="implicit-flow---authorization-request">Implicit Flow - Authorization Request</h1>
+<!-- 
+ 44.2.1. Implicit Authorization Request 
+ https://tools.ietf.org/html/rfc6749
+ OAUTH 2.0
+ -->
+<p>The client constructs the request URI by adding the following
+parameters to the query component of the authorization endpoint URI
+using the &quot;application/x-www-form-urlencoded&quot; format, per Appendix B:</p>
+<table>
+<thead>
+<tr>
+<th>FIELD NAME</th>
+<th>R/O/C</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>response_type</td>
+<td>REQUIRED</td>
+<td>Value MUST be set to &quot;token&quot;.</td>
+</tr>
+<tr>
+<td>client_id</td>
+<td>REQUIRED</td>
+<td>The client identifier</td>
+</tr>
+<tr>
+<td>redirect_uri</td>
+<td>OPTIONAL</td>
+<td>As described in Section 3.1.2.</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>OPTIONAL</td>
+<td>The scope of the access request as described by Section 3.3</td>
+</tr>
+<tr>
+<td>state</td>
+<td>RECOMMENDED</td>
+<td>An opaque value used by the client to maintain state between the request and callback.  The authorization server includes this value when redirecting the user-agent back to the client.  The parameter SHOULD be used for preventing cross-site request forgery as described in Section 10.12.</td>
+</tr>
+</tbody>
+</table>
+<p>The client directs the resource owner to the constructed URI using an
+HTTP redirection response, or by other means available to it via the
+user-agent.</p>
+<p>For example, the client directs the user-agent to make the following
+HTTP request using TLS (with extra line breaks for display purposes
+only):</p>
+<pre><code>GET /authorize?response_type=token&amp;client_id=s6BhdRkqt3&amp;state=xyz
+    &amp;redirect_uri=https%3A%2F%2Fclient%2Eexample%2Ecom%2Fcb HTTP/1.1
+Host: server.example.com
+</code></pre><p>The authorization server validates the request to ensure that all
+required parameters are present and valid.  The authorization server
+MUST verify that the redirection URI to which it will redirect the
+access token matches a redirection URI registered by the client as
+described in Section 3.1.2.</p>
+<p>If the request is valid, the authorization server authenticates the
+resource owner and obtains an authorization decision (by asking the
+resource owner or by establishing approval via other means).</p>
+<p>When a decision is established, the authorization server directs the
+user-agent to the provided client redirection URI using an HTTP
+redirection response, or by other means available to it via the
+user-agent.</p>
 
                                 
                                 </section>
@@ -709,12 +756,12 @@ body {
 
             
                 
-                <a href="authorization-implicit-response-error.html" class="navigation navigation-prev " aria-label="Previous page: Error">
+                <a href="authorization-implicit.html" class="navigation navigation-prev " aria-label="Previous page: Implicit Flow - Authorization">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="message-encoding-and-transport.html" class="navigation navigation-next " aria-label="Next page: Message encoding and transport">
+                <a href="authorization-implicit-response.html" class="navigation navigation-next " aria-label="Next page: Response">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -725,7 +772,7 @@ body {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Message exchange flow and message types","level":"4.1","depth":1,"next":{"title":"Message encoding and transport","level":"4.2","depth":1,"path":"content/message-encoding-and-transport.md","ref":"content/message-encoding-and-transport.md","articles":[]},"previous":{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/message-exchange-flow-and-message-types.md","mtime":"2017-11-01T11:44:54.880Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Request","level":"3.2.4.1","depth":3,"next":{"title":"Response","level":"3.2.4.2","depth":3,"path":"content/authorization-implicit-response.md","ref":"content/authorization-implicit-response.md","articles":[{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]}]},"previous":{"title":"Implicit Flow - Authorization","level":"3.2.4","depth":2,"path":"content/authorization-implicit.md","ref":"content/authorization-implicit.md","articles":[{"title":"Request","level":"3.2.4.1","depth":3,"path":"content/authorization-implicit-request.md","ref":"content/authorization-implicit-request.md","articles":[]},{"title":"Response","level":"3.2.4.2","depth":3,"path":"content/authorization-implicit-response.md","ref":"content/authorization-implicit-response.md","articles":[{"title":"Error","level":"3.2.4.2.1","depth":4,"path":"content/authorization-implicit-response-error.md","ref":"content/authorization-implicit-response-error.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/authorization-implicit-request.md","mtime":"2017-11-01T11:28:44.384Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

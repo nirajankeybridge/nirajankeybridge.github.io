@@ -17,10 +17,6 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-image-captions/image-captions.css">
-                
-            
-                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -36,6 +32,18 @@
 
     
 
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
     
         
     
@@ -121,7 +129,7 @@
                     
                         <b>2.1.</b>
                     
-                    SAS-ESC Independence
+                    Independence of SAS and ESC
             
                 </a>
             
@@ -136,7 +144,7 @@
                     
                         <b>2.2.</b>
                     
-                    SAS-ESC Peering Protocol
+                    Independence of SAS-ESC Peering Protocol
             
                 </a>
             
@@ -166,14 +174,14 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="../authorization/">
+        <li class="chapter " data-level="3.1" data-path="../authorization-registration.html">
             
-                <a href="../authorization/">
+                <a href="../authorization-registration.html">
             
                     
                         <b>3.1.</b>
                     
-                    Concept of Operations
+                    SAS Registration (Authentication)
             
                 </a>
             
@@ -181,14 +189,30 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../authorization/authentication.html">
+        <li class="chapter " data-level="3.2" data-path="../authorization.html">
             
-                <a href="../authorization/authentication.html">
+                <a href="../authorization.html">
             
                     
                         <b>3.2.</b>
                     
-                    SAS Authentication
+                    Authorization Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../authorization-roles.html">
+            
+                <a href="../authorization-roles.html">
+            
+                    
+                        <b>3.2.1.</b>
+                    
+                    Roles
             
                 </a>
             
@@ -196,18 +220,110 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="../authorization/authorization.html">
+        <li class="chapter " data-level="3.2.2" data-path="../authorization-protocol-flow.html">
             
-                <a href="../authorization/authorization.html">
+                <a href="../authorization-protocol-flow.html">
             
                     
-                        <b>3.3.</b>
+                        <b>3.2.2.</b>
                     
-                    SAS Authorization
+                    Abstract OAuth 2.0 Protocol Flow
             
                 </a>
             
 
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../authorization-grant.html">
+            
+                <a href="../authorization-grant.html">
+            
+                    
+                        <b>3.2.3.</b>
+                    
+                    Authorization Grant
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../authorization-implicit.html">
+            
+                <a href="../authorization-implicit.html">
+            
+                    
+                        <b>3.2.4.</b>
+                    
+                    Implicit Flow - Authorization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.4.1" data-path="../authorization-implicit-request.html">
+            
+                <a href="../authorization-implicit-request.html">
+            
+                    
+                        <b>3.2.4.1.</b>
+                    
+                    Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4.2" data-path="../authorization-implicit-response.html">
+            
+                <a href="../authorization-implicit-response.html">
+            
+                    
+                        <b>3.2.4.2.</b>
+                    
+                    Response
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.4.2.1" data-path="../authorization-implicit-response-error.html">
+            
+                <a href="../authorization-implicit-response-error.html">
+            
+                    
+                        <b>3.2.4.2.1.</b>
+                    
+                    Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -318,9 +434,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.2.1.1" data-path="sasRegistrationMessage-enhancements.html">
+        <li class="chapter " data-level="5.1.2.1.1" data-path="../sasRegistrationMessage-enhancements.md">
             
-                <a href="sasRegistrationMessage-enhancements.html">
+                <span>
             
                     
                         <b>5.1.2.1.1.</b>
@@ -430,29 +546,14 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="../security.html">
+        <li class="chapter " data-level="6.2" data-path="../security-concerns.html">
             
-                <a href="../security.html">
+                <a href="../security-concerns.html">
             
                     
                         <b>6.2.</b>
                     
-                    Security Considerations
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3" data-path="../urlencoded.html">
-            
-                <a href="../urlencoded.html">
-            
-                    
-                        <b>6.3.</b>
-                    
-                    application/x-www-form-urlencoded Media Type
+                    Security
             
                 </a>
             
@@ -557,91 +658,68 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="sas-esc-messages">SAS-ESC Messages</h1>
+                                <p><style>
+body {
+  counter-reset: h1 15;
+}
+</style></p>
+<h1 id="sas-esc-messages">SAS-ESC Messages</h1>
 <h2 id="message-container">Message Container</h2>
-<p>All the SAS-ESC Messages shall be generated by encoding the MessageContainer object using JSON. The MessageContainer object is a Flattened JSON Web Encryption (JWE) object as per <a href="https://tools.ietf.org/html/rfc7516#section-7.2.2" target="_blank">RFC 7516 &#xA7; 7.2.2</a>, using a JSON Web Signature-signed data as its payload. This container structure ensures: </p>
+<p>All the SAS-ESC Messages shall be generated by encoding the MessageContainer object using JSON. The MessageContainer object is a Flattened JSON Web Signature object as per RFC 7515 &#xA7; 7.2.2. This representation allows for </p>
 <ul>
-<li>integrity-<a href="../../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a> (JWS): the receiver will be able to validate the signature using the counterparty&apos;s public key</li>
-<li>confidentiality (JWE): only the intended receiver will be able to decrypt the message using their private key</li>
-<li>assurance of the sender identity (JWS): only the holder of the sender private key (the sender) can sign the message</li>
-<li>a single message recipient (due to the Flattened JWE representation)</li>
-<li>a single message signer (the to the Flattened JWS representation)</li>
+<li>a single signature to digitally sign the payload</li>
+<li>integrity <a href="../../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a> (authentication) for the payload and header</li>
+<li>an optional non integrity-protected header</li>
 </ul>
-<!--## Message Encryption
-
-The JWE specification allows for a number of message encryption schemes, including no encryption and shared secret key encryption. The SAS and ESC MUST only use schemes involving public-key cryptography, listed in Table 1. 
-
-**Table 1: SAS-ESC message signature algorithms**
-
-| "alg" parameter value | Digital signature algorithm |
-| :--- | :--- |
-| RS256 | RSASSA-PKCS1-v1_5 using SHA-256 |
-| RS384 | RSASSA-PKCS1-v1_5 using SHA-384 |
-| RS512 | RSASSA-PKCS1-v1_5 using SHA-512 |
-| ES256 | ECDSA using P-256 and SHA-256 |
-| ES384 | ECDSA using P-384 and SHA-384 |
-| ES512 | ECDSA using P-512 and SHA-512 |
-| PS256 | RSASSA-PSS using SHA-256 and MGF1 with SHA-256 |
-| PS384 | RSASSA-PSS using SHA-384 and MGF1 with SHA-384 |
-| PS512 | RSASSA-PSS using SHA-512 and MGF1 with SHA-512 |
-
--->
-<p><strong>Table 1: MessageContainer object</strong></p>
+<p>The JWS specification allows for a number of signature algorithms but only ones using public key cryptography should be used. </p>
+<p><strong>Table 1: SAS-ESC message signature algorithms</strong></p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left"><strong>Field</strong></th>
-<th style="text-align:left"><strong>Type</strong></th>
-<th style="text-align:left"><strong>R/O/C</strong></th>
-<th style="text-align:left"><strong>Descriptions</strong></th>
+<th style="text-align:left">&quot;alg&quot; parameter value</th>
+<th style="text-align:left">Digital signature algorithm</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">protected</td>
-<td style="text-align:left">base64url-encoded JOSEHeader object</td>
-<td style="text-align:left">Required</td>
-<td style="text-align:left">The value of this parameter is base64url-encoded JOSE header that provides sufficient information to enable the recipient of the message to decrypt the message <!--, i.e. the JOSE header object should contain at least the "alg" field with a value from Table 1--></td>
+<td style="text-align:left">RS256</td>
+<td style="text-align:left">RSASSA-PKCS1-v1_5 using SHA-256</td>
 </tr>
 <tr>
-<td style="text-align:left">header</td>
-<td style="text-align:left">object JOSEHeader</td>
-<td style="text-align:left">Optional</td>
-<td style="text-align:left">JOSEHeader that may be used for transfering additional metadata that do not require integrity <a href="../../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a> or confidentiality</td>
+<td style="text-align:left">RS384</td>
+<td style="text-align:left">RSASSA-PKCS1-v1_5 using SHA-384</td>
 </tr>
 <tr>
-<td style="text-align:left">encrypted_key</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">Required</td>
-<td style="text-align:left">The base64url-encoded bytes of the encrypted symemtric key</td>
+<td style="text-align:left">RS512</td>
+<td style="text-align:left">RSASSA-PKCS1-v1_5 using SHA-512</td>
 </tr>
 <tr>
-<td style="text-align:left">aad</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">Optional</td>
-<td style="text-align:left">Base64url-encoded bytes of the Additional Authenticated Data</td>
+<td style="text-align:left">ES256</td>
+<td style="text-align:left">ECDSA using P-256 and SHA-256</td>
 </tr>
 <tr>
-<td style="text-align:left">iv</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">Required</td>
-<td style="text-align:left">Base64url-encoded Initialization Vector (IV) bytes. A random IV MUST be generated for each message</td>
+<td style="text-align:left">ES384</td>
+<td style="text-align:left">ECDSA using P-384 and SHA-384</td>
 </tr>
 <tr>
-<td style="text-align:left">ciphertext</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">Required</td>
-<td style="text-align:left">Base64url-encoded SignedMessage object</td>
+<td style="text-align:left">ES512</td>
+<td style="text-align:left">ECDSA using P-512 and SHA-512</td>
 </tr>
 <tr>
-<td style="text-align:left">tag</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">Required</td>
-<td style="text-align:left">Base64url-encoded thentication tag. The Authentication Tag is an additional output provided by Authenticated Encryption methods or Authenticated Encryption with Authenticated Data</td>
+<td style="text-align:left">PS256</td>
+<td style="text-align:left">RSASSA-PSS using SHA-256 and MGF1 with SHA-256</td>
+</tr>
+<tr>
+<td style="text-align:left">PS384</td>
+<td style="text-align:left">RSASSA-PSS using SHA-384 and MGF1 with SHA-384</td>
+</tr>
+<tr>
+<td style="text-align:left">PS512</td>
+<td style="text-align:left">RSASSA-PSS using SHA-512 and MGF1 with SHA-512</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Table 2: SignedMessage object</strong></p>
+<p><strong>Table 2: MessageContainer object</strong></p>
 <table>
 <thead>
 <tr>
@@ -654,52 +732,32 @@ The JWE specification allows for a number of message encryption schemes, includi
 <tbody>
 <tr>
 <td style="text-align:left">protected</td>
-<td style="text-align:left">string</td>
+<td style="text-align:left">object JOSEHeader</td>
 <td style="text-align:left">Required</td>
-<td style="text-align:left">The value of this parameter is base64url-encoded JOSE header that provides sufficient information to enable the recipient of the message to validate the signature <!--, i.e. the JOSE header object should contain at least the "alg" field with a value from Table 1--></td>
+<td style="text-align:left">The value of this parameter is a JOSE header that provides sufficient information to enable the recipient of the message to validate the signature, i.e. the JOSE header object should contain at least the &quot;alg&quot; field with a value from Table 1</td>
 </tr>
 <tr>
 <td style="text-align:left">header</td>
 <td style="text-align:left">object JOSEHeader</td>
 <td style="text-align:left">Optional</td>
-<td style="text-align:left">An optional JOSEHeader that may be used for transfering additional metadata that do not require integrity <a href="../../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a></td>
+<td style="text-align:left">An optional JOSEHeader that may be used for transfering additional metadata that does not require integrity <a href="../../GLOSSARY.html#protection" class="glossary-term" title="To avoid harmful interference from lower-tier user(s) to the upper tier user(s).">protection</a></td>
 </tr>
 <tr>
 <td style="text-align:left">payload</td>
 <td style="text-align:left">string</td>
 <td style="text-align:left">Required</td>
-<td style="text-align:left">The value of this field is the base64url-encoded JSON representation of the payload objects listed in section <a href="sas-esc-messages/sasRegistrationMessage.md">Payload Data</a></td>
+<td style="text-align:left">The value of this field is the JSON representation of the payload objects listed in section <a href="sas-esc-messages/sasRegistrationMessage.md">Payload Data</a></td>
 </tr>
 <tr>
 <td style="text-align:left">signature</td>
 <td style="text-align:left">string</td>
 <td style="text-align:left">Required</td>
-<td style="text-align:left">This parameter contains the digital signature encoded in Base64URL encoding. This parameter is calculated by taking the BASE64 encoding of the digital signature applied to the Payload Data and Protected header, prepared according to the Example JWK procedures in <a href="https://tools.ietf.org/html/rfc7517#section-3" target="_blank">Section 3 of RFC 7515</a> which is reproduced <a href="#Example-Jwk">below</a>, using the algorithm as declared in the protected header &quot;alg&quot; field.</td>
+<td style="text-align:left">This parameter contains the digital signature encoded in Base64URL encoding. This parameter is calculated by taking the BASE64 encoding of the digital signature applied to the Payload Data and Protected header, prepared according to the procedures in Section 3 of RFC 7515 [n.7], using the algorithm as declared in the protected header &quot;alg&quot; field.</td>
 </tr>
 </tbody>
 </table>
-<p>JSON representation of the payload objects listed in section <a href="sas-esc-messages/sasRegistrationMessage.md">Payload Data</a></p>
-<p>Base64 and Base64URL encodings are described in <a href="https://tools.ietf.org/html/rfc4648" target="_blank">RFC 4648</a>. </p>
-<h2 id="samples">Samples</h2>
-<p><strong>JSON Web Encryption object in Flattened JWE Serialization</strong></p>
-<pre><code>{
-    &quot;protected&quot;:&quot;&lt;integrity-protected header contents&gt;&quot;,
-    &quot;unprotected&quot;:&lt;non-integrity-protected header contents&gt;,
-    &quot;header&quot;:&lt;more non-integrity-protected header contents&gt;,
-    &quot;encrypted_key&quot;:&quot;&lt;encrypted key contents&gt;&quot;,
-    &quot;aad&quot;:&quot;&lt;additional authenticated data contents&gt;&quot;,
-    &quot;iv&quot;:&quot;&lt;initialization vector contents&gt;&quot;,
-    &quot;ciphertext&quot;:&quot;&lt;ciphertext contents&gt;&quot;,
-    &quot;tag&quot;:&quot;&lt;authentication tag contents&gt;&quot;
-}
-</code></pre><p><strong>JSON Web Signature object in Flattened JWS Serialization</strong></p>
-<pre><code>{
-    &quot;payload&quot;:&quot;&lt;payload contents&gt;&quot;,
-    &quot;protected&quot;:&quot;&lt;integrity-protected header contents&gt;&quot;,
-    &quot;header&quot;:&lt;non-integrity-protected header contents&gt;,
-    &quot;signature&quot;:&quot;&lt;signature contents&gt;&quot;
-}
-</code></pre>
+<p>Base64 and Base64URL encodings are described in RFC 4648 [n.8]. </p>
+
                                 
                                 </section>
                             
@@ -742,7 +800,7 @@ The JWE specification allows for a number of message encryption schemes, includi
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SAS-ESC Messages","level":"5.1","depth":1,"next":{"title":"Message Container","level":"5.1.1","depth":2,"path":"content/sas-esc-messages/messageContainer.md","ref":"content/sas-esc-messages/messageContainer.md","articles":[]},"previous":{"title":"Message encoding and transport","level":"4.2","depth":1,"path":"content/message-encoding-and-transport.md","ref":"content/message-encoding-and-transport.md","articles":[]},"dir":"ltr"},"config":{"plugins":["image-captions","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"image-captions":{"caption":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","variable_name":"_pictures"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"content/authorization/index.html#fig3.1.1","level":"3.1","list_caption":"Figure: Authentication and Authorization Concept of Operations","alt":"Authentication and Authorization Concept of Operations","nro":1,"url":"../../assets/authentication-authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Authentication and Authorization Concept of Operations","attributes":{},"skip":false,"key":"3.1.1"},{"backlink":"content/authorization/authentication.html#fig3.2.1","level":"3.2","list_caption":"Figure: SAS-ESC Authentication","alt":"SAS-ESC Authentication","nro":2,"url":"../../assets/authentication.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS-ESC Authentication","attributes":{},"skip":false,"key":"3.2.1"},{"backlink":"content/authorization/authorization.html#fig3.3.1","level":"3.3","list_caption":"Figure: SAS-ESC Authorization","alt":"SAS-ESC Authorization","nro":3,"url":"../../assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS-ESC Authorization","attributes":{},"skip":false,"key":"3.3.1"},{"backlink":"content/message-exchange-flow-and-message-types.html#fig4.1.1","level":"4.1","list_caption":"Figure: Request-Response flow","alt":"Request-Response flow","nro":4,"url":"/assets/flow-request-response.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Request-Response flow","attributes":{},"skip":false,"key":"4.1.1"},{"backlink":"content/message-exchange-flow-and-message-types.html#fig4.1.2","level":"4.1","list_caption":"Figure: Indication-Confirmation flow","alt":"Indication-Confirmation flow","nro":5,"url":"/assets/flow-indication-confirmation.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Indication-Confirmation flow","attributes":{},"skip":false,"key":"4.1.2"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1","level":"5.1.2","list_caption":"Figure: Register Transaction Is Used for SAS Registration","alt":"Register Transaction Is Used for SAS Registration","nro":6,"url":"/assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Register Transaction Is Used for SAS Registration","attributes":{},"skip":false,"key":"5.1.2.1"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.2","level":"5.1.2","list_caption":"Figure: SAS Registration Request & Response","alt":"SAS Registration Request & Response","nro":7,"url":"/assets/registration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Registration Request & Response","attributes":{},"skip":false,"key":"5.1.2.2"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1.1","level":"5.1.2.1","list_caption":"Figure: Register Transaction Is Used for SAS Registration","alt":"Register Transaction Is Used for SAS Registration","nro":8,"url":"/assets/authorization.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Register Transaction Is Used for SAS Registration","attributes":{},"skip":false,"key":"5.1.2.1.1"},{"backlink":"content/sas-esc-messages/sasRegistrationMessage.html#fig5.1.2.1.2","level":"5.1.2.1","list_caption":"Figure: SAS Registration Request & Response","alt":"SAS Registration Request & Response","nro":9,"url":"/assets/registration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Registration Request & Response","attributes":{},"skip":false,"key":"5.1.2.1.2"},{"backlink":"content/sas-esc-messages/escInformationUpdate.html#fig5.1.2.2.1","level":"5.1.2.2","list_caption":"Figure: Update Transaction Is Used For ESC Information Update Indication & Confirm","alt":"Update Transaction Is Used For ESC Information Update Indication & Confirm","nro":10,"url":"..\\..\\assets\\update.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Update Transaction Is Used For ESC Information Update Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.2.1"},{"backlink":"content/sas-esc-messages/escInformationUpdate.html#fig5.1.2.2.2","level":"5.1.2.2","list_caption":"Figure: ESC Information Update Indication & Confirm","alt":"ESC Information Update Indication & Confirm","nro":11,"url":"..\\..\\assets\\esc-information-update.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"ESC Information Update Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.2.2"},{"backlink":"content/sas-esc-messages/dpaActivationStatus.html#fig5.1.2.3.1","level":"5.1.2.3","list_caption":"Figure: Update Transaction Is Used For DPA Activation Status Indication & Confirm","alt":"Update Transaction Is Used For DPA Activation Status Indication & Confirm","nro":12,"url":"..\\..\\assets\\update.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Update Transaction Is Used For DPA Activation Status Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.3.1"},{"backlink":"content/sas-esc-messages/dpaActivationStatus.html#fig5.1.2.3.2","level":"5.1.2.3","list_caption":"Figure: DPA Activation Status Indication & Confirm","alt":"DPA Activation Status Indication & Confirm","nro":13,"url":"/assets/dpa-activation-status.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"DPA Activation Status Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.3.2"},{"backlink":"content/sas-esc-messages/keepAlive.html#fig5.1.2.4.1","level":"5.1.2.4","list_caption":"Figure: Poll Transaction Is Used For Keep Alive Indication & Confirm","alt":"Poll Transaction Is Used For Keep Alive Indication & Confirm","nro":14,"url":"..\\..\\assets\\poll.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Poll Transaction Is Used For Keep Alive Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.4.1"},{"backlink":"content/sas-esc-messages/keepAlive.html#fig5.1.2.4.2","level":"5.1.2.4","list_caption":"Figure: Keep Alive Indication & Confirm","alt":"Keep Alive Indication & Confirm","nro":15,"url":"/assets/keep-alive.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Keep Alive Indication & Confirm","attributes":{},"skip":false,"key":"5.1.2.4.2"},{"backlink":"content/sas-esc-messages/sasDeregistration.html#fig5.1.2.5.1","level":"5.1.2.5","list_caption":"Figure: Unregister Transaction Is Used For SAS Deregistration","alt":"Unregister Transaction Is Used For SAS Deregistration","nro":16,"url":"..\\..\\assets\\unregister.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"Unregister Transaction Is Used For SAS Deregistration","attributes":{},"skip":false,"key":"5.1.2.5.1"},{"backlink":"content/sas-esc-messages/sasDeregistration.html#fig5.1.2.5.2","level":"5.1.2.5","list_caption":"Figure: SAS Deregistration Request & Response","alt":"SAS Deregistration Request & Response","nro":17,"url":"/assets/deregistration.svg","index":2,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"SAS Deregistration Request & Response","attributes":{},"skip":false,"key":"5.1.2.5.2"},{"backlink":"content/dpa-state-machine.html#fig6.1.1","level":"6.1","list_caption":"Figure: DPA State Machine in a channel per DPA","alt":"DPA State Machine in a channel per DPA","nro":18,"url":"/assets/dpa-state-diagram.svg","index":1,"caption_template":"Figure _BOOK_IMAGE_NUMBER_ - _CAPTION_","label":"DPA State Machine in a channel per DPA","attributes":{},"skip":false,"key":"6.1.1"}]},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/sas-esc-messages/messageContainer.md","mtime":"2017-11-08T01:53:55.662Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-20T16:29:22.155Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SAS-ESC Messages","level":"5.1","depth":1,"next":{"title":"Message Container","level":"5.1.1","depth":2,"path":"content/sas-esc-messages/messageContainer.md","ref":"content/sas-esc-messages/messageContainer.md","articles":[]},"previous":{"title":"Message encoding and transport","level":"4.2","depth":1,"path":"content/message-encoding-and-transport.md","ref":"content/message-encoding-and-transport.md","articles":[]},"dir":"ltr"},"config":{"plugins":["numbered-headings","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"numbered-headings":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Key Bridge Wireless":"http://www.keybridgewireless.com"}},"gitbook":">=3.1.0"},"file":{"path":"content/sas-esc-messages/messageContainer.md","mtime":"2017-11-01T12:55:24.737Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-01T12:39:28.303Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

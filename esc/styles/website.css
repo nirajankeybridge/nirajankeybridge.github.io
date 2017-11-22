@@ -5,8 +5,3 @@ h1:before, h2:before, h3:before, h4:before, h5:before {
   color: #aaa;
   width: 40px;
 }
-
-.image-wrapper {
-    text-align: center;
-    padding: 15px 0px;
-}

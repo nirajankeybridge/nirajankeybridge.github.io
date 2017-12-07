@@ -3,11 +3,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Responsive Bootstrap Megamenu Free Download - w3lessons.info</title>
+    <link rel="icon" type="image/x-icon" href="https://s3.amazonaws.com/keybridge-cdn/images/icon/favicon/favicon.ico" />
+    <title>Responsive Bootstrap Megamenu - Bootstrap, CSS, Jquery</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="menu.css" />
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">                   -->
+    <link rel="stylesheet" href="src/bootstrap3-1-1.min.css">
+
+    <!-- To use Bootstrap 4 -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
+    
+
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
+    <!-- <link href="src/font-awesome4-0-3.css" rel="stylesheet"> -->
+    <link href="src/font-awesome4-4-0.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="megamenu.css" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -24,200 +33,263 @@
 <body>
     <div class="container">
             
-        <h1>Responsive Bootstrap Megamenu - w3lessons.info</h1>
+        <!-- <h1>Responsive Bootstrap Megamenu - w3lessons.info</h1> -->
         <div class="bootstrap_container">
             <nav class="navbar navbar-default w3_megamenu" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand"><i class="fa fa-home"></i></a>
-                </div>
+                <!-- <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand"><i class="fa fa-home"></i></a>
+                </div> -->
                 <!-- end navbar-header -->
+
                 <div id="defaultmenu" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="javascript:;">Home</a></li>
+                        <!-- <li class="active"><a href="javascript:;">Home</a></li> -->
+                
                         <!-- Mega Menu -->
                         
-                        <li class="dropdown w3_megamenu-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Mega DropDown (4 col)<b class="caret"></b></a>
+                        <li class="dropdown w3_megamenu-fw">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <i class="fa fa-home fa-2x"></i> MegaMenu<b class="caret"></b></a>
                             <ul class="dropdown-menu fullwidth">
-                                <li class="w3_megamenu-content withdesc">
-                                    <div class="row">
-                                        <div class="col-sm-3">
+                                <li class="w3_megamenu-content withoutdesc">
+                                    <div class="row"> <!-- main top row -->
+                                        <!-- <div class="col-sm-3 border-on-right no-margin"> -->
+                                        <div class="col-sm-3 border-on-right no-margin">
                                             <h3 class="title">Info</h3>
                                             <ul>
-                                                <li><a data-description="Description" href="http://keybridgewireless.com/">Key Bridge Wireless</a></li>
-                                                <li>Key Bridge LLC<br/>1600 Tysons Blvd., Suite 1100 <br/> McLean, VA 22102 <br/> United States</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h3 class="title">jQuery</h3>
-                                            <ul>
-                                                <li><a data-description="DropDown Menu" href="http://w3lessons.info/2013/12/26/mashable-style-ajax-drop-down-menu-using-php-mysql-jquery/">Mashable Style Ajax Drop Down Menu using PHP, Mysql & jQuery</a></li>
-                                                <li><a data-description="Facebook Friends Search" href="#">Facebook Style Search Friends using jQuery</a></li>
-                                                <li><a data-description="Text Search" href="#">Live Text Search using jQuery</a></li>
-                                                <li><a data-description="Security" href="#">Protect / Secure your Website Content using jQuery</a></li>
-                                                <li><a data-description="Page Speed" href="#">How to reduce web page loading time with jQuery</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h3 class="title">PHP</h3>
-                                            <ul>
-                                                <li><a data-description="Checking Expired Sessions" href="http://w3lessons.info/2014/01/01/how-to-check-expired-sessions-using-php-jquery-ajax/">How to Check Expired Sessions using PHP & jQuery Ajax</a></li>
-                                                <li><a data-description="Smiley Parser" href="http://w3lessons.info/2013/08/11/smiley-parser-with-php/">Smiley Parser with PHP</a></li>
-                                                <li><a data-description="IP address validation" href="http://w3lessons.info/2013/04/01/validate-ipv4-address-in-php/">Validate IPv4 Address in PHP</a></li>
-                                                <li><a data-description="PHP TimeZones" href="http://w3lessons.info/2012/11/11/php-country-time-zones/">PHP Country Time Zones</a></li>
-                                                <li><a data-description="Fixing Urls" href="http://w3lessons.info/2012/09/14/fixing-url-using-php-by-adding-http-https/">Fixing url using PHP by adding http & https</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h3 class="title">HTMl5</h3>
-                                            <ul>
-                                                <li><a data-description="HTML5 Inline Edit" href="http://w3lessons.info/2014/04/13/html5-inline-edit-with-php-mysql-jquery-ajax/">HTML5 Inline Edit with PHP, MYSQL & jQuery Ajax</a></li>
-                                                <li><a data-description="Advanced HTML5 Tutorials" href="http://w3lessons.info/2014/03/22/advanced-html5-tutorials-client-side-offline-geolocation-part-i/">Advanced HTML5 Tutorials – Client Side, Offline, Geolocation – Part I</a></li>
-                                                <li><a data-description="HTML5 Chart" href="http://w3lessons.info/2013/04/08/html5-chart/">HTML5 Chart</a></li>
-                                                <li><a data-description="HTML5 Whiteboard Marker" href="http://w3lessons.info/2012/12/22/white-board-drawing-widget-using-html5/">WhiteBoard Drawing Widget using HTML5</a></li>
-                                                <li><a data-description="Free HTML5 Ebook" href="http://w3lessons.info/2012/03/23/free-html5-and-css3-ebook/">Free HTML5 and CSS3 Ebook</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown w3_megamenu-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">2 columns <b class="caret"></b></a>
-                            <ul class="dropdown-menu half">
-                                <li class="w3_megamenu-content withoutdesc">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <h3 class="title">PHP</h3>
-                                            <ul>
-                                                <li><a data-description="Facebook Url Expander" href="http://w3lessons.info/2015/06/01/facebook-url-expander-with-jquery-ajax-and-php/">Facebook Url Expander with jQuery Ajax and PHP</a></li>
-                                                <li><a data-description="Google oAuth login" href="http://w3lessons.info/2015/05/19/google-oauth-2-0-ajax-login-using-jquery-php-mysql/">Google OAuth 2.0 Ajax Login using jQuery, PHP & MYSQL</a></li>
-                                                <li><a data-description="Instant Soundcloud Search" href="http://w3lessons.info/2014/10/01/instant-soundcloud-search-using-php-jquery-ajax/">Instant Soundcloud Search using PHP & jQuery Ajax</a></li>
-                                                <li><a data-description="PHP TimeZones" href="http://w3lessons.info/2012/11/11/php-country-time-zones/">PHP Country Time Zones</a></li>
-                                                <li><a data-description="Fixing Urls" href="http://w3lessons.info/2012/09/14/fixing-url-using-php-by-adding-http-https/">Fixing url using PHP by adding http & https</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <h3 class="title">HTMl5</h3>
-                                            <ul>
-                                                <li><a data-description="HTML5 Inline Edit" href="http://w3lessons.info/2014/04/13/html5-inline-edit-with-php-mysql-jquery-ajax/">HTML5 Inline Edit with PHP, MYSQL & jQuery Ajax</a></li>
-                                                <li><a data-description="Advanced HTML5 Tutorials" href="http://w3lessons.info/2014/03/22/advanced-html5-tutorials-client-side-offline-geolocation-part-i/">Advanced HTML5 Tutorials – Client Side, Offline, Geolocation – Part I</a></li>
-                                                <li><a data-description="HTML5 Chart" href="http://w3lessons.info/2013/04/08/html5-chart/">HTML5 Chart</a></li>
-                                                <li><a data-description="HTML5 Whiteboard Marker" href="http://w3lessons.info/2012/12/22/white-board-drawing-widget-using-html5/">WhiteBoard Drawing Widget using HTML5</a></li>
-                                                <li><a data-description="Free HTML5 Ebook" href="http://w3lessons.info/2012/03/23/free-html5-and-css3-ebook/">Free HTML5 and CSS3 Ebook</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown w3_megamenu-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">3 Columns with footer<b class="caret"></b></a>
-                            <ul class="dropdown-menu fullwidth">
-                                <li class="w3_megamenu-content">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <h3 class="title">Section 1</h3>
-                                            <iframe width="400" height="225" src="//www.google.com" allowfullscreen></iframe>
-                                        </div>
-                                        <!-- end col-4 -->
-                                        <div class="col-sm-4">
-                                            <h3 class="title">HTML5 Tutorials</h3>
-                                            <ul class="media-list">
-                                                <li class="media"><a href="http://w3lessons.info/2014/04/13/html5-inline-edit-with-php-mysql-jquery-ajax/" class="pull-right"><img src="http://w3lessons.info/wp-content/uploads/2014/04/html5.png" alt="" width="70" class="img-thumbnail media-object"></a>
-                                                    <div class="media-body">
-                                                        <p>HTML5 Inline Edit with PHP, MYSQL & jQuery Ajax</p>
-                                                    </div>
-                                                </li>
-                                                <li class="media"><a href="http://w3lessons.info/2014/03/22/advanced-html5-tutorials-client-side-offline-geolocation-part-i/" class="pull-right"><img src="http://w3lessons.info/wp-content/uploads/2014/03/Advanced-HTML5-Tutorials-332x187.png" alt="" width="70" class="img-thumbnail media-object"></a>
-                                                    <div class="media-body">
-                                                        <p>Advanced HTML5 Tutorials - Working Offline, Geolocation, Client Side Data Storage</p>
-                                                    </div>
+
+                                                <!-- <div class="vcard-container py-4"> -->
+                                                <div class="vcard-container">
+                                                    <a href="http://www.keybridgewireless.com">
+                                                        <figure>
+                                                            <img src="img/kb256.png" class="img-fluid halfsize" />
+                                                            <!-- <img src="img/kb256.png" class="img-fluid halfsize center-block" /> -->
+                                                        </figure>
+                                                    </a>
+                                                    <h1>Key Bridge</h1>
+                                                    <p>Spectrum. Simple.</p>
+                                                    <hr />
+                                                    <!-- <ul class="vcard-details py-4 list list-unstyled"> -->
+                                                    <ul class="">
+                                                        <li> <i class="fa fa-fw fa-user"></i> Key Bridge Wireless </li>
+                                                        <li> <i class="fa fa-fw fa-map-marker"></i> McLean, VA </li>
+                                                        <li> <i class="fa fa-fw fa-envelope-o"></i>
+                                                            <a href="mailto://info@keybridgewireless.com"> info@keybridgewireless.com</a> </li>
+                                                        <li> <i class="fa fa-fw fa-envelope-o"></i><a href="mailto://sales@keybridgewireless.com"> sales@keybridgewireless.com</a> </li>
+                                                        <li> <i class="fa fa-fw fa-link"></i><a href="http://keybridgewireless.com" rel="nofollow me"> http://keybridgewireless.com</a> </li>
+                                                    </ul>
+                                                </div>
+
+                                                <br/>
+                                                <li><p class="description">Corporate Headquarters</p>
+                                                 <p> Key Bridge Wireless LLC<br/>1600 Tysons Blvd., Suite 1100 <br/> McLean, VA 22102 <br/> United States</p></li>
+                                                 <br/>
+                                                <li><p class="description">Canada Regional Office</p>
+                                                    <p>Key Bridge Wireless (Canada)<br/>Ottawa, ON</p>
                                                 </li>
                                             </ul>
                                         </div>
-                                        <!-- end col-4 -->
-                                        <div class="col-sm-4">
-                                            <h3 class="title">Add Google Map</h3>
-                                            <img src="https://maps.googleapis.com/maps/api/staticmap?center=chennai&zoom=12&size=160x105&maptype=roadmap&markers=color:red%7Cchennai&sensor=false&scale=2">
+
+
+                                        <div class="col-sm-9">
+
+                                        <div class="row">
+                                        <!-- <div class="col-sm-3 withdesc"> -->
+                                        <div class="col-sm-3">
+                                            <h3 class="title"><i class="fa fa-fw fa-television fa-2x"></i> Portals</h3>
+                                            
+                                            <ul class="margin-on-bottom font-awesome-bullets">
+                                                <li><a data-description="US TV band SAS Portal " href="#">US TVWS</a></li>
+
+                                                <li><a data-description="US 3.5 GHz SAS Portal" href="#">US 3.5 GHz </a></li>
+
+                                                <li><a data-description="US TV band SAS Portal" href="#">US mm Band</a></li>
+
+                                                <li><a data-description="US 600 MHz Info Portal" href="#">US 600 MHz</a></li>
+
+                                                <li><a data-description="US ENG Portal" href="#">US ENG Portal</a></li>
+
+                                                <li><a data-description="Canada TV band SAS Portal" href="http://ca.keybridgewireless.com">Canada TVWS </a></li>
+
+
+                                                
+                                            </ul>
                                         </div>
-                                        <!-- end col-4 -->
+
+                                        <div class="col-sm-3">
+                                            <h3 class="title"><i class="fa fa-fw fa-server fa-2x"></i> Services</h3>
+                                            <ul class="margin-on-bottom font-awesome-bullets">
+                                                <li><a href="http://keybridgeglobal.com/gis/index.xhtml">Geographic Information Services</a> </li>
+                                                <li><a href="http://keybridgeglobal.com/services/remote-spectrum-monitoring.xhtml">Remote Spectrum Monitoring</a> </li>
+                                                <li><a href="http://keybridgeglobal.com/database/index.xhtml">Spectrum Data &amp; Databases</a> </li>
+                                                <li><a href="http://keybridgeglobal.com/services/spectrum-situational-awareness.xhtml">Spectrum Situational Awareness</a> </li>
+                                                <li><a href="http://keybridgeglobal.com/wsdb/index.xhtml">White Space Database</a> </li>
+                                            </ul>
+
+                                            <!-- <ul>
+                                                <li><a data-description="Checking Expired Sessions" href="#">How</a></li>
+
+                                                <li><a data-description="Smiley Parser" href="#">Parser </a></li>
+
+                                                <li><a data-description="IP address validation" href="#">Validate </a></li>
+
+                                                <li><a data-description="PHP TimeZones" href="#">PHP </a></li>
+                                            </ul> -->
+                                        </div>
+
+
+
+                                        <div class="col-sm-3">
+                                        
+                                            <h3 class="title"><i class="fa fa-fw fa-cogs fa-2x"></i> Support Solutions</h3>
+                                            <ul class="margin-on-bottom font-awesome-bullets">
+                                                <li><a href="http://keybridgeglobal.com/services/data-monitoring-and-alerts.xhtml">Data Monitoring &amp; Alerts</a> </li>
+                                                <li><a href="http://keybridgeglobal.com/services/frequency-coordination-support.xhtml">Frequency Coordination Support</a> </li>
+                                                <li><a href="http://keybridgeglobal.com/services/white-space-device-activation.xhtml">White Space Device Activation</a> </li>
+                                                <li><a href="http://keybridgeglobal.com/services/wireless-microphone-solutions.xhtml">Wireless Microphone Solutions</a> </li>
+                                                
+                                              </ul>
+                                            
+                                            <!--     <li><a data-description="Checking Expired Sessions" href="#">How</a></li>
+
+                                                <li><a data-description="Smiley Parser" href="#">Parser </a></li>
+
+                                                <li><a data-description="IP address validation" href="#">Validate </a></li>
+
+                                                <li><a data-description="PHP TimeZones" href="#">PHP </a></li>
+ -->
+                                        </div>     
+                                    </div> <!-- End Row -->
+
+                                        <!-- <hr/> -->
+                                    <div class="row">                                        
+                                        
+                                        <div class="col-sm-3">
+                                            <h3 class="title"><i class="fa fa-fw fa-th-large fa-2x"></i>  Products</h3>
+                                            <ul class="margin-on-bottom font-awesome-bullets">
+                                                <li><a href="http://keybridgeglobal.com/products/white-space-portals.xhtml#top-ee">Enterprise White Space Portal</a> </li>
+
+                                                <li><a href="http://keybridgeglobal.com/products/white-space-portals.xhtml#top-ce">Community White Space Portal</a> </li>
+
+                                                <li><a href="http://keybridgeglobal.com/products/spectrum-monitoring/index.xhtml">Spectrum Monitoring System</a> </li>
+
+                                                <li><a href="http://keybridgeglobal.com/products/open-source-software.xhtml">Software</a> </li>
+                                                
+                                            </ul>
+                                        </div>
+                                       
+                                        
+                                
+
                                     </div>
-                                    <!-- end row -->
-                                    <hr>
+
+
+                                </div> <!-- <div class="col-sm-9"> -->
+                                
+                                </div> <!-- <div class="row"> main top row -->
+
+                                    <hr/>
+
+
+                                        
+                                    <!-- Optional Bottom Footer -->
                                     <div class="row">
-                                        <div class="col-sm-6">
-                                            <h3 class="title">About W3lessons.info</h3>
-                                            <p>W3lessons.info is a web2.0 programming blog maintained by Karthikeyan. Tutorials focused on Programming, Jquery, Ajax, CSS3, HTML5, PHP, Web Services etc</p>
+
+                                        <div class="row well-sm">
+          
+          <div class="clearfix visible-xs"></div>
+
+          <div class="col-sm-2 col-sm-offset-1 col-xs-6">
+            <p class="title footer-header">
+              Contact Us
+            </p>
+            <ul class="list-unstyled">
+              <li><a href="http://keybridgeglobal.com/company/contact-us.xhtml">General</a></li>
+              <li><a href="mailto:sales@keybridgeglobal.com"> Sales</a></li>
+              <li><a href="mailto:support@keybridgeglobal.com"> Support</a></li>
+              <li><a href="mailto:security@keybridgeglobal.com"> Security</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-2 col-xs-6">
+            <p class="title footer-header">
+              Solutions
+            </p>
+            <ul class="list-unstyled">
+              <li><a href="http://keybridgeglobal.com/services/index.xhtml">Services</a></li>
+              <li><a href="http://keybridgeglobal.com/products/index.xhtml">Products</a></li>
+              <li><a href="http://keybridgeglobal.com/products/open-source-software.xhtml">Software</a></li>
+            </ul>
+          </div>
+
+          <div class="clearfix visible-xs"></div>
+
+          <div class="col-sm-2 col-xs-6">
+            <p class="title footer-header">
+              Company
+            </p>
+            <ul class="list-unstyled">
+              <li><a href="http://keybridgeglobal.com/company/index.xhtml">About Us</a></li>
+              <li><a href="http://keybridgeglobal.com/company/news/index.xhtml">News</a></li>
+              <li><a href="http://keybridgeglobal.com/company/teaming-and-partnerships.xhtml">Teaming</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-2 col-xs-6">
+            <p class="title footer-header">
+              Documents
+            </p>
+            <ul class="list-unstyled">
+              <li><a href="http://keybridgeglobal.com/documents/services-getting-started-guide.xhtml">API Guide</a></li>
+              <li><a href="http://keybridgeglobal.com/documents/services-terms-of-service.xhtml">API Terms</a></li>
+              <li><a href="http://keybridgeglobal.com/documents/index.xhtml">Notice</a></li>
+              <li><a href="http://keybridgeglobal.com/documents/privacy-statement.xhtml">Privacy</a></li>
+              <li><a href="http://keybridgeglobal.com/documents/terms-and-conditions.xhtml">Terms</a></li>
+              <li><a href="http://keybridgeglobal.com/documents/peering-terms-of-service.xhtml">Peering</a></li>
+            </ul>
+          </div>
+        
+
+                                     <!--    <div class="col-sm-6">
+                                            <h3 class="title">Optional Bottom Footer</h3>
+                                            <p>Lorem</p>
                                         </div>
-                                        <!-- end col-6 -->
+                                        
                                         <div class="col-sm-3">
                                             <h3 class="title">Follow W3lessons.info</h3>
                                             <p>
                                               Lorem ipsum
                                             </p>
                                         </div>
-                                        <!-- end col-3 -->
+                                        
                                         <div class="col-sm-3">
                                             <h3 class="title">Subscribe</h3>
                                             <p>
                                                 
                                             </p>
                                             
-                                        </div>
+                                        </div> -->
                                     </div>
+
                                 </li>
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Single Column <b class="caret"></b></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="http://w3lessons.info/2013/10/29/facebook-style-tag-selector-using-jquery-css3/">Facebook Style Tag Selector</a></li>
-                                <li><a href="http://w3lessons.info/2013/10/17/facebook-style-homepage-design-with-registration-form-login-form-using-css3/">Facebook Style Home Page</a></li>
-                                <li><a href="http://w3lessons.info/2013/03/22/facebook-like-tooltip-using-jquery-css/">Facebook Style ToolTip</a></li>
-                                <li><a href="http://w3lessons.info/2012/12/28/css3-facebook-style-buttons/">Facebook Style Buttons</a></li>
-                                <li><a href="http://w3lessons.info/2012/01/03/facebook-like-fetch-url-data-using-php-curl-jquery-and-ajax/">Facebook Style Url Data Extracter</a></li>
-                                <li><a href="http://w3lessons.info/2013/05/25/facebook-style-youtube-video-vimeo-video-soundcloud-audio-url-expander-with-jquery-php/">Facebook Style Video Url Expander</a></li>
-                                <li class="dropdown-submenu">
-                                    <a href="#">Wall Scripts</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="http://w3lessons.info/2013/09/24/facebook-wall-script-4-0-with-php-codeigniter-mvc-framework/">Facebook Wall Script 4.0 &#8211; Codeigniter</a></li>
-                                        <li><a href="http://w3lessons.info/2013/04/21/facebook-wall-script-3-0-timeline-oauth-location-sharing-smileys-many-more/">Facebook Wall Script 3.0</a></li>
-                                        <li><a href="http://w3lessons.info/2013/03/24/facebook-timeline-wall-script-2-0-with-php-mysql-jquery/">Facebook Wall Script 2.0</a></li>
-                                    </ul>
-                                    <!-- end dropdown-menu -->
-                                </li>
-                                <!-- end dropdown-submenu -->
-                            </ul>
-                            <!-- end dropdown-menu -->
-                        </li>
+                       
+
+
+
+
+                        
+                        
                         <!-- end standard drop down -->
                         <!-- end dropdown w3_megamenu-fw -->
                     </ul>
                     <!-- end nav navbar-nav -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Contact Us<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <form id="contact1" action="#" name="contactform" method="post">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <input type="text" name="name" id="name1" class="form-control" placeholder="Name">
-                                            <input type="text" name="email" id="email1" class="form-control" placeholder="Email">
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <input type="text" name="phone" id="phone1" class="form-control" placeholder="Phone">
-                                            <input type="text" name="subject" id="subject1" class="form-control" placeholder="Subject">
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <textarea class="form-control" name="comments" id="comments1" rows="6" placeholder="Your Message ..."></textarea>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="pull-right">
-                                                <input type="submit" value="SEND" id="submit1" class="btn btn-primary small">
-                                            </div>
-                                        </div>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                    
                     <!-- end nav navbar-nav navbar-right -->
                 </div>
                 <!-- end #navbar-collapse-1 -->
@@ -229,33 +301,21 @@
         
         <br>
         <center>
-            <script id="mNCC" language="javascript">
-            medianet_width = "728";
-            medianet_height = "90";
-            medianet_crid = "784430518";
-            medianet_versionId = "3111299";
-            </script>
-            <script src="//contextual.media.net/nmedianet.js?cid=8CU65ZB5M"></script>
+            Lorem 
         </center>
         <br>
-        <table class="table table-bordered">
-            <tr>
-                <td>
-
-                </td>
-                <td>
-                    
-                </td>
-            </tr>
-        </table>
-        <br>
-        <br>
-        <br>
+       
         
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script src="src/jquery1-10-2.min.js"></script>
     
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+    <script src="src/bootstrap3-1-1.min.js"></script>
     
+    <!-- Bootstrap 4 -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"  crossorigin="anonymous"> -->
+    
+
     </center>
 </body>
 

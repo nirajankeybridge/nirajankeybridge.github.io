@@ -1,0 +1,5 @@
+<map id="src.harness.testcases.WINNF_FT_S_SIQ_testcase.SpectrumInquiryTestcase.test_WINNF_FT_S_SIQ_4" name="src.harness.testcases.WINNF_FT_S_SIQ_testcase.SpectrumInquiryTestcase.test_WINNF_FT_S_SIQ_4">
+<area shape="rect" id="node2" href="$df/ded/classsrc_1_1harness_1_1sas__interface_1_1SasTestcaseInterface.html#ae5fdeb19b3235937e0fe9b447297f7ec" title="src.harness.sas_interface.\lSasTestcaseInterface.assertRegistered" alt="" coords="300,13,553,54"/>
+<area shape="rect" id="node4" href="$df/dc5/classsrc_1_1harness_1_1sas__testcase_1_1SasTestCase.html#a2c48084a45c1953e0f1b658bec5c66f8" title="src.harness.sas_testcase.\lSasTestCase.assertChannelsContain\lFrequencyRange" alt="" coords="305,77,548,133"/>
+<area shape="rect" id="node3" href="$df/ded/classsrc_1_1harness_1_1sas__interface_1_1SasTestcaseInterface.html#a36b0593c135c9f69cba9eb4b359bdfa2" title="src.harness.sas_interface.\lSasTestcaseInterface.assertRegistered\lAndGranted" alt="" coords="601,5,855,61"/>
+</map>

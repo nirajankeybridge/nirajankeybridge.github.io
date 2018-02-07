@@ -1,0 +1,12 @@
+<map id="extract_uls_data.ProcessULS" name="extract_uls_data.ProcessULS">
+<area shape="rect" id="node2" href="$d8/d5b/namespaceextract__uls__data.html#a63e6882ef243f07992fa7fa1007f1ccf" title="extract_uls_data.LoadULSSchema" alt="" coords="249,5,473,32"/>
+<area shape="rect" id="node3" href="$d8/d5b/namespaceextract__uls__data.html#a41f33050d28cbd4d261edd66427fa770" title="extract_uls_data.UnzipNeeded\lFiles" alt="" coords="261,57,462,98"/>
+<area shape="rect" id="node4" href="$d8/d5b/namespaceextract__uls__data.html#afd6ccfa6d71f064c826268f6885cca54" title="extract_uls_data.Process\lULSData" alt="" coords="276,187,447,229"/>
+<area shape="rect" id="node10" href="$d8/d5b/namespaceextract__uls__data.html#a526568abb0390b12e9bfd0c691e344f8" title="extract_uls_data.Consolidate\lULSData" alt="" coords="266,122,457,163"/>
+<area shape="rect" id="node5" href="$d8/d5b/namespaceextract__uls__data.html#a22ca29b25d3ad93c0b1bd09944b372a0" title="extract_uls_data.WriteHeader\lRecord" alt="" coords="533,125,728,166"/>
+<area shape="rect" id="node6" href="$d8/d5b/namespaceextract__uls__data.html#a64d85f6406808d3e6c85cf0a45c31729" title="extract_uls_data.ReadULSData\lRecords" alt="" coords="527,242,734,283"/>
+<area shape="rect" id="node9" href="$d8/d5b/namespaceextract__uls__data.html#af25caa0ea0d20ae40a638e3a49740cef" title="extract_uls_data.WriteRecord" alt="" coords="533,191,728,217"/>
+<area shape="rect" id="node7" href="$d8/d5b/namespaceextract__uls__data.html#aaf9f5aef1e13ee749e9b7e1ebf2b0fa2" title="extract_uls_data.Normalize\lLines" alt="" coords="801,213,982,254"/>
+<area shape="rect" id="node8" href="$d8/d5b/namespaceextract__uls__data.html#a93cffd2122b1d16029eac2db067e56ba" title="extract_uls_data.RowToRecord" alt="" coords="788,279,995,305"/>
+<area shape="rect" id="node11" href="$d8/d5b/namespaceextract__uls__data.html#a3124ebc0516dd6ff6591b60beff177be" title="extract_uls_data.LoadULSFlatFile" alt="" coords="521,73,740,100"/>
+</map>

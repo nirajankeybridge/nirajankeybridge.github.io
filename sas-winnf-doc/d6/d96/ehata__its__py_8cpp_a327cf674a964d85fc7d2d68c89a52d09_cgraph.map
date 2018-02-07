@@ -1,0 +1,21 @@
+<map id="ExtendedHata" name="ExtendedHata">
+<area shape="rect" id="node2" href="$d3/d10/ehata_8h.html#ad0010e6b786d7fb87d52c851677b1e64" title="ExtendedHata_DBG" alt="" coords="159,313,300,340"/>
+<area shape="rect" id="node3" href="$d3/d10/ehata_8h.html#a89ca684c84b78b8528505abc29419fa7" title="PreprocessTerrainPath" alt="" coords="380,107,535,133"/>
+<area shape="rect" id="node14" href="$d9/daf/ExtendedHata_8cpp.html#ac2661be4d300461cad422c3ddd036efc" title="GetDistanceInMeters" alt="" coords="384,157,531,184"/>
+<area shape="rect" id="node15" href="$da/d86/namespacesrc_1_1harness_1_1reference__models_1_1propagation_1_1ehata_1_1ehata.html#ad7cf66a53fd465def05331ae71e500ee" title="src.harness.reference\l_models.propagation.ehata.ehata.\lMedianBasicPropLoss" alt="" coords="348,208,567,264"/>
+<area shape="rect" id="node16" href="$d3/d10/ehata_8h.html#afa1d8e8e562e4f5bb0490a0590b6b4ff" title="IsolatedRidgeCorrectionFactor" alt="" coords="358,288,557,315"/>
+<area shape="rect" id="node17" href="$d3/d10/ehata_8h.html#ac2ce9e68d9cc0bb358944607471b4451" title="MixedPathCorrectionFactor" alt="" coords="367,339,548,365"/>
+<area shape="rect" id="node18" href="$d3/d10/ehata_8h.html#abbaa6ba53c0b4f9dfb444307d7e5b4cc" title="MedianRollingHillyTerrain\lCorrectionFactor" alt="" coords="372,390,543,431"/>
+<area shape="rect" id="node19" href="$d3/d10/ehata_8h.html#a82a89504823298d3e6b579c5982fd680" title="FineRollingHillyTerrainCorection\lFactor" alt="" coords="353,455,562,497"/>
+<area shape="rect" id="node20" href="$d3/d10/ehata_8h.html#af46b0604fab4518f86ea4009fdff2f56" title="GeneralSlopeCorrectionFactor" alt="" coords="359,521,556,548"/>
+<area shape="rect" id="node4" href="$d9/dbb/PreprocessTerrainPath_8cpp.html#a00f5ff87da922544d27c2b981b5b6b36" title="FindAverageGroundHeight" alt="" coords="615,56,789,83"/>
+<area shape="rect" id="node6" href="$d9/dbb/PreprocessTerrainPath_8cpp.html#ac81f09823451e4d2ef74055acfe06b36" title="ComputeTerrainStatistics" alt="" coords="617,5,787,32"/>
+<area shape="rect" id="node8" href="$d9/dbb/PreprocessTerrainPath_8cpp.html#a6763c3438128142d15da82c3ce7d5ebb" title="MobileTerrainSlope" alt="" coords="635,107,769,133"/>
+<area shape="rect" id="node10" href="$d9/dbb/PreprocessTerrainPath_8cpp.html#afd68e3ff1f0e2b5300a867d859dd5b21" title="AnalyzeSeaPath" alt="" coords="643,208,761,235"/>
+<area shape="rect" id="node11" href="$d9/dbb/PreprocessTerrainPath_8cpp.html#a27a12c18458e03988a70810234122896" title="SingleHorizonTest" alt="" coords="637,157,767,184"/>
+<area shape="rect" id="node5" href="$d3/d10/ehata_8h.html#a04da5d949a150c9e4be4ccacc17b237c" title="GetDistanceInMeters" alt="" coords="838,56,985,83"/>
+<area shape="rect" id="node7" href="$d3/d10/ehata_8h.html#ab1ea39eb9d2a55d7d659770100edc454" title="FindQuantile" alt="" coords="864,5,959,32"/>
+<area shape="rect" id="node9" href="$d3/d10/ehata_8h.html#aaa5b4f6709cdb127a70af78debc1e496" title="LeastSquares" alt="" coords="860,107,963,133"/>
+<area shape="rect" id="node12" href="$d9/dbb/PreprocessTerrainPath_8cpp.html#a5215bf8ba24622edaa42bec0d6f12f2a" title="AverageTerrainHeight" alt="" coords="837,208,985,235"/>
+<area shape="rect" id="node13" href="$d3/d10/ehata_8h.html#ae12b05e3f880936b5258e4ecbeed7fad" title="FindHorizons" alt="" coords="862,157,961,184"/>
+</map>

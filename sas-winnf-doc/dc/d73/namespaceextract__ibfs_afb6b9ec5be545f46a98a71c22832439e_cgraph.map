@@ -1,0 +1,10 @@
+<map id="extract_ibfs.ExtractIBFSData" name="extract_ibfs.ExtractIBFSData">
+<area shape="rect" id="node2" href="$dc/d73/namespaceextract__ibfs.html#a965a154dae10c9c574070599a11da7d3" title="extract_ibfs.LoadIBFSSchema" alt="" coords="257,5,457,32"/>
+<area shape="rect" id="node3" href="$dc/d73/namespaceextract__ibfs.html#a4be6c168b8eea33dbdaecef5aaa099e2" title="extract_ibfs.UnzipNeeded\lFiles" alt="" coords="271,57,444,98"/>
+<area shape="rect" id="node4" href="$dc/d73/namespaceextract__ibfs.html#a119f685a69113d3dd92df56dd4e0a081" title="extract_ibfs.ReadULSData\lRecords" alt="" coords="268,122,447,163"/>
+<area shape="rect" id="node7" href="$dc/d73/namespaceextract__ibfs.html#a50e44f5d2770ba3a26e9b7b60d80b308" title="extract_ibfs.WriteHeader\lRecord" alt="" coords="274,187,441,229"/>
+<area shape="rect" id="node8" href="$dc/d73/namespaceextract__ibfs.html#afb5b181a5077035e495eaf1f80875590" title="extract_ibfs.CollapseCoordination\lRecords" alt="" coords="248,253,467,294"/>
+<area shape="rect" id="node9" href="$dc/d73/namespaceextract__ibfs.html#a4e943dca987b3a757988f3c098159f2b" title="extract_ibfs.WriteRecord" alt="" coords="274,319,441,345"/>
+<area shape="rect" id="node5" href="$dc/d73/namespaceextract__ibfs.html#af7fef204919c657dc1dda9e5184d1bf1" title="extract_ibfs.NormalizeLines" alt="" coords="515,104,699,131"/>
+<area shape="rect" id="node6" href="$dc/d73/namespaceextract__ibfs.html#a3161f3815f5dd49e8be8fdcf9a9a3542" title="extract_ibfs.RowToRecord" alt="" coords="517,155,696,181"/>
+</map>

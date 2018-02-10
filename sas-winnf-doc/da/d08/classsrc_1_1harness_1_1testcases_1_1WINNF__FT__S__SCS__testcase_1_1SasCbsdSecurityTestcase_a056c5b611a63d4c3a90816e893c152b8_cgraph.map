@@ -1,7 +1,0 @@
-<map id="src.harness.testcases.WINNF_FT_S_SCS_testcase.SasCbsdSecurityTestcase.test_WINNF_FT_S_SCS_5" name="src.harness.testcases.WINNF_FT_S_SCS_testcase.SasCbsdSecurityTestcase.test_WINNF_FT_S_SCS_5">
-<area shape="rect" id="node2" href="$db/df9/classsrc_1_1harness_1_1security__testcase_1_1SecurityTestCase.html#ae4503f0701e9fa5758f44cd21f8160f5" title="src.harness.security\l_testcase.SecurityTestCase.do\lTestCipher" alt="" coords="312,85,519,141"/>
-<area shape="rect" id="node3" href="$db/df9/classsrc_1_1harness_1_1security__testcase_1_1SecurityTestCase.html#a39567813af1d6b1ad22f3e06301f1d8d" title="src.harness.security\l_testcase.SecurityTestCase.assert\lTlsHandshakeSucceed" alt="" coords="579,5,807,61"/>
-<area shape="rect" id="node4" href="$db/df9/classsrc_1_1harness_1_1security__testcase_1_1SecurityTestCase.html#af1e403d01b8ebf0efdb941907e9f4375" title="src.harness.security\l_testcase.SecurityTestCase.\lSasReset" alt="" coords="597,85,789,141"/>
-<area shape="rect" id="node5" href="$df/ded/classsrc_1_1harness_1_1sas__interface_1_1SasTestcaseInterface.html#ae5fdeb19b3235937e0fe9b447297f7ec" title="src.harness.sas_interface.\lSasTestcaseInterface.assertRegistered" alt="" coords="567,165,820,206"/>
-<area shape="rect" id="node6" href="$df/ded/classsrc_1_1harness_1_1sas__interface_1_1SasTestcaseInterface.html#a36b0593c135c9f69cba9eb4b359bdfa2" title="src.harness.sas_interface.\lSasTestcaseInterface.assertRegistered\lAndGranted" alt="" coords="868,157,1121,213"/>
-</map>

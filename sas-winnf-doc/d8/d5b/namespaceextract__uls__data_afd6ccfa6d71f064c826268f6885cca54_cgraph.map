@@ -1,7 +1,0 @@
-<map id="extract_uls_data.ProcessULSData" name="extract_uls_data.ProcessULSData">
-<area shape="rect" id="node2" href="$d8/d5b/namespaceextract__uls__data.html#a22ca29b25d3ad93c0b1bd09944b372a0" title="extract_uls_data.WriteHeader\lRecord" alt="" coords="230,5,425,47"/>
-<area shape="rect" id="node3" href="$d8/d5b/namespaceextract__uls__data.html#a64d85f6406808d3e6c85cf0a45c31729" title="extract_uls_data.ReadULSData\lRecords" alt="" coords="224,71,431,112"/>
-<area shape="rect" id="node6" href="$d8/d5b/namespaceextract__uls__data.html#af25caa0ea0d20ae40a638e3a49740cef" title="extract_uls_data.WriteRecord" alt="" coords="230,137,425,163"/>
-<area shape="rect" id="node4" href="$d8/d5b/namespaceextract__uls__data.html#aaf9f5aef1e13ee749e9b7e1ebf2b0fa2" title="extract_uls_data.Normalize\lLines" alt="" coords="491,41,673,83"/>
-<area shape="rect" id="node5" href="$d8/d5b/namespaceextract__uls__data.html#a93cffd2122b1d16029eac2db067e56ba" title="extract_uls_data.RowToRecord" alt="" coords="479,107,685,134"/>
-</map>

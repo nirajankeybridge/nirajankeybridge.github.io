@@ -1,6 +1,0 @@
-<map id="src.harness.sas.SasImpl.Heartbeat" name="src.harness.sas.SasImpl.Heartbeat">
-<area shape="rect" id="node2" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#addd4707f64601a3e08d7aa2e0a35760c" title="src.harness.sas.SasImpl.\l_CbsdRequest" alt="" coords="224,57,395,98"/>
-<area shape="rect" id="node3" href="$d4/d97/namespacesrc_1_1harness_1_1sas.html#a3fa87f39d6ac675cc79718db6e45aabe" title="src.harness.sas._RequestPost" alt="" coords="443,5,645,32"/>
-<area shape="rect" id="node4" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#a6cb26f7efd8c5abc04770c1f87649f76" title="src.harness.sas.SasImpl.\l_GetDefaultCbsdSSLCertPath" alt="" coords="444,57,644,98"/>
-<area shape="rect" id="node5" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#a26d36dd6bd6d1fcf31d01b4798e13c90" title="src.harness.sas.SasImpl.\l_GetDefaultCbsdSSLKeyPath" alt="" coords="445,122,643,163"/>
-</map>

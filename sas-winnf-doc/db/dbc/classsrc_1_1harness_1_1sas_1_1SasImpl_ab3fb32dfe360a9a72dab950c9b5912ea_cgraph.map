@@ -1,6 +1,0 @@
-<map id="src.harness.sas.SasImpl.GetSasImplementationRecord" name="src.harness.sas.SasImpl.GetSasImplementationRecord">
-<area shape="rect" id="node2" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#a1c38612363298068e5b0caf677dbcb8d" title="src.harness.sas.SasImpl.\l_SasRequest" alt="" coords="251,57,421,98"/>
-<area shape="rect" id="node3" href="$d4/d97/namespacesrc_1_1harness_1_1sas.html#a1e797e620e2d634cd06583ab3eb1ae60" title="src.harness.sas._RequestGet" alt="" coords="469,5,665,32"/>
-<area shape="rect" id="node4" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#acdf9704300a0a20c81c439d6fed7375b" title="src.harness.sas.SasImpl.\l_GetDefaultSasSSLCertPath" alt="" coords="471,57,663,98"/>
-<area shape="rect" id="node5" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#a1ba7f3ce68f54b195e4ebfa523c9230e" title="src.harness.sas.SasImpl.\l_GetDefaultSasSSLKeyPath" alt="" coords="472,122,663,163"/>
-</map>

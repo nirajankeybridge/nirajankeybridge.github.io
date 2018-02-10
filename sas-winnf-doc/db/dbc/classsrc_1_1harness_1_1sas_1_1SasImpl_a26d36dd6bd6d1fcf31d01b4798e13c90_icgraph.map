@@ -1,9 +1,0 @@
-<map id="src.harness.sas.SasImpl._GetDefaultCbsdSSLKeyPath" name="src.harness.sas.SasImpl._GetDefaultCbsdSSLKeyPath">
-<area shape="rect" id="node2" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#addd4707f64601a3e08d7aa2e0a35760c" title="src.harness.sas.SasImpl.\l_CbsdRequest" alt="" coords="252,169,423,211"/>
-<area shape="rect" id="node3" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#ae7c23f8712102b374e9ad313202456d5" title="src.harness.sas.SasImpl.\lRegistration" alt="" coords="471,5,641,47"/>
-<area shape="rect" id="node4" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#a21113e5ba5aa03d6b5e1167028fd5658" title="src.harness.sas.SasImpl.\lSpectrumInquiry" alt="" coords="471,71,641,112"/>
-<area shape="rect" id="node5" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#abb86d5442fd13eaa7f8940d916d1414e" title="src.harness.sas.SasImpl.\lGrant" alt="" coords="471,136,641,177"/>
-<area shape="rect" id="node6" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#a1b8ebaf683a96b8c56615dfd121cc48f" title="src.harness.sas.SasImpl.\lHeartbeat" alt="" coords="471,201,641,243"/>
-<area shape="rect" id="node7" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#a9878f3a79d5614f89c502996ff888ce9" title="src.harness.sas.SasImpl.\lRelinquishment" alt="" coords="471,267,641,308"/>
-<area shape="rect" id="node8" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#ae87a8b22797c3136301c1d825881d80f" title="src.harness.sas.SasImpl.\lDeregistration" alt="" coords="471,332,641,373"/>
-</map>

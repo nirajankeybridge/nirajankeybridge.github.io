@@ -1,8 +1,0 @@
-<map id="src.harness.testcases.grant_testcase.GrantTestcaseUsingOldIds.test_WINNF_FT_S_GRA_18" name="src.harness.testcases.grant_testcase.GrantTestcaseUsingOldIds.test_WINNF_FT_S_GRA_18">
-<area shape="rect" id="node2" href="$d8/d6c/namespacesrc_1_1harness_1_1util.html#ad781031fc0a08430a583769551ac9b40" title="src.harness.util.makePpa\lAndPalRecordsConsistent" alt="" coords="643,6,819,48"/>
-<area shape="rect" id="node3" href="$d8/d6c/namespacesrc_1_1harness_1_1util.html#a105dd692e0d0640cc251860113ff5a97" title="src.harness.util.getRandom\lLatLongInPolygon" alt="" coords="325,36,507,77"/>
-<area shape="rect" id="node4" href="$df/ded/classsrc_1_1harness_1_1sas__interface_1_1SasTestcaseInterface.html#a39812d93a172aad20d1ec3006ade06bb" title="src.harness.sas_interface.\lSasTestcaseInterface.TriggerDaily\lActivitiesImmediatelyAndWaitUntilComplete" alt="" coords="276,100,556,156"/>
-<area shape="rect" id="node5" href="$df/ded/classsrc_1_1harness_1_1sas__interface_1_1SasTestcaseInterface.html#a30381223329eaa6c5394735a2ef90901" title="src.harness.sas_interface.\lSasTestcaseInterface.assertValid\lResponseFormatForApprovedGrant" alt="" coords="302,180,530,236"/>
-<area shape="rect" id="node6" href="$df/ded/classsrc_1_1harness_1_1sas__interface_1_1SasTestcaseInterface.html#ae5fdeb19b3235937e0fe9b447297f7ec" title="src.harness.sas_interface.\lSasTestcaseInterface.assertRegistered" alt="" coords="604,188,857,229"/>
-<area shape="rect" id="node7" href="$df/ded/classsrc_1_1harness_1_1sas__interface_1_1SasTestcaseInterface.html#a36b0593c135c9f69cba9eb4b359bdfa2" title="src.harness.sas_interface.\lSasTestcaseInterface.assertRegistered\lAndGranted" alt="" coords="905,180,1159,236"/>
-</map>

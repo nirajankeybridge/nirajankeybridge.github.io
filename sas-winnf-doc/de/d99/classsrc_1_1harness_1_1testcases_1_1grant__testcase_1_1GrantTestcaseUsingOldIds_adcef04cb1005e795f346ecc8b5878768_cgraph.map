@@ -1,5 +1,0 @@
-<map id="src.harness.testcases.grant_testcase.GrantTestcaseUsingOldIds.test_WINNF_FT_S_GRA_20" name="src.harness.testcases.grant_testcase.GrantTestcaseUsingOldIds.test_WINNF_FT_S_GRA_20">
-<area shape="rect" id="node2" href="$df/ded/classsrc_1_1harness_1_1sas__interface_1_1SasTestcaseInterface.html#a30381223329eaa6c5394735a2ef90901" title="src.harness.sas_interface.\lSasTestcaseInterface.assertValid\lResponseFormatForApprovedGrant" alt="" coords="276,5,504,61"/>
-<area shape="rect" id="node3" href="$df/ded/classsrc_1_1harness_1_1sas__interface_1_1SasTestcaseInterface.html#ae5fdeb19b3235937e0fe9b447297f7ec" title="src.harness.sas_interface.\lSasTestcaseInterface.assertRegistered" alt="" coords="552,13,805,54"/>
-<area shape="rect" id="node4" href="$df/ded/classsrc_1_1harness_1_1sas__interface_1_1SasTestcaseInterface.html#a36b0593c135c9f69cba9eb4b359bdfa2" title="src.harness.sas_interface.\lSasTestcaseInterface.assertRegistered\lAndGranted" alt="" coords="853,5,1107,61"/>
-</map>

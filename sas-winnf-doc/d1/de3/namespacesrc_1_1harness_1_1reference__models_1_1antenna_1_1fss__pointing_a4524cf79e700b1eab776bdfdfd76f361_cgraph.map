@@ -1,5 +1,0 @@
-<map id="src.harness.reference_models.antenna.fss_pointing._GsoExtent" name="src.harness.reference_models.antenna.fss_pointing._GsoExtent">
-<area shape="rect" id="node2" href="$d1/de3/namespacesrc_1_1harness_1_1reference__models_1_1antenna_1_1fss__pointing.html#ae44d3620d5cd74c57c7b1c9ce6cb76b1" title="src.harness.reference\l_models.antenna.fss_pointing.\lGsoPossiblePointings" alt="" coords="252,45,451,101"/>
-<area shape="rect" id="node3" href="$d1/de3/namespacesrc_1_1harness_1_1reference__models_1_1antenna_1_1fss__pointing.html#a37fc14cd54cf3bc2043cb8c5c4dba792" title="src.harness.reference\l_models.antenna.fss_pointing.\lGsoElevation" alt="" coords="499,5,697,61"/>
-<area shape="rect" id="node4" href="$d1/de3/namespacesrc_1_1harness_1_1reference__models_1_1antenna_1_1fss__pointing.html#a64a396f781f81497eff84aafe8f8429b" title="src.harness.reference\l_models.antenna.fss_pointing.\lGsoAzimuth" alt="" coords="499,85,697,141"/>
-</map>

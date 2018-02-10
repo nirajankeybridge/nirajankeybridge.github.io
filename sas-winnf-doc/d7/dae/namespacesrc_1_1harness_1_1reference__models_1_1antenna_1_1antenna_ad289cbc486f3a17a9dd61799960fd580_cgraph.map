@@ -1,5 +1,0 @@
-<map id="src.harness.reference_models.antenna.antenna.GetStandardAntennaGains" name="src.harness.reference_models.antenna.antenna.GetStandardAntennaGains">
-<area shape="rect" id="node2" href="$d7/dae/namespacesrc_1_1harness_1_1reference__models_1_1antenna_1_1antenna.html#a7440a52b44ac1ff2cd89fc51ea4f1475" title="src.harness.reference\l_models.antenna.antenna.Get\lRadarNormalizedAntennaGains" alt="" coords="249,5,455,61"/>
-<area shape="rect" id="node3" href="$d7/dae/namespacesrc_1_1harness_1_1reference__models_1_1antenna_1_1antenna.html#a28b72a8a899c7724b3d377cbcd2131dc" title="src.harness.reference\l_models.antenna.antenna.Get\lFssAntennaGains" alt="" coords="503,5,699,61"/>
-<area shape="rect" id="node4" href="$d7/dae/namespacesrc_1_1harness_1_1reference__models_1_1antenna_1_1antenna.html#aef93ccb27a57bf91f4b70fc0701c45e9" title="src.harness.reference\l_models.antenna.antenna.\l_GetGsoGains" alt="" coords="747,5,921,61"/>
-</map>

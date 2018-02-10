@@ -1,9 +1,0 @@
-var searchData=
-[
-  ['qerf',['qerf',['../d2/d31/itm_8cpp.html#a172080c7c5a964791db33d1fb27b26f8',1,'qerf(const double &amp;z):&#160;itm.cpp'],['../d3/dd0/ITMDLL_8cpp.html#a172080c7c5a964791db33d1fb27b26f8',1,'qerf(const double &amp;z):&#160;ITMDLL.cpp']]],
-  ['qerfi',['qerfi',['../d2/d31/itm_8cpp.html#ad0a12435e029210dab38fce002347a31',1,'qerfi(double q):&#160;itm.cpp'],['../d3/dd0/ITMDLL_8cpp.html#ab2d14bf2630b6c36a667b9b3d715cf50',1,'qerfi(double q):&#160;ITMDLL.cpp']]],
-  ['qlra',['qlra',['../d2/d31/itm_8cpp.html#ae3afa2621c52a60ad6ad9cbeb815bea0',1,'qlra(int kst[], int klimx, int mdvarx, prop_type &amp;prop, propv_type &amp;propv):&#160;itm.cpp'],['../d3/dd0/ITMDLL_8cpp.html#afe95983a6a83beb62119da30182468df',1,'qlra(int kst[], int klimx, int mdvarx, prop_type &amp;prop, propv_type &amp;propv):&#160;ITMDLL.cpp']]],
-  ['qlrpfl',['qlrpfl',['../d2/d31/itm_8cpp.html#ae682440b4eaee05406c08f8ae48e60d8',1,'qlrpfl(double pfl[], int klimx, int mdvarx, prop_type &amp;prop, propa_type &amp;propa, propv_type &amp;propv):&#160;itm.cpp'],['../d3/dd0/ITMDLL_8cpp.html#a152ccc6442f590f588a376c23453eb59',1,'qlrpfl(double pfl[], int klimx, int mdvarx, prop_type &amp;prop, propa_type &amp;propa, propv_type &amp;propv):&#160;ITMDLL.cpp']]],
-  ['qlrps',['qlrps',['../d2/d31/itm_8cpp.html#a35bdc04d015dd4e8c83f0ff5ffb4966a',1,'qlrps(double fmhz, double zsys, double en0, int ipol, double eps, double sgm, prop_type &amp;prop):&#160;itm.cpp'],['../d3/dd0/ITMDLL_8cpp.html#a54f6dd43958712aff52dbda2a9463831',1,'qlrps(double fmhz, double zsys, double en0, int ipol, double eps, double sgm, prop_type &amp;prop):&#160;ITMDLL.cpp']]],
-  ['qtile',['qtile',['../d2/d31/itm_8cpp.html#a8ab54b7902d55b592e2d76dafdb93069',1,'qtile(const int &amp;nn, double a[], const int &amp;ir):&#160;itm.cpp'],['../d3/dd0/ITMDLL_8cpp.html#a8ab54b7902d55b592e2d76dafdb93069',1,'qtile(const int &amp;nn, double a[], const int &amp;ir):&#160;ITMDLL.cpp']]]
-];

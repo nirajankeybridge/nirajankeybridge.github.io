@@ -1,5 +1,0 @@
-<map id="SingleHorizonTest" name="SingleHorizonTest">
-<area shape="rect" id="node2" href="$d3/d10/ehata_8h.html#a04da5d949a150c9e4be4ccacc17b237c" title="GetDistanceInMeters" alt="" coords="183,5,330,32"/>
-<area shape="rect" id="node3" href="$d9/dbb/PreprocessTerrainPath_8cpp.html#a5215bf8ba24622edaa42bec0d6f12f2a" title="AverageTerrainHeight" alt="" coords="183,56,331,83"/>
-<area shape="rect" id="node4" href="$d3/d10/ehata_8h.html#ae12b05e3f880936b5258e4ecbeed7fad" title="FindHorizons" alt="" coords="207,107,306,133"/>
-</map>

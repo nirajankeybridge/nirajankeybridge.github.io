@@ -1,5 +1,0 @@
-<map id="src.harness.reference_models.geo.terrain.TerrainDriver.__init__" name="src.harness.reference_models.geo.terrain.TerrainDriver.__init__">
-<area shape="rect" id="node2" href="$d6/d6b/classsrc_1_1harness_1_1reference__models_1_1geo_1_1terrain_1_1TerrainDriver.html#ab4a4665755d87bc3e1508ba31d366201" title="src.harness.reference\l_models.geo.terrain.Terrain\lDriver.SetTerrainDirectory" alt="" coords="241,5,421,61"/>
-<area shape="rect" id="node3" href="$dd/dda/classsrc_1_1harness_1_1reference__models_1_1geo_1_1nlcd_1_1NlcdDriver.html#a7ade19dde1080141681df045f4c44623" title="src.harness.reference\l_models.geo.nlcd.NlcdDriver.\lSetCacheSize" alt="" coords="233,85,428,141"/>
-<area shape="rect" id="node4" href="$d6/d6b/classsrc_1_1harness_1_1reference__models_1_1geo_1_1terrain_1_1TerrainDriver.html#a570637440f50dce842a68d1b94fb75ae" title="src.harness.reference\l_models.geo.terrain.Terrain\lDriver.SetCacheSize" alt="" coords="241,165,421,221"/>
-</map>

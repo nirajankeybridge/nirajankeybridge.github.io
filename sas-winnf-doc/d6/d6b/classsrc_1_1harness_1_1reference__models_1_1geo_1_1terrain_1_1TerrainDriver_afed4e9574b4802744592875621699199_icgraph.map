@@ -1,5 +1,0 @@
-<map id="src.harness.reference_models.geo.terrain.TerrainDriver.GetTile" name="src.harness.reference_models.geo.terrain.TerrainDriver.GetTile">
-<area shape="rect" id="node2" href="$d6/d6b/classsrc_1_1harness_1_1reference__models_1_1geo_1_1terrain_1_1TerrainDriver.html#a8d5f60a37aec4d3318fd0ef720c9c12c" title="src.harness.reference\l_models.geo.terrain.Terrain\lDriver.GetTerrainElevation" alt="" coords="233,5,413,61"/>
-<area shape="rect" id="node3" href="$d6/d6b/classsrc_1_1harness_1_1reference__models_1_1geo_1_1terrain_1_1TerrainDriver.html#a937db85ff8e17162dd624ad69cebe456" title="src.harness.reference\l_models.geo.terrain.Terrain\lDriver.TerrainProfile" alt="" coords="475,5,655,61"/>
-<area shape="rect" id="node4" href="$d6/d6b/classsrc_1_1harness_1_1reference__models_1_1geo_1_1terrain_1_1TerrainDriver.html#aedbde9861afb8bcdee5a04e00b77bd22" title="src.harness.reference\l_models.geo.terrain.Terrain\lDriver.ComputeNormalizedHaat" alt="" coords="461,85,669,141"/>
-</map>

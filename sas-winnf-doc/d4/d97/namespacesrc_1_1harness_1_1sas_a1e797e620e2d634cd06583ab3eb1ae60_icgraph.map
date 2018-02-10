@@ -1,5 +1,0 @@
-<map id="src.harness.sas._RequestGet" name="src.harness.sas._RequestGet">
-<area shape="rect" id="node2" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#a1c38612363298068e5b0caf677dbcb8d" title="src.harness.sas.SasImpl.\l_SasRequest" alt="" coords="249,39,420,80"/>
-<area shape="rect" id="node3" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#ab3fb32dfe360a9a72dab950c9b5912ea" title="src.harness.sas.SasImpl.\lGetSasImplementationRecord" alt="" coords="468,5,665,47"/>
-<area shape="rect" id="node4" href="$db/dbc/classsrc_1_1harness_1_1sas_1_1SasImpl.html#aef3a52027aee2c00bdf0214391111df9" title="src.harness.sas.SasImpl.\lGetEscSensorRecord" alt="" coords="481,71,652,112"/>
-</map>
